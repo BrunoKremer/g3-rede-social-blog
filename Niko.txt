@@ -1,4 +1,6 @@
 ﻿Corinthians é meio de tabela !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# Adriano em Campo Grande - MS inseriu esta linha depois do café. 
-# Palmeiras é mo melhor do mundo. Tão bom que deixou o titulo de mundial pra outros. 
-palmeiras não tem mundial
+<<<<<<< HEAD
+=======
+# Luan inseriu esta linha. 
+# Flamengo é o melhor do mundo. Tão bom que deixou o titulo de mundial pra outros. 
+>>>>>>> 1567ce06f51283b20c5870ed9bf7814236cba627
