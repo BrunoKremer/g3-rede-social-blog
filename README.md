@@ -4,7 +4,7 @@
 
 **Título**
 
-    Rede Social e Blog.
+    <h1 align="center"> Rede Social e Blog </h1>
 
 **Status**
 
