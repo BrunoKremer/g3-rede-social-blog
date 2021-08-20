@@ -10,6 +10,16 @@
 
     - Status do projeto: O projeto se encontra em desenvolvimento  :warning:
 
+**Tabela de conteúdo**
+
+    1-Site blog pagina inicial.
+    2-Ultimos artigos postados.
+    3-Aba comunidade direcionando o usuario para a pagina de cadastro/login da rede social.
+    4-Informações de contato.
+    5-Filtro por categoria dos artigos.
+    6-Barra de pesquisa, para localizar artigos pelos nome do autor e/ou assunto.
+
+
 **Descrição**
 
     - Esse projeto tem como objetivo a criação de um blog e de uma mini rede social.
@@ -46,45 +56,57 @@
     2. Execute python manage.py runserver no cmd
     3. Acesse localhost:8000
 
-**Como rodar os testes**
+# **Como rodar os testes**
 
-    1. Acesse a pasta do arquivo
-    2. Execute python manage.py runserver no cmd
-    3. Acesse localhost:8000
-    4. Acessar API ou Admin do Django
+#      1. Instalar o github
+#      2. Baixar o repositório https://github.com/BrunoKremer/g3-rede-social-blog
+#      3. Vá para o diretório blog no cmd
+#      3.1 Abra a pasta Scripts e digite activate
+#      3.2 Volte para o diretório anterior
+#      4. Baixar todas dependências e bibliotecas descritas anteriormente
+#      5. Abra o Chrome e o endereço http://localhost:8000/
     
-**Database**
+# **Database**
 
-    - Neste projeto está sendo utilizado o banco de dados SQlite
-    - Ele estará sendo alimentado tanto por uma API quanto pelo django admin
-    - Já tem algumas tabelas do Blog criadas nele e conforme os dias, vamos inserindo mais elementos.
+#      1. Neste projeto está sendo utilizado o banco de dados SQlite
+#      2. Ele estará sendo alimentado tanto por uma API quanto pelo django admin
+#      3. Já tem algumas tabelas do Blog criadas nele e conforme os dias, vamos inserindo mais elementos.
 
-**Solução de problemas**
+# **Solução de problemas**
 
-    - Aqui estaram as resoluções dos problemas, caso venham a acontecer.
+#      1. Resolução de possíveis problemas, caso venham a acontecer.
 
-**Contribuintes**
+# **Contribuintes**
 
-    1. Antonio Bruno - DBA, Front-end
-    2. Luan Gabriel - Testes
-    3. Jean - Conteúdo
-    4. Evanildo - DBA
+#      Autores:
 
-**Tarefas em aberto**
+#      1. Antonio Bruno -Líder de equipe de desenvolvimento (brunokremer022@gmail.com)
+#      2. Evanildo - Desenvolvimento de banco de dados
+#      3. Jean França - Conteúdo dos aplicativos
+#      4. Luan Gabriel - Testes de aplicativos
+    
 
-    1. Criar arquivo models blog
-        [x] - Models de postagem
-        [x] - Models de categoria
-        [ ] - Models de cursos e livros
+# **Tarefas em aberto**
 
-    2. Criar views
-        [x] - Views que retorna todos itens
-        [x] - Outras views, como filtros, etc.
+#      1. Terminar este arquivo README
 
-    3. Layout
-        [x] - Desenvolver tela principal do blog
-        [x] - Desenvolver demais telas
-        [ ] - Colocar esse layout em código
+#      2. Criar arquivo models blog
+#           [x] - Models de postagem
+#           [x] - Models de categoria
+#           [ ] - Models de cursos e livros
 
-**Licença**
+#      3. Criar views
+#           [x] - Views que retorna todos itens
+#           [x] - Outras views, como filtros, etc.
+
+#      4. Layout
+#           [x] - Desenvolver tela principal do blog
+#           [x] - Desenvolver demais telas
+#           [ ] - Colocar esse layout em código
+
+# **Licença**
+
+# Todo o desenvolvimento descrito aqui em suas partes esta sendo liberado em A Lincença Pública em Geral GNU. Você pode copiar, por partes ou por inteiro a sua vontade. Se você for utilizar mais de 20% do código aqui, por favor, me avise, e registre em seus documentos. Obrigado.
+
+
 
