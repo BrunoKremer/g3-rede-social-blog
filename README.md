@@ -58,51 +58,51 @@
 
 # **Como rodar os testes**
 
-    # 1. Instalar o github
-    # 2. Baixar o repositório https://github.com/BrunoKremer/g3-rede-social-blog
-    # 3. Vá para o diretório blog no cmd
-    # 3.1 Abra a pasta Scripts e digite activate
-    # 3.2 Volte para o diretório anterior
-    # 4. Baixar todas dependências e bibliotecas descritas anteriormente
-    # 5. Abra o Chrome e o endereço http://localhost:8000/
+#      1. Instalar o github
+#      2. Baixar o repositório https://github.com/BrunoKremer/g3-rede-social-blog
+#      3. Vá para o diretório blog no cmd
+#      3.1 Abra a pasta Scripts e digite activate
+#      3.2 Volte para o diretório anterior
+#      4. Baixar todas dependências e bibliotecas descritas anteriormente
+#      5. Abra o Chrome e o endereço http://localhost:8000/
     
 # **Database**
 
-    # 1. Neste projeto está sendo utilizado o banco de dados SQlite
-    # 2. Ele estará sendo alimentado tanto por uma API quanto pelo django admin
-    # 3. Já tem algumas tabelas do Blog criadas nele e conforme os dias, vamos inserindo mais elementos.
+#      1. Neste projeto está sendo utilizado o banco de dados SQlite
+#      2. Ele estará sendo alimentado tanto por uma API quanto pelo django admin
+#      3. Já tem algumas tabelas do Blog criadas nele e conforme os dias, vamos inserindo mais elementos.
 
 # **Solução de problemas**
 
-    # 1. Resolução de possíveis problemas, caso venham a acontecer.
+#      1. Resolução de possíveis problemas, caso venham a acontecer.
 
 # **Contribuintes**
 
-    # Autores:
+#      Autores:
 
-    # 1. Antonio Bruno -Líder de equipe de desenvolvimento (brunokremer022@gmail.com)
-    # 2. Evanildo - Desenvolvimento de banco de dados
-    # 3. Jean França - Conteúdo dos aplicativos
-    # 4. Luan Gabriel - Testes de aplicativos
+#      1. Antonio Bruno -Líder de equipe de desenvolvimento (brunokremer022@gmail.com)
+#      2. Evanildo - Desenvolvimento de banco de dados
+#      3. Jean França - Conteúdo dos aplicativos
+#      4. Luan Gabriel - Testes de aplicativos
     
 
 # **Tarefas em aberto**
 
-    # 1. Terminar este arquivo README
+#      1. Terminar este arquivo README
 
-    # 2. Criar arquivo models blog
-        # [x] - Models de postagem
-        # [x] - Models de categoria
-        # [ ] - Models de cursos e livros
+#      2. Criar arquivo models blog
+#           [x] - Models de postagem
+#           [x] - Models de categoria
+#           [ ] - Models de cursos e livros
 
-    # 3. Criar views
-        [x] - Views que retorna todos itens
-        [x] - Outras views, como filtros, etc.
+#      3. Criar views
+#           [x] - Views que retorna todos itens
+#           [x] - Outras views, como filtros, etc.
 
-    # 4. Layout
-        [x] - Desenvolver tela principal do blog
-        [x] - Desenvolver demais telas
-        [ ] - Colocar esse layout em código
+#      4. Layout
+#           [x] - Desenvolver tela principal do blog
+#           [x] - Desenvolver demais telas
+#           [ ] - Colocar esse layout em código
 
 # **Licença**
 
