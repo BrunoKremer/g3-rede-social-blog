@@ -18,8 +18,6 @@
 
 **Layout ou Deploy da aplicação**
 
-
-
 **Como rodar os testes**
 
     1. Acesse a pasta do arquivo
@@ -34,6 +32,8 @@
     - Já tem algumas tabelas do Blog criadas nele e conforme os dias, vamos inserindo mais elementos.
 
 **Solução de problemas**
+
+    - Aqui estaram as resoluções dos problemas, caso venham a acontecer.
 
 **Contribuintes**
 
@@ -59,5 +59,29 @@
         [ ] - Colocar esse layout em código
 
 **Licença**
+
+**Pré requisitos**
+
+    • Instalado Python
+    • Instalado Django
+    • Instalado Git
+    • Instalado algum editor de cód. 
+
+    Sistema operacional
+
+    • Windows 7, 8, 10
+
+**Dependências e Libs instaladas**
+
+    - django
+    - pillow
+    - rest_framework
+    - django-filter
+
+**Como rodar a aplicação**
+
+    1. Acesse a pasta do arquivo
+    2. Execute python manage.py runserver no cmd
+    3. Acesse localhost:8000
 
 
