@@ -36,29 +36,31 @@
     4. Tópicos recentes
     5. [menu] = Quem somos, Categorias, Contato
 
+
 **Pré requisitos**
 
-    • Instalado Python
-    • Instalado Django
-    • Instalado Git
-    • Instalado algum editor de cód. 
+  • Instalado Python
+  • Instalado Django
+  • Instalado Git
+  • Instalado algum editor de cód. 
 
     Sistema operacional
-
-    • Windows 7, 8, 10
+    
+  • Windows 7, 8, 10
+    
 
 **Dependências e Libs instaladas**
 
-    - django
-    - pillow
-    - rest_framework
-    - django-filter
+ - django
+ - pillow
+ - rest_framework
+ - django-filter
 
 **Como rodar a aplicação**
 
-    1. Acesse a pasta do arquivo
-    2. Execute python manage.py runserver no cmd
-    3. Acesse localhost:8000
+#    1. Acesse a pasta do arquivo
+#    2. Execute python manage.py runserver no cmd
+#    3. Acesse localhost:8000
 
 # **Como rodar os testes**
 
@@ -95,7 +97,7 @@
 
 #      Autores:
 
-#      1. Antonio Bruno -Líder de equipe de desenvolvimento (brunokremer022@gmail.com)
+#      1. Antonio Bruno -Líder de equipe de desenvolvimento - (brunokremer022@gmail.com)
 #      2. Evanildo - Desenvolvimento de banco de dados
 #      3. Jean França - Conteúdo dos aplicativos
 #      4. Luan Gabriel - Testes de aplicativos
