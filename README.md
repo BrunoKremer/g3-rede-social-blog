@@ -1,13 +1,5 @@
 # g3-rede-social-blog
 
-**Descrição**
-
-    - Esse projeto tem como objetivo a criação de um blog e de uma mini rede social.
-    - Esse projeto visa tanto pessoas experientes na área da tecnologia  mas também toda e qualquer pessoa que visa começar a aprender ou aprimorar os seus conhecimentos na área.
-    - O blog contara com artigos voltados as mais variadas  linguagens de programação, frameworks,
-    linguagens de marcação, etc...
-    - A mini rede social sera um espaço para programadores de variados niveis e linguagens para compartilhar e atualizar seus conhecimentos e habilidades e expandir seu "Networking".
-
 **Como rodar os testes**
 
     1. Acesse a pasta do arquivo
@@ -47,5 +39,29 @@
         [ ] - Colocar esse layout em código
 
 **Licença**
+
+**Pré requisitos**
+
+    • Instalado Python
+    • Instalado Django
+    • Instalado Git
+    • Instalado algum editor de cód. 
+
+    Sistema operacional
+
+    • Windows 7, 8, 10
+
+**Dependências e Libs instaladas**
+
+    - django
+    - pillow
+    - rest_framework
+    - django-filter
+
+**Como rodar a aplicação**
+
+    1. Acesse a pasta do arquivo
+    2. Execute python manage.py runserver no cmd
+    3. Acesse localhost:8000
 
 
