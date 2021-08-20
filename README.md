@@ -1,5 +1,29 @@
 # g3-rede-social-blog
 
+**Pré requisitos**
+
+    • Instalado Python
+    • Instalado Django
+    • Instalado Git
+    • Instalado algum editor de cód. 
+
+    Sistema operacional
+
+    • Windows 7, 8, 10
+
+**Dependências e Libs instaladas**
+
+    - django
+    - pillow
+    - rest_framework
+    - django-filter
+
+**Como rodar a aplicação**
+
+    1. Acesse a pasta do arquivo
+    2. Execute python manage.py runserver no cmd
+    3. Acesse localhost:8000
+
 **Como rodar os testes**
 
     1. Acesse a pasta do arquivo
@@ -41,29 +65,4 @@
         [ ] - Colocar esse layout em código
 
 **Licença**
-
-**Pré requisitos**
-
-    • Instalado Python
-    • Instalado Django
-    • Instalado Git
-    • Instalado algum editor de cód. 
-
-    Sistema operacional
-
-    • Windows 7, 8, 10
-
-**Dependências e Libs instaladas**
-
-    - django
-    - pillow
-    - rest_framework
-    - django-filter
-
-**Como rodar a aplicação**
-
-    1. Acesse a pasta do arquivo
-    2. Execute python manage.py runserver no cmd
-    3. Acesse localhost:8000
-
 
