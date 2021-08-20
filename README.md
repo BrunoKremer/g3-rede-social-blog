@@ -1,6 +1,7 @@
 # g3-rede-social-blog
 
 <<<<<<< HEAD
+
 **Pré requisitos**
 
     • Instalado Python
