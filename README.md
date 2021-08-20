@@ -30,21 +30,34 @@
 
 **Layout ou Deploy da aplicação**
 
+<<<<<<< HEAD
+=======
+    1. Blog / Página inicial / Menu
+    2. Login / Registro
+    3. Barra de pesquisa
+    4. Tópicos recentes
+    5. [menu] = Quem somos, Categorias, Contato
+>>>>>>> 381b46ea039d14034539a280f23494f5056e30cf
 
 
 **Pré requisitos**
 
- #   0. Servidor de Internet 
- #   1. Linux ou Wndows
- #   2. Python
- #   3. Django
- #   4. Mysql
+  • Instalado Python
+  • Instalado Django
+  • Instalado Git
+  • Instalado algum editor de cód. 
+
+    Sistema operacional
+    
+  • Windows 7, 8, 10
     
 
 **Dependências e Libs instaladas**
 
-# 1. Transferencia de arquivos
-# 2. Conexão com banco de dados
+ - django
+ - pillow
+ - rest_framework
+ - django-filter
 
 **Como rodar a aplicação**
 
@@ -67,6 +80,17 @@
 #      1. Neste projeto está sendo utilizado o banco de dados SQlite
 #      2. Ele estará sendo alimentado tanto por uma API quanto pelo django admin
 #      3. Já tem algumas tabelas do Blog criadas nele e conforme os dias, vamos inserindo mais elementos.
+
+# Databases
+#      Tabela: Posts 
+#      Campos : category, title, content, created_by, created_in, photo
+
+#      Tabela : Category
+#      Campos: category
+
+#      Tabela : Indicacao
+#      Campos : indicacao, title, category, author, created_in, sinopse
+
 
 # **Solução de problemas**
 
