@@ -14,8 +14,10 @@
 
     - Site blog pagina inicial.
     - Ultimos artigos postados.
-    - Aba comunidade direcionando o usuario a para a pagina de cadastro/login da rede social.
+    - Aba comunidade direcionando o usuario para a pagina de cadastro/login da rede social.
     - Informações de contato.
+    - Filtro por categoria dos artigos.
+    - Barra de pesquisa, para encontrar artigos pelos nome do autor e/ou assunto.
 
 
 **Descrição**
