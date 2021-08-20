@@ -84,7 +84,7 @@
 #      Campos: category
 
 #      Tabela : Indicacao
-#      Campos : indicacao, title, category, author, sinopse, created_in
+#      Campos : indicacao, title, category, author, created_in, sinopse
 
 
 # **Solução de problemas**
