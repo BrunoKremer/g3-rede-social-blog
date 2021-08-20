@@ -31,9 +31,10 @@
 **Layout ou Deploy da aplicação**
 
     1. Blog / Página inicial / Menu
-    2. Barra de pesquisa
-    3. Tópicos recentes
-    4. [menu] = Quem somos, Categorias, Contato
+    2. Login / Registro
+    3. Barra de pesquisa
+    4. Tópicos recentes
+    5. [menu] = Quem somos, Categorias, Contato
 
 **Pré requisitos**
 
