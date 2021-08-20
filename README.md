@@ -75,6 +75,14 @@
 #      2. Ele estará sendo alimentado tanto por uma API quanto pelo django admin
 #      3. Já tem algumas tabelas do Blog criadas nele e conforme os dias, vamos inserindo mais elementos.
 
+# Databases
+# Tabela: posts 
+# Campos: id-unico;titulo;postagem;data_hora;anexos
+
+
+
+
+
 # **Solução de problemas**
 
 #      1. Resolução de possíveis problemas, caso venham a acontecer.
