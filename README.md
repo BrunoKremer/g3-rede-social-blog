@@ -76,8 +76,14 @@
 #      3. Já tem algumas tabelas do Blog criadas nele e conforme os dias, vamos inserindo mais elementos.
 
 # Databases
-# Tabela: posts 
-# Campos: id-unico;titulo;postagem;data_hora;anexos
+#      Tabela: Posts 
+#      Campos : category, title, content, created_by, created_in, photo
+
+#      Tabela : Category
+#      Campos: category
+
+#      Tabela : Indicacao
+#      Campos : indicacao, title, category, author, sinopse, created_in
 
 
 # **Solução de problemas**
