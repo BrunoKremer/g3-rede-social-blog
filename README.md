@@ -34,7 +34,7 @@
     2. Login / Registro
     3. Barra de pesquisa
     4. Tópicos recentes
-    5. [menu] = Quem somos, Categorias, Contato
+    5. menu = Quem somos, Categorias, Contato
 
 
 **Pré requisitos**
