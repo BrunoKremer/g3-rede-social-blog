@@ -80,9 +80,6 @@
 # Campos: id-unico;titulo;postagem;data_hora;anexos
 
 
-
-
-
 # **Solução de problemas**
 
 #      1. Resolução de possíveis problemas, caso venham a acontecer.
