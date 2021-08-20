@@ -12,12 +12,12 @@
 
 **Tabela de conteúdo**
 
-    - Site blog pagina inicial.
-    - Ultimos artigos postados.
-    - Aba comunidade direcionando o usuario para a pagina de cadastro/login da rede social.
-    - Informações de contato.
-    - Filtro por categoria dos artigos.
-    - Barra de pesquisa, para encontrar artigos pelos nome do autor e/ou assunto.
+    1-Site blog pagina inicial.
+    2-Ultimos artigos postados.
+    3-Aba comunidade direcionando o usuario para a pagina de cadastro/login da rede social.
+    4-Informações de contato.
+    5-Filtro por categoria dos artigos.
+    6-Barra de pesquisa, para localizar artigos pelos nome do autor e/ou assunto.
 
 
 **Descrição**
