@@ -10,6 +10,14 @@
 
     - Status do projeto: O projeto se encontra em desenvolvimento  :warning:
 
+**Tabela de conteúdo**
+
+    - Site blog pagina inicial.
+    - Ultimos artigos postados.
+    - Aba comunidade direcionando o usuario a para a pagina de cadastro/login da rede social.
+    - Informações de contato.
+
+
 **Descrição**
 
     - Esse projeto tem como objetivo a criação de um blog e de uma mini rede social.
