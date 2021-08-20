@@ -4,7 +4,7 @@
 
 **Título**
 
-    <h1 align="center"> Rede Social e Blog </h1>
+    - Rede Social e Blog
 
 **Status**
 
@@ -30,14 +30,11 @@
 
 **Layout ou Deploy da aplicação**
 
-<<<<<<< HEAD
-=======
     1. Blog / Página inicial / Menu
     2. Login / Registro
     3. Barra de pesquisa
     4. Tópicos recentes
     5. [menu] = Quem somos, Categorias, Contato
->>>>>>> 381b46ea039d14034539a280f23494f5056e30cf
 
 
 **Pré requisitos**
