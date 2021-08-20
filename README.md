@@ -15,6 +15,8 @@
 
 **Solução de problemas**
 
+    - Aqui estaram as resoluções dos problemas, caso venham a acontecer.
+
 **Contribuintes**
 
     1. Antonio Bruno - DBA, Front-end
