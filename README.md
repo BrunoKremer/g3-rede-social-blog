@@ -4,7 +4,7 @@
 
 **Título**
 
-    - Rede Social e Blog
+    <h1 align="center"> Rede Social e Blog </h1>
 
 **Status**
 
@@ -30,35 +30,40 @@
 
 **Layout ou Deploy da aplicação**
 
+<<<<<<< HEAD
+=======
     1. Blog / Página inicial / Menu
     2. Login / Registro
     3. Barra de pesquisa
     4. Tópicos recentes
     5. [menu] = Quem somos, Categorias, Contato
+>>>>>>> 381b46ea039d14034539a280f23494f5056e30cf
+
 
 **Pré requisitos**
 
-    • Instalado Python
-    • Instalado Django
-    • Instalado Git
-    • Instalado algum editor de cód. 
+  • Instalado Python
+  • Instalado Django
+  • Instalado Git
+  • Instalado algum editor de cód. 
 
     Sistema operacional
-
-    • Windows 7, 8, 10
+    
+  • Windows 7, 8, 10
+    
 
 **Dependências e Libs instaladas**
 
-    - django
-    - pillow
-    - rest_framework
-    - django-filter
+ - django
+ - pillow
+ - rest_framework
+ - django-filter
 
 **Como rodar a aplicação**
 
-    1. Acesse a pasta do arquivo
-    2. Execute python manage.py runserver no cmd
-    3. Acesse localhost:8000
+#    1. Acesse a pasta do arquivo
+#    2. Execute python manage.py runserver no cmd
+#    3. Acesse localhost:8000
 
 # **Como rodar os testes**
 
