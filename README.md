@@ -31,33 +31,36 @@
 **Layout ou Deploy da aplicação**
 
     1. Blog / Página inicial / Menu
-    2. Barra de pesquisa
-    3. Tópicos recentes
-    4. [menu] = Quem somos, Categorias, Contato
+    2. Login / Registro
+    3. Barra de pesquisa
+    4. Tópicos recentes
+    5. [menu] = Quem somos, Categorias, Contato
+
 
 **Pré requisitos**
 
-    • Instalado Python
-    • Instalado Django
-    • Instalado Git
-    • Instalado algum editor de cód. 
+  • Instalado Python
+  • Instalado Django
+  • Instalado Git
+  • Instalado algum editor de cód. 
 
     Sistema operacional
-
-    • Windows 7, 8, 10
+    
+  • Windows 7, 8, 10
+    
 
 **Dependências e Libs instaladas**
 
-    - django
-    - pillow
-    - rest_framework
-    - django-filter
+ - django
+ - pillow
+ - rest_framework
+ - django-filter
 
 **Como rodar a aplicação**
 
-    1. Acesse a pasta do arquivo
-    2. Execute python manage.py runserver no cmd
-    3. Acesse localhost:8000
+#    1. Acesse a pasta do arquivo
+#    2. Execute python manage.py runserver no cmd
+#    3. Acesse localhost:8000
 
 # **Como rodar os testes**
 
@@ -76,11 +79,14 @@
 #      3. Já tem algumas tabelas do Blog criadas nele e conforme os dias, vamos inserindo mais elementos.
 
 # Databases
-# Tabela: posts 
-# Campos: id-unico;titulo;postagem;data_hora;anexos
+#      Tabela: Posts 
+#      Campos : category, title, content, created_by, created_in, photo
 
+#      Tabela : Category
+#      Campos: category
 
-
+#      Tabela : Indicacao
+#      Campos : indicacao, title, category, author, created_in, sinopse
 
 
 # **Solução de problemas**
