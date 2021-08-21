@@ -24,7 +24,7 @@ from main.api import viewsets
 router = routers.DefaultRouter()
 router.register(r'blog', viewsets.PostViewSet)
 router.register(r'category', viewsets.CategoryViewSet)
-router.register(r'indicacao', viewsets.IndicacaoViewSet)
+router.register(r'Recommendation', viewsets.IndicacaoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
