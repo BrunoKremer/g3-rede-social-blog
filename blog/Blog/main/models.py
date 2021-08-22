@@ -1,21 +1,22 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 from django.conf import settings
 from django.db.models.deletion import CASCADE
 
-class Category(models.Model):
-    category = models.CharField(max_length=100)
+class Categoria(models.Model):
+    categoria = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.category
+        return self.categoria
 
 
 class Post(models.Model):
-    category = models.ForeignKey(Category, on_delete= models.CASCADE)
-    title = models.CharField(max_length=100)
-    content = models.TextField()
-    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
-    created_in = models.DateField(auto_now_add= False)
-    photo = models.FileField(null=True, blank=True, upload_to="static/img/")
+    categoria = models.ForeignKey(Categoria, on_delete= models.CASCADE)
+    titulo = models.CharField(max_length=100)
+    conteúdo = models.TextField()
+    criado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
+    criado_em = models.DateField(auto_now_add= False)
+    foto = models.FileField(null=True, blank=True, upload_to="static/img/")
 
     class Meta:
         verbose_name = 'Post'
@@ -23,18 +24,18 @@ class Post(models.Model):
 
 
     def __str__(self):
-        return self.title
+        return self.titulo
 
 class Indicacao(models.Model):
     INDICACAO_CHOICES = [
         ('livro', 'Livro'), ('curso', 'Curso')
     ]
     indicacao = models.CharField(max_length=10, choices= INDICACAO_CHOICES, default='curso')
-    title = models.CharField(max_length=100)
-    category = models.ForeignKey(Category, on_delete= models.CASCADE)
-    author = models.CharField(max_length=100)
-    sinopse = models.TextField()
-    created_in = models.DateField(auto_now_add= False)
+    titulo = models.CharField(max_length=100)
+    categoria = models.ForeignKey(Categoria, on_delete= models.CASCADE)
+    autor = models.CharField(max_length=100)
+    sinopse = RichTextField()
+    criado_em = models.DateField(auto_now_add= False)
 
     def __str__(self):
-        return self.title
+        return self.titulo

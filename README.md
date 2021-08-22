@@ -80,13 +80,13 @@
 
 # Databases
 #      Tabela: Posts 
-#      Campos : category, title, content, created_by, created_in, photo
+#      Campos : categoria, titulo, conteudo, criado_por, criado_em, foto
 
-#      Tabela : Category
-#      Campos: category
+#      Tabela : Categoria
+#      Campos: categoria
 
 #      Tabela : Indicacao
-#      Campos : indicacao, title, category, author, created_in, sinopse
+#      Campos : indicacao, titulo, categoria, autor, criado_em, sinopse
 
 
 # **Solução de problemas**
