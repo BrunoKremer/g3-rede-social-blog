@@ -1,14 +1,14 @@
 from rest_framework.serializers import ModelSerializer
-from main.models import Post, Category, Indicacao
+from main.models import Post, Categoria, Indicacao
 
 class PostSerializer(ModelSerializer):
     class Meta:
         model = Post
         fields = '__all__'
 
-class CategorySerializer(ModelSerializer):
+class CategoriaSerializer(ModelSerializer):
     class Meta:
-        model = Category
+        model = Categoria
         fields = '__all__'
 
 class IndicacaoSerializer(ModelSerializer):

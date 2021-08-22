@@ -23,11 +23,11 @@ from main.api import viewsets
 
 router = routers.DefaultRouter()
 router.register(r'blog', viewsets.PostViewSet)
-router.register(r'category', viewsets.CategoryViewSet)
+router.register(r'category', viewsets.CategoriaViewSet)
 router.register(r'indicacao', viewsets.IndicacaoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
     path('', include('main.urls', namespace = 'main')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
