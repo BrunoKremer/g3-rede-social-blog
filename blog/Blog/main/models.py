@@ -28,7 +28,7 @@ class Post(models.Model):
 
 class Indicacao(models.Model):
     INDICACAO_CHOICES = [
-        ('livro', 'Livro'), ('curso', 'Curso')
+        ('l', 'Livro'), ('c', 'Curso')
     ]
     indicacao = models.CharField(max_length=10, choices= INDICACAO_CHOICES, default='curso')
     titulo = models.CharField(max_length=100)
