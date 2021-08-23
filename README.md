@@ -34,7 +34,8 @@
     2. Login / Registro
     3. Barra de pesquisa
     4. Tópicos recentes
-    5. [menu] = Quem somos, Categorias, Contato
+    5. menu = Quem somos, Categorias, Contato
+
 
 
 **Pré requisitos**
@@ -97,7 +98,7 @@
 
 #      Autores:
 
-#      1. Antonio Bruno -Líder de equipe de desenvolvimento (brunokremer022@gmail.com)
+#      1. Antonio Bruno -Líder de equipe de desenvolvimento - (brunokremer022@gmail.com)
 #      2. Evanildo - Desenvolvimento de banco de dados
 #      3. Jean França - Conteúdo dos aplicativos
 #      4. Luan Gabriel - Testes de aplicativos
