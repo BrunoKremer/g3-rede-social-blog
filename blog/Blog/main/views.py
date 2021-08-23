@@ -11,9 +11,9 @@ from .models import Post, Categoria
 
 def home(request):
     post =  get_list_or_404(Post)
-    return render(request, 'home.html', {'post':post})
+    return render(request, 'blog/home.html', {'post':post})
 
-def filter_categoria(request)
+def filter_categoria(request):
     categoria = Categoria.objects.filter()
     return render(request, "home.html", {'categoria':categoria})
 
