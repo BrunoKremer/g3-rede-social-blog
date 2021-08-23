@@ -13,6 +13,7 @@ class Categoria(models.Model):
 class Post(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete= models.CASCADE)
     titulo = models.CharField(max_length=100)
+    subtitulo = models.CharField(max_length=100)
     conteúdo = models.TextField()
     criado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
     criado_em = models.DateField(auto_now_add= False)
@@ -36,6 +37,10 @@ class Indicacao(models.Model):
     autor = models.CharField(max_length=100)
     sinopse = RichTextField()
     criado_em = models.DateField(auto_now_add= False)
+
+    class Meta:
+        verbose_name = 'Indicação'
+        verbose_name_plural = 'Indicações'
 
     def __str__(self):
         return self.titulo
