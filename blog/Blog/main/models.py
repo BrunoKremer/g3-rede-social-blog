@@ -36,8 +36,9 @@ class Indicacao(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete= models.CASCADE)
     autor = models.CharField(max_length=100)
     sinopse = RichTextField()
-    link_venda = models.CharField(max_length=2000,null=True,blank=True)
+    link = models.CharField(max_length=2000,null=True,blank=True)
     criado_em = models.DateField(auto_now_add= False)
+    foto = models.FileField(null=True, blank=True, upload_to="static/img/")
 
     class Meta:
         verbose_name = 'Indicação'
