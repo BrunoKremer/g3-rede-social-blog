@@ -12,32 +12,46 @@
 </head>
 <body>    
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <img src="static/img/banner.png" alt="image" srcset="">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <form class="form-inline my-2 my-lg-0 text-center">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Sobre <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Comunidade <span class="sr-only">(current)</span></a>
-            </li>
-            
-          </ul>
-         
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #8fc38a;">
+        <div class="container-sm">
+            <div>
+                <img src="main/static/img/logo.png" alt="image" srcset="" style="width: 50px;">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                
+            </div>
+            <form class=" form-inline" style="padding-left: 50px;">    
+                <input class="form-control " type="search" placeholder="Buscar" aria-label="Search" style="width: 300px;">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" >
+                
+              <ul class="navbar-nav link-menu">
+                <li class="nav-item active">
+                  <a class="nav-link  " href="#">Home <span class="sr-only ">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link " href="#">Sobre <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Comunidade <span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+            </div>
         </div>
+        
       </nav>
+      
+      <section>
+          <div class="banner">
+            <img src="#" alt="banner" srcset="" style="width: 800px;">
+          </div>
+
+          
+      </section>
+
+      
         {% block main %}
         {% endblock %}
   
