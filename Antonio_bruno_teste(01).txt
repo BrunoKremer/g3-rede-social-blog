@@ -1,0 +1,6 @@
+﻿# Escrevi no meu PC
+<<<<<<< HEAD
+=======
+# Luan inseriu esta linha. 
+# Flamengo é o melhor do mundo. Tão bom que deixou o titulo de mundial pra outros. 
+>>>>>>> 1567ce06f51283b20c5870ed9bf7814236cba627
