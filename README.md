@@ -52,10 +52,15 @@
 
 **Dependências e Libs instaladas**
 
- - django
- - pillow
- - rest_framework
- - django-filter
+1. asgiref==3.4.1
+2. Django==3.2.6
+3. django-ckeditor==6.1.0
+4. django-filter==2.4.0
+5. django-js-asset==1.2.2
+6. djangorestframework==3.12.4
+7. Pillow==8.3.1
+8. pytz==2021.1
+9. sqlparse==0.4.1
 
 **Como rodar a aplicação**
 
