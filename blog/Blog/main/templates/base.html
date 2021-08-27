@@ -15,7 +15,7 @@
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #8fc38a;">
         <div class="container-sm">
             <div>
-                <img src="main/static/img/logo.png" alt="image" srcset="" style="width: 50px;">
+                <img src="main/static/img/logo.png" alt="image" srcset="" style="width: 40px;">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -44,11 +44,21 @@
       </nav>
       
       <section>
-          <div class="banner">
-            <img src="#" alt="banner" srcset="" style="width: 800px;">
+          <div class="text-center">
+            <img class="img-fluid" src="main/static/img/banner.png" alt="banner" srcset="" style="height: 150px; margin-top: 50px;">
           </div>
+      </section>
 
+      <section class="text-center" style="margin-top: 15px;">
+        {% for categoria in categoria %}
+
+        <ul class="list-group list-group-horizontal-sm" style="display: inline-block;">
+          <li class="nav-link"> <a class="pesquisa" style="color: #010139;" href="#">{{categoria.categoria}}</a> </li>
           
+        </ul>
+        
+        
+          {% endfor %}
       </section>
 
       

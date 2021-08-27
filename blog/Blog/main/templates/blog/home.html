@@ -5,20 +5,10 @@
 
 {% block main %}
 
-{% for categoria in categoria %}
-  <div class="card-group" style="width: 300px; min-height: 250px; display: inline;">
-    <div class="card" style="width: 260px; padding: 10px 10px; display: inline-block; margin: 35px;">
-      <img src="" class="card-img-top" alt="{{produto.produto}}" style= "border-bottom: 1px solid #ccc;">
-      <div class="card-body">
-        <strong class="card-title">{{categoria.categoria}}</strong>
-        <p class="card-text">{{produto.descricao|truncatewords:10|linebreaks}}</p>
-        <p><strong>R${{produto.valor}}</strong> </p>
-        <a href="#" class="btn btn-primary">Adicionar ao Carrinho</a>
-      </div><!--card-body-->
-    </div><!--card-->
-  </div><!--card-group-->
-  {% endfor %}
-</div><!--container-->
+
+
+
+
 
 {% endblock %}
     <!-- <h1>Blog</h1>

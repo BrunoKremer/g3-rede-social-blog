@@ -14,7 +14,9 @@ def home(request):
     return render(request, 'blog/home.html', {'post':post})
 
 def filter_categoria(request):
-    categoria = Categoria.objects.filter()
-    return render(request, "home.html", {'categoria':categoria})
+    categoria =  get_list_or_404(Categoria)
+    return render(request, "blog/home.html", {'categoria':categoria})
+    
+    
 
 # Create your views here.
