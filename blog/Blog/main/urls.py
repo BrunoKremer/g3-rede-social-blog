@@ -12,7 +12,6 @@ app_name = 'main'
 
 urlpatterns = [
     
-    # URL PRINCIPAL DA LOJA
     path('', views.filter_categoria , name = 'categoria'),
     path('', views.home , name = 'home'),
     
