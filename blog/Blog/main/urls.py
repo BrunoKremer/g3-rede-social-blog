@@ -13,7 +13,5 @@ app_name = 'main'
 urlpatterns = [
     
     path('', views.filter_categoria , name = 'categoria'),
-    path('', views.home , name = 'home'),
-    
-
+    path('', views.home , name = 'post'),
 ]

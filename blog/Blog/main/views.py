@@ -3,7 +3,7 @@ from django.http import HttpResponse, request
 
 
 # from django.contrib.auth.models import User
-from .models import Post, Categoria
+from .models import Post, Categoria, Comentarios
 # from rest_framework.renderers import TemplateHTMLRenderer
 # from rest_framework.response import Response
 # from rest_framework.views import APIView
@@ -16,6 +16,8 @@ def home(request):
 def filter_categoria(request):
     categoria =  get_list_or_404(Categoria)
     return render(request, "blog/home.html", {'categoria':categoria})
+
+
     
     
 

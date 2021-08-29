@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'ckeditor',
     'ckeditor_uploader',
+    'crispy_forms',
 
 ]
 

@@ -46,3 +46,14 @@ class Indicacao(models.Model):
 
     def __str__(self):
         return self.titulo
+
+class Comentarios(models.Model):
+    posts = models.ForeignKey(Post, on_delete = models.CASCADE, related_name ='comentarios')
+    comentario = models.TextField()
+
+    class Meta:
+        verbose_name = 'Comentário'
+        verbose_name_plural = 'Comentários'
+
+    def __str__(self):
+        return self.comentario
