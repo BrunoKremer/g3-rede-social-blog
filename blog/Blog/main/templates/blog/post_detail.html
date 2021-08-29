@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{post.titulo}}{% endblock %}
+
+{% block main %}
+
+
+
+<div class="container">
+    <h1 class="text-center">{{post.titulo}}</h1>
+    <h6 class="text-center">{{post.subtitulo}}</h6>
+    <img src="{{post.foto.url}}" class='img-fluid' alt="" srcset="">
+    <p class="card-text">{{post.conteúdo|linebreaks}}</p>
+</div>
+
+
+
+         
+{% endblock %}

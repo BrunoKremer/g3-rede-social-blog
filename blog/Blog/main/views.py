@@ -5,6 +5,7 @@ from django.http import HttpResponse, request
 # from django.contrib.auth.models import User
 from .models import Post, Categoria, Comentarios
 from django.core.paginator import Paginator
+from django.views import generic
 
 
 
@@ -20,6 +21,9 @@ def home(request):
     context = {'post':post, 'categoria':categoria, 'page_obj': page_obj}
     return render(request, 'blog/home.html', context)
         
-    
+
+class DetailView(generic.DetailView):
+    model = Post
+    template_name = 'blog/post_detail.html'
 
 # Create your views here.
