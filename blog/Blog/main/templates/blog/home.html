@@ -5,42 +5,52 @@
 
 {% block main %}
 
-{% for post in post %}
+<div class="container">
 
-<ul class="list-group list-group-horizontal-sm" style="display: inline-block;">
-  <li class="nav-link"> <a class="pesquisa" style="color: #010139;" href="#">{{post.conteudo}}</a> </li>
-  
-</ul>
+    
+    {%for post in page_obj%}
 
-
-  {% endfor %}
-
-{%for post in post%}
-
-<div class="card mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="..." alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{post.titulo}}</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <div class="card mb-6" style=" margin-top: 50px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img class="img-thumbnail" src="{{post.foto.url}}" alt="..." >
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold">{{post.titulo}}</h5>
+              <p class="card-text font-weight-light"> <small>{{post.subtitulo}}</small> </p>
+              <p class="card-text">{{post.conteúdo|truncatewords:20|linebreaks}}</p>
+              <p class="card-text font-italic"><small class="text-muted">Criado por {{post.criado_por}}, em {{post.criado_em}}</small></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-{% endfor %}
-
-
-{% endblock %}
-    <!-- <h1>Blog</h1>
-    <ul>
-       
-    </ul> -->
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     
+    {% endfor %}
+
+</div>
+
+
+
+
+<div class="pagination">
+    <span class="step-links text-center">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+        {% endif %}
+
+        <span class="current">
+            {{ page_obj.number }}
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Próxima</a>
+            <!-- <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a> -->
+        {% endif %}
+    </span>
+</div>
+{% endblock %}
+
+
+  

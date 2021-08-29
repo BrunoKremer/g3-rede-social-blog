@@ -4,21 +4,22 @@ from django.http import HttpResponse, request
 
 # from django.contrib.auth.models import User
 from .models import Post, Categoria, Comentarios
-# from rest_framework.renderers import TemplateHTMLRenderer
-# from rest_framework.response import Response
-# from rest_framework.views import APIView
+from django.core.paginator import Paginator
+
 
 
 def home(request):
     post =  get_list_or_404(Post)
-    return render(request, 'blog/home.html', {'post':post})
+    paginator = Paginator(post, 2) # Show 25 contacts per page.
 
-def filter_categoria(request):
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     categoria =  get_list_or_404(Categoria)
-    return render(request, "blog/home.html", {'categoria':categoria})
-
-
     
+
+    context = {'post':post, 'categoria':categoria, 'page_obj': page_obj}
+    return render(request, 'blog/home.html', context)
+        
     
 
 # Create your views here.
