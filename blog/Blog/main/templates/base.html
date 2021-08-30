@@ -22,11 +22,15 @@
                 </button>
                 
             </div>
-            <form method="get" class="form-inline" style="padding-left: 50px;" action="{url 'main:categoria/<int:pk>/ %'}">
+            <form id="searchForm" class="form" action="" method="get">
+              <div class="form__field">
+                  <label for="formInput#search">Buscar</label>
+                  <input class="input input--text" id="formInput#search" type="text" name="search"
+                      value="{{search}}" placeholder="" />
+              </div>
               
-                <input class="form-control " type="text" placeholder="Buscar" id="search" name = 'search 'style="width: 300px;">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
+          </form>
+
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" >
                 
               <ul class="navbar-nav link-menu navbar-nav-scroll">
