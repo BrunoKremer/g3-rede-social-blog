@@ -22,11 +22,12 @@
                 </button>
                 
             </div>
-            <form id="searchForm" class="form" action="" method="get">
-              <div class="form__field">
-                  <label for="formInput#search">Buscar</label>
-                  <input class="input input--text" id="formInput#search" type="text" name="search"
-                      value="{{search}}" placeholder="" />
+            <form id="searchForm" class="form  form-inline" action="" method="get" style="margin-left: 20px;">
+              <div class="form__field form-group">
+                  <label for="formInput#search"></label>
+                  <input class="input input--text form-control" id="formInput#search" type="text" name="search"
+                      value="{{search}}" placeholder="Pesquisar..." />
+                      <button type="submit" class="btn btn-sucess" style="border: 1px solid black; margin-left: 5px;">Buscar</button>
               </div>
               
           </form>
