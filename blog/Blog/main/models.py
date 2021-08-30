@@ -16,8 +16,8 @@ class Categoria(models.Model):
 
 class Post(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete= models.CASCADE)
-    titulo = models.CharField(max_length=100)
-    subtitulo = models.CharField(max_length=100, null = True)
+    titulo = models.CharField(max_length=1000)
+    subtitulo = models.CharField(max_length=1000)
     conteúdo = models.TextField()
     criado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
     criado_em = models.DateField(auto_now_add= False)
