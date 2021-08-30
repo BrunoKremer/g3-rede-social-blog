@@ -5,10 +5,19 @@
 {% block title %}Home{% endblock %}
 
 {% block main %}
+<section class="text-center" style="margin-top: 15px;">
+  {% for cat in categoria %}
+  <ul class="list-group list-group-horizontal-sm" style="display: inline-block;">
+    <li class="nav-link"> <a class="pesquisa" style="color: #010139;" href="">{{cat.categoria}}</a> </li> 
+  </ul>
+  
+  
+    {% endfor %}
+</section>
 
 <div class="container">
     {%for post in page_obj%}
-    <div class="card mb-6" style=" margin-top: 50px;">
+    <div class="card mb-6" style=" margin-top: 50px;" >
         <div class="row no-gutters">
             <div class="col-md-4">
                 <img class="img-thumbnail" src="{{post.foto.url}}" alt="..." >
@@ -17,7 +26,7 @@
               <div class="card-body">
                 <h5 class="card-title font-weight-bold">{{post.titulo}}</h5>
                 <p class="card-text font-weight-light"> <small>{{post.subtitulo}}</small> </p>
-                <p class="card-text">{{post.conteúdo|truncatewords:20|linebreaks}} <a href="{% url 'main:post_detail' post.id %}">Ver mais..</a></p>
+                <p class="card-text">{{post.conteúdo|truncatewords:20|linebreaks}} <span><a href="{% url 'main:post_detail' post.id %}">Ver mais..</a></span> </p>
                 <p class="card-text font-italic"><small class="text-muted">Criado por {{post.criado_por}}, em {{post.criado_em}}</small></p>
               </div>
             </div>
@@ -26,10 +35,28 @@
     {% endfor %}
 </div>
 
-<div class="container" >
+<div class="pagination text-center">
+  <span class="step-links text-center">
+      {% if page_obj.has_previous %}
+          <a href="?page=1" class="text-center">&laquo; Primeira</a>
+          <a class="text-center" href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+      {% endif %}
+
+      <span class="text-center current">
+          {{ page_obj.number }}
+      </span>
+
+      {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}">Próxima</a>
+          <!-- <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a> -->
+      {% endif %}
+  </span>
+</div>
+
+<div class="container align-items-center" id= "sobre" style="margin-top: 45px; border-top: 1px solid #010139;">
     <h1 class="text-center">INTEGRANTES DO PROJETO</h1>
-    <div class="row" style="background-color: #8fc38a;">
-      <div class="card col align-items-center" style="width: 18rem; border: none;">
+    <div class="row align-self-center" style="margin-top: 15px;">
+      <div class="card col-lg align-items-center" style="width: 18rem; border: none;">
         <img class="card-img-top" src="{% static 'img/antonio.jfif' %}" alt="Imagem de capa do card" style="width: 90px; height: 90px; border-radius: 50%;">
           <div class="card-body">
             <p class="card-text text-center font-italic">"Minha experiência com a criação deste projeto foi incrível, pude colocar minhas habilidades em prática e aprimorar meus conhecimentos"</p>
@@ -49,7 +76,7 @@
           </div><!--Card-body-->
       </div><!--Antonio - Card-->
 
-      <div class="card col align-items-center" style="width: 18rem; border: none;">
+      <div class="card col-lg align-items-center" style="width: 18rem; border: none;">
         <img class="card-img-top" src="{% static 'img/antonio.jfif' %}" alt="Imagem de capa do card" style="width: 90px; height: 90px; border-radius: 50%;">
           <div class="card-body">
             <p class="card-text text-center font-italic">"Minha experiência com a criação deste projeto foi incrível, pude colocar minhas habilidades em prática e aprimorar meus conhecimentos"</p>
@@ -69,7 +96,7 @@
           </div><!--Card-body-->
       </div><!--Antonio - Card-->
 
-      <div class="card col align-items-center" style="width: 18rem; border: none;">
+      <div class="card col-lg align-items-center" style="width: 18rem; border: none;">
         <img class="card-img-top" src="{% static 'img/antonio.jfif' %}" alt="Imagem de capa do card" style="width: 90px; height: 90px; border-radius: 50%;">
           <div class="card-body">
             <p class="card-text text-center font-italic">"Minha experiência com a criação deste projeto foi incrível, pude colocar minhas habilidades em prática e aprimorar meus conhecimentos"</p>
@@ -89,7 +116,7 @@
           </div><!--Card-body-->
       </div><!--Antonio - Card-->
 
-      <div class="card col align-items-center" style="width: 18rem; border: none;">
+      <div class="card col-lg align-items-center" style="width: 18rem; border: none;">
         <img class="card-img-top" src="{% static 'img/antonio.jfif' %}" alt="Imagem de capa do card" style="width: 90px; height: 90px; border-radius: 50%;">
           <div class="card-body">
             <p class="card-text text-center font-italic">"Minha experiência com a criação deste projeto foi incrível, pude colocar minhas habilidades em prática e aprimorar meus conhecimentos"</p>
@@ -114,6 +141,8 @@
         
     </div>
 </div>
+
+
 {% endblock %}
 
 
@@ -121,23 +150,7 @@
 
 
 
-<div class="pagination">
-    <span class="step-links text-center">
-        {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
-        {% endif %}
 
-        <span class="current">
-            {{ page_obj.number }}
-        </span>
-
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">Próxima</a>
-            <!-- <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a> -->
-        {% endif %}
-    </span>
-</div>
 
 
 

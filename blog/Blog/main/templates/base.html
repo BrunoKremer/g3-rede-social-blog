@@ -13,7 +13,7 @@
 </head>
 <body>    
 
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #8fc38a;">
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #8fc38a;">
         <div class="container-sm">
             <div>
                 <img src=" {% static 'img/logo.png'%}" alt="image" srcset="" style="width: 40px;">
@@ -22,18 +22,19 @@
                 </button>
                 
             </div>
-            <form method="get" class=" form-inline" style="padding-left: 50px;">    
+            <form method="get" class="form-inline" style="padding-left: 50px;" action="{url 'main:categoria/<int:pk>/ %'}">
+              
                 <input class="form-control " type="text" placeholder="Buscar" id="search" name = 'search 'style="width: 300px;">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
             </form>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" >
                 
-              <ul class="navbar-nav link-menu">
+              <ul class="navbar-nav link-menu navbar-nav-scroll">
                 <li class="nav-item active">
                   <a class="nav-link  " href="/">Home <span class="sr-only ">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link " href="#">Sobre <span class="sr-only">(current)</span></a>
+                  <a class="nav-link " href="#sobre">Sobre <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="#">Comunidade <span class="sr-only">(current)</span></a>
@@ -50,17 +51,7 @@
           </div>
       </section>
 
-      <section class="text-center" style="margin-top: 15px;">
-        {% for categoria in categoria %}
-
-        <ul class="list-group list-group-horizontal-sm" style="display: inline-block;">
-          <li class="nav-link"> <a class="pesquisa" style="color: #010139;" href="#">{{categoria.categoria}}</a> </li>
-          
-        </ul>
-        
-        
-          {% endfor %}
-      </section>
+     
 
       
 
@@ -72,7 +63,7 @@
   
         {% block content %}
         {% endblock %}
-    
+        {% include 'snipetts/rodape.html' %}
    
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
