@@ -11,7 +11,9 @@
     <div class="card mb-6" style=" margin-top: 50px;">
         <div class="row no-gutters">
             <div class="col-md-4">
+            {%if post.foto%}
                 <img class="img-thumbnail" src="{{post.foto.url}}" alt="..." >
+            {%endif%}
             </div>
             <div class="col-md-8">
               <div class="card-body">

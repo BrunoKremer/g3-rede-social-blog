@@ -16,13 +16,13 @@ class Categoria(models.Model):
 
 
 class Post(models.Model):
-    categoria = models.ForeignKey(Categoria, on_delete= models.CASCADE)
+    categoria = models.ManyToManyField(Categoria)
     titulo = models.CharField(max_length=1000)
     subtitulo = models.CharField(max_length=1000,null=True)
     conteúdo = models.TextField()
     criado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
     criado_em = models.DateField(auto_now_add= False)
-    foto = models.FileField(null=True, blank=True, upload_to="static/img/")
+    foto = models.ImageField(null=True, blank=True, upload_to="static/img/")
 
     class Meta:
         verbose_name = 'Post'

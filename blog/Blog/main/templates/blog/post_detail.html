@@ -9,8 +9,13 @@
 
 <div class="container">
     <h1 class="text-center">{{post.titulo}}</h1>
-    <h6 class="text-center">{{post.subtitulo}}</h6>
-    <img src="{{post.foto.url}}" class='img-fluid' alt="" srcset="" style="width: 1100px; height: 700px;">
+    {% if post.subtitulo %}
+        <h6 class="text-center">{{post.subtitulo}}</h6>
+    {%endif%}
+    {% if post.foto %}
+        <img src="{{post.foto.url}}" class='img-fluid' alt="" srcset="" style="width: 1100px; height: 700px;">
+    {%endif%}
+    
     <p class="card-text">{{post.conteúdo|linebreaks}}</p>
 </div>
 
