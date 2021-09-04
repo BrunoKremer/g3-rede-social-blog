@@ -1,10 +1,7 @@
 
+# from .forms import FormComentario
 from django.shortcuts import render, get_object_or_404, redirect, get_list_or_404
 from django.http import HttpResponse, request, response
-from django.db.models import Q
-
-
-# from django.contrib.auth.models import User
 from django.db.models import Q
 from .models import Post, Categoria, Comentarios
 from django.core.paginator import Paginator
@@ -38,9 +35,16 @@ class DetailView(generic.DetailView):
     model = Post
     template_name = 'blog/post_detail.html'
 
+    # def ComentarioFormView(request):
+    #         form = FormComentario()
+    #         if form.is_valid():
+    #             form.save()
+
 # class CategoriaDetailView(generic.DetailView):
 #     model = Categoria
 #     template_name = 'blog/categoria_detail.html'
 
 
 # Create your views here.
+
+            
