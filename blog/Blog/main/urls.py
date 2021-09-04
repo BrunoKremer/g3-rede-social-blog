@@ -11,10 +11,8 @@ from django.contrib.auth import views as auth_views
 app_name = 'main'
 
 urlpatterns = [
-    path('', views.home, name = 'post'),    
-    
+    path('', views.home, name = 'post'),        
     path('<int:pk>/', views.DetailView.as_view(), name='post_detail'),
-    # path('categoria/<int:pk>/', views.CategoriaDetailView.as_view(), name='categoria_detail'),
     # path('', views.filter_categoria , name = 'categoria'),
     
 ]

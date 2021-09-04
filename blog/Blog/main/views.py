@@ -1,9 +1,9 @@
 
-# from .forms import FormComentario
+from .forms import FormComentario
 from django.shortcuts import render, get_object_or_404, redirect, get_list_or_404
 from django.http import HttpResponse, request, response
 from django.db.models import Q
-from .models import Post, Categoria, Comentarios
+from .models import Indicacao, Post, Categoria, Comentarios
 from django.core.paginator import Paginator
 from django.views import generic
 
@@ -35,14 +35,18 @@ class DetailView(generic.DetailView):
     model = Post
     template_name = 'blog/post_detail.html'
 
-    # def ComentarioFormView(request):
-    #         form = FormComentario()
-    #         if form.is_valid():
-    #             form.save()
+    def comentario(request):
+        if request.method == 'POST':
+            form = FormComentario()
+            # aqui Django valida o teu form, neste caso só os dois válidos irá gravar, mas podes mudar esta lógica
+            if form.is_valid(): 
+                form.save()
+            return render(request, 'blog/post_detail.html', {'form':form})
+        else:
+            form = FormComentario()
+        return render(request, 'blog/post_detail.html', {'form':form})
 
-# class CategoriaDetailView(generic.DetailView):
-#     model = Categoria
-#     template_name = 'blog/categoria_detail.html'
+
 
 
 # Create your views here.

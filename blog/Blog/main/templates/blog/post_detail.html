@@ -26,15 +26,14 @@
          
 {% endblock %}
 
-<!-- {% block content %}
+{% block content %}
 <div class="container">
 	<h1>Faça um comentário</h1>
 	
 	<form method="POST" enctype="multpart/form-data">
-		{{ form|crispy }}
-		<textarea name="" id="" cols="30" rows="10"></textarea>
+        {{ form.as_p }}
     	{% csrf_token %}
 		<p><input class="btn btn-primary" type="submit" value="Salvar alterações"></p>
 	</form>
 </div>
-{% endblock %} -->
+{% endblock %}
