@@ -12,7 +12,7 @@ app_name = 'main'
 
 urlpatterns = [
     path('', views.home, name = 'post'),        
-    path('<int:pk>/', views.DetailView.as_view(), name='post_detail'),
+    path('<int:pk>/', views.PostDetailView.as_view(), name='post_detail'),
     # path('', views.filter_categoria , name = 'categoria'),
     
 ]

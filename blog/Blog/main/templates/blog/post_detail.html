@@ -30,10 +30,15 @@
 <div class="container">
 	<h1>Faça um comentário</h1>
 	
-	<form method="POST" enctype="multpart/form-data">
-        {{ form.as_p }}
+	<form method="POST" action="#">
+            
+            <div class="form-group">
+              <textarea class="form-control" id="comentario" name="comentario" rows="3"></textarea>
+            </div>
+         
+        
     	{% csrf_token %}
-		<p><input class="btn btn-primary" type="submit" value="Salvar alterações"></p>
+		<p><input class="btn" style="background-color: #8fc38a;" type="submit" value="Salvar alterações"></p>
 	</form>
 </div>
 {% endblock %}

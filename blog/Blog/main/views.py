@@ -1,4 +1,5 @@
 
+from django.views.generic.edit import FormView
 from .forms import FormComentario
 from django.shortcuts import render, get_object_or_404, redirect, get_list_or_404
 from django.http import HttpResponse, request, response
@@ -6,6 +7,7 @@ from django.db.models import Q
 from .models import Indicacao, Post, Categoria, Comentarios
 from django.core.paginator import Paginator
 from django.views import generic
+from django.urls import reverse_lazy
 
 def home(request):
     search = ''
@@ -31,20 +33,23 @@ def home(request):
     return render(request, 'blog/home.html', context )
         
 
-class DetailView(generic.DetailView):
+class PostDetailView(generic.DetailView):
     model = Post
     template_name = 'blog/post_detail.html'
 
-    def comentario(request):
-        if request.method == 'POST':
-            form = FormComentario()
-            # aqui Django valida o teu form, neste caso só os dois válidos irá gravar, mas podes mudar esta lógica
-            if form.is_valid(): 
-                form.save()
-            return render(request, 'blog/post_detail.html', {'form':form})
-        else:
-            form = FormComentario()
-        return render(request, 'blog/post_detail.html', {'form':form})
+class ComentarioView(FormView):
+    form_class = FormComentario
+    success_url = reverse_lazy('post_detail')
+    template_name = 'blog/post_detail.html'
+
+    def form_valid(self, form, *args, **kwargs):
+        comentario = form.cleaned_data['comentario']
+        comentario.save()
+        return super().form_valid(form)
+
+
+
+    
 
 
 
