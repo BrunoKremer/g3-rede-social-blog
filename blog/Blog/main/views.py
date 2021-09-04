@@ -10,15 +10,15 @@ from django.views import generic
 from django.urls import reverse_lazy
 
 def home(request):
-    search = ''
+    cat = ''
 
-    if request.GET.get('search'):
-        search = request.GET.get('search')
+    if request.GET.get('cat'):
+        cat = request.GET.get('cat')
         
-    categorias = Categoria.objects.filter(categoria__icontains=search) 
+    categorias = Categoria.objects.filter(categoria__icontains=cat) 
     post =  Post.objects.distinct().filter(
-        Q(titulo__icontains=search)| 
-        Q(subtitulo__icontains=search)|
+        Q(titulo__icontains=cat)| 
+        Q(subtitulo__icontains=cat)|
         Q(categoria__in=categorias)
     )
     paginator = Paginator(post, 5) # Show 25 contacts per page.
@@ -28,7 +28,7 @@ def home(request):
     categoria =  Categoria.objects.all()
     
 
-    context = {'post':post, 'categoria':categoria, 'page_obj': page_obj,'search':search}
+    context = {'post':post, 'categoria':categoria, 'page_obj': page_obj,'cat':cat}
     
     return render(request, 'blog/home.html', context )
         
