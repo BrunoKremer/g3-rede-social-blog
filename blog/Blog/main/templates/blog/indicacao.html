@@ -14,14 +14,15 @@
 <article class="c-carousel c-carousel--responsive align-items-center text-center" style=" margin-top: 75px;">
   <div class="c-carousel__slides js-carousel--responsive " style="margin-left: 130px;">
     {%for ind in indicacao %}
+    
         <article class="c-carousel__slide">
             <div class="card" style="width: 15rem; min-height: 38rem; max-height: 38rem;" >
                 <img src="{{ind.foto.url}}" class="card-img-top" alt="..." style="min-height: 20rem;">
                 <div class="card-body">
                   <h5 class="card-title">{{ind.titulo}}</h5>
                   <!-- <p class="card-text">{{ind.sinopse|truncatewords:16}}</p> -->
-                  <p class="card-text">{{ind.autor|truncatewords:16}}</p>
-                  <a href="{% url 'main:indicacao_detail' ind.id %}" class="btn btn-primary">Ver mais</a>
+                  <p class="card-text">{{ind.categoria}}</p>
+                  <a href="{% url 'main:indicacao_detail' ind.id %}" class="btn btn-outline-success">Ver mais</a>
                 </div>
               </div>
         </article>
