@@ -53,6 +53,10 @@ def indicacao(request):
     context = {'indicacao':indicacao}
     return render(request, 'blog/indicacao.html', context)
 
+class IndicacaoDetailView(generic.DetailView):
+    model = Indicacao
+    template_name = 'blog/indicacao_detail.html'
+
     
 
 

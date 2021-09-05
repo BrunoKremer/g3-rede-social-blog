@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}{{post.titulo}}{% endblock %}
+
+{% block main %}
+
+
+
+<div class="container">
+    <h1 class="text-center">{{indicacao.titulo}}</h1>
+    {% if post.subtitulo %}
+        <h6 class="text-center">{{post.subtitulo}}</h6>
+    {%endif%}
+    {% if post.foto %}
+        <img src="{{post.foto.url}}" class='img-fluid' alt="" srcset="" style="width: 1100px; height: 700px;">
+    {%endif%}
+    
+    <p class="card-text">{{post.conteúdo|linebreaks}}</p>
+</div>
+
+
+
+
+         
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<h1>Faça um comentário</h1>
+	
+	<form method="POST" action="#">
+            
+            <div class="form-group">
+              <textarea class="form-control" id="comentario" name="comentario" rows="3"></textarea>
+            </div>
+         
+        
+    	{% csrf_token %}
+		<p><input class="btn" style="background-color: #8fc38a;" type="submit" value="Salvar alterações"></p>
+	</form>
+</div>
+{% endblock %}

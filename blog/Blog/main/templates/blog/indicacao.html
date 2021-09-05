@@ -21,7 +21,7 @@
                   <h5 class="card-title">{{ind.titulo}}</h5>
                   <!-- <p class="card-text">{{ind.sinopse|truncatewords:16}}</p> -->
                   <p class="card-text">{{ind.autor|truncatewords:16}}</p>
-                  <a href="#" class="btn btn-primary">Ver mais</a>
+                  <a href="{% url 'main:indicacao_detail' ind.id %}" class="btn btn-primary">Ver mais</a>
                 </div>
               </div>
         </article>
