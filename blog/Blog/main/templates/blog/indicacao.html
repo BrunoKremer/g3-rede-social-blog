@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}Indicacao{% endblock %}
+
+{% block main %}
+
+
+
+<div class="container">
+    {%for ind in indicacao %}
+    <p>{{ind.titulo}}</p>
+    {%endfor%}
+</div>
+
+
+
+
+         
+{% endblock %}

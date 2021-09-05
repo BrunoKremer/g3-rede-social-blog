@@ -46,8 +46,12 @@ class ComentarioView(FormView):
         comentario = form.cleaned_data['comentario']
         comentario.save()
         return super().form_valid(form)
+        
 
-
+def indicacao(request):
+    indicacao = get_list_or_404(Indicacao)
+    context = {'indicacao':indicacao}
+    return render(request, 'blog/indicacao.html', context)
 
     
 
