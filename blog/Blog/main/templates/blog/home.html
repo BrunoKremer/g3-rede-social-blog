@@ -5,21 +5,23 @@
 {% block title %}Home{% endblock %}
 
 {% block main %}
-<div class=" container text-center"style="margin-top: 15px;">
+<div class=" container-sm text-center"style="margin-top: 15px;">
    <div class="align-items-center btn-group">
     {% for cat in categoria %}
     <form id="searchForm" class="form  align-items-center  form-inline" action="" method="get">
       <ul class="list-group list-group-horizontal-sm  align-items-center" style="display: inline-block;">
-        <li class="nav-link align-items-center"> <button type="submit" name="cat" value="{{cat}}" class=" align-items-center btn-sm btn btn-outline-success">{{cat.categoria}}</button> </li> 
+        <li class="nav-link align-items-center"> <button type="submit" name="cat" value="{{cat}}" class=" align-items-center btn-sm btn btn-outline-success">{{cat.categoria}}</button> </li>
       </ul>    
     </form>
     {% endfor %}
+    <li class="nav-link align-items-center"> <a class="btn-sm  btn btn-outline-success" href="{% url 'main:indicacao'%}">Indicacao</a> </li> 
    </div>
+
         
      
 </div>
 
-<div class="container">
+<div class="container-sm">
     {%for post in page_obj%}
     <div class="card mb-6" style=" margin-top: 50px;" >
         <div class="row no-gutters">
