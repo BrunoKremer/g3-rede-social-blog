@@ -8,9 +8,10 @@
 <div class=" container-sm text-center"style="margin-top: 15px;">
    <div class="align-items-center btn-group">
     {% for cat in categoria %}
-    <form id="searchForm" class="form  align-items-center  form-inline" action="" method="get">
-      <ul class="list-group list-group-horizontal-sm  align-items-center" style="display: inline-block;">
-        <li class="nav-link align-items-center"> <button type="submit" name="cat" value="{{cat}}" class=" align-items-center btn-sm btn btn-outline-success">{{cat.categoria}}</button> </li>
+    <form id="searchForm" class="align-items-center  form-inline" action="" method="get">
+      <ul class="list-group list-group-horizontal-sm align-items-center" style="display: inline-block;">
+        
+        <li class="nav-link align-items-center"> <button type="submit" name="cat" role="group"  value="{{cat}}" class=" btn-group align-items-center btn-sm btn btn-outline-success">{{cat.categoria}}</button> </li>
       </ul>    
     </form>
     {% endfor %}
