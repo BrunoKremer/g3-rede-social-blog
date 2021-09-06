@@ -21,7 +21,7 @@ def home(request):
         Q(subtitulo__icontains=cat)|
         Q(categoria__in=categorias)
     )
-    paginator = Paginator(post, 5) # Show 25 contacts per page.
+    paginator = Paginator(post, 5) 
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)

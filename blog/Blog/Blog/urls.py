@@ -34,3 +34,5 @@ urlpatterns = [
 
 
 admin.site.site_header = 'Infocode'
+admin.site.site_title = 'Mantenha-se conectado com todas tecnologias'
+admin.site.site_header = 'Sistema de gerenciamento da infocode'
