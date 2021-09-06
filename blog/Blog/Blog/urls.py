@@ -31,3 +31,6 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('', include('main.urls', namespace = 'main')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+
+admin.site.site_header = 'Infocode'

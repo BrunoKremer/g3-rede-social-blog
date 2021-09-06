@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
-class social(models.Model):
+class Usuario(models.Model):
     CATEGORIA_CHOICES = [
         ('p', 'Python'), ('h', 'Html'), ('c', 'Css'), ('js', 'JavaScript'), ('d', 'Django'), ('j', 'Java'), ('a', 'Api'), ('g', 'Geral')
     ]
