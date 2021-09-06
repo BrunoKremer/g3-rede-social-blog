@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'main.apps.MainConfig',
+    'usuarios.apps.UsuariosConfig',
     'ckeditor',
     'ckeditor_uploader',
     'crispy_forms',
@@ -136,8 +137,6 @@ MEDIA_ROOT = 'static'
 MEDIA_URL = '/static/'
 
 
-
-
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_RENDERER_CLASSES': [
@@ -145,6 +144,8 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',
     ]
 }
+
+# AUTH_USER_MODEL = 'usuarios.Usuarios'
 
 CKEDITOR_UPLOAD_PATH = 'uploades/'
 
