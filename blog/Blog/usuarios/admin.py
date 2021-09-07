@@ -1,8 +1,13 @@
-# from django.contrib import admin
-# from django.contrib.auth.admin import UserAdmin
+from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 
 # from .forms import UsuarioFormChange, UsuarioForm
-# from .models import Usuarios
+from .models import CustomUser
+
+admin.site.register(CustomUser)
+
+def _autor(self, instance):
+    return f'{instance.user.get_full_name()}'
 
 
 

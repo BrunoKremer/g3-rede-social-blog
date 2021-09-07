@@ -137,6 +137,7 @@ MEDIA_ROOT = 'static'
 
 MEDIA_URL = '/static/'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
