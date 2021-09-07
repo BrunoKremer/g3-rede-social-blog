@@ -11,7 +11,7 @@ from django.contrib.auth import views as auth_views
 app_name = 'main'
 
 urlpatterns = [
-    path('', views.home, name = 'post'),        
+    path('', views.home, name = 'post'),
     path('<int:pk>/', views.PostDetailView.as_view(), name='post_detail'),
     path('indicacao/', views.indicacao, name='indicacao'),
 
