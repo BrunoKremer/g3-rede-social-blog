@@ -20,6 +20,6 @@ class UsuarioForm(UserCreationForm):
 # class UsuarioFormChange(UserChangeForm):
 
 #     class Meta:
-#         model = Usuarios
-#         fields = ('first_name', 'last_name', 'telefone', 'aniversario','endereco', 'ocupacao', 'linguagens')
+#         model = CustomUser
+#         fields = ('telefone',)
     

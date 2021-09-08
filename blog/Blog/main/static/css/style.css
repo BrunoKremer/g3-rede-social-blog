@@ -3,9 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: #8fc38a;
-}
+
 
 .container-sm{
     max-width: 1250px;
@@ -18,3 +16,4 @@ body{
 .btn-outline-success:hover{
     background-color: #8fc38a;
 }
+

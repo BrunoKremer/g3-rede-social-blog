@@ -13,6 +13,7 @@ app_name = 'usuarios'
 urlpatterns = [
     path('cadastro', views.CadastroFormView.as_view(), name='cadastro'),
     path('cadastro/sucess', views.RegistradoView.as_view(), name='sucess'),
+    path('profile/<int:pk>', views.ProfileView, name='profile'),
 
     
 ]
