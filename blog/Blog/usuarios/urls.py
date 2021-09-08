@@ -14,5 +14,5 @@ urlpatterns = [
     path('cadastro', views.CadastroFormView.as_view(), name='cadastro'),
     path('cadastro/sucess', views.RegistradoView.as_view(), name='sucess'),
 
-    # path('accounts/', include('django.contrib.auth.urls')),
+    
 ]

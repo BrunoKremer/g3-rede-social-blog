@@ -29,6 +29,7 @@ router.register(r'indicacao', viewsets.IndicacaoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('api/', include(router.urls)),
     path('api-token-auth/', obtain_auth_token),
     path('', include('main.urls', namespace = 'main')),

@@ -6,13 +6,12 @@ class UsuarioForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
-        fields = ('first_name', 'last_name', 'email', 'telefone')
-        labels = {'username': 'Username/E-mail'}
+        fields = ('username','first_name', 'last_name', 'email', 'telefone')
+        labels = {'username': 'Usuário'}
 
     # def save(self, commit: True):
     #     user =  super().save(commit=False)
-    #     user.set_password(self.cleaned_data["passoword1"])
-    #     user.email = self.cleaned_data["username"]
+    #     user.first_name = self.cleaned_data["username"]
     #     if commit:
     #         user.save()
     #     return user

@@ -1,5 +1,7 @@
-{% extends "base.html" %}
+{% extends "base_social.html" %}
 {% load crispy_forms_tags %}
+
+{% block title %}Cadastro{% endblock %}
 
 {% block main %}
 
@@ -9,6 +11,7 @@
       <form method="POST" action="">
         {% csrf_token %}
         <p class="formulario">{{form|crispy}}</p>
+       
         <p><input  class="btn btn-primary"type="submit" value="Salvar"></p>
       </form>
     </div>
