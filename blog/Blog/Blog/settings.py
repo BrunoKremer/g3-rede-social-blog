@@ -40,13 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # API framework
     'rest_framework',
     'rest_framework.authtoken',
+    # apps criados
     'main.apps.MainConfig',
     'usuarios.apps.UsuariosConfig',
+    # Bibliotecas auxiliares
     'ckeditor',
     'ckeditor_uploader',
     'crispy_forms',
+    'localflavor',
 
 ]
 
@@ -139,6 +143,8 @@ MEDIA_ROOT = 'static'
 
 MEDIA_URL = '/static/'
 
+# Bootstrap Form
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 REST_FRAMEWORK = {
@@ -149,10 +155,16 @@ REST_FRAMEWORK = {
     ]
 }
 
+# Redirecionamento de login e logout
+
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/accounts/login"
 
+# Biblioteca
+
 CKEDITOR_UPLOAD_PATH = 'uploades/'
+
+# Local_settings
 
 with open("Blog/local_settings.py") as infile:
     exec(infile.read())

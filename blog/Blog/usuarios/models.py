@@ -1,17 +1,22 @@
 # from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
-
+from localflavor.br.models import BRStateField, BRPostalCodeField
 from django.contrib.auth.models import User
+
 class CustomUser(User):
     telefone = models.CharField(max_length=15, null=True, blank=True)
     aniversario = models.DateField(auto_now_add=True, null=True, blank=True)
+    foto = models.ImageField(null=True, blank=True, upload_to="static/img/")
+    estado = BRStateField(null = True, blank = True)
+    CEP = BRPostalCodeField(null = True)
+    cidade = models.CharField(max_length=155, null=True)
     genero_choices = [("F", "Feminino"), ("H", "Masculino"), ("O", "Outro")]
     genero = models.CharField(choices=genero_choices, default="M", max_length=1)
     ocupacao_choices = [
         ('e', 'Estudante'), ('t', 'Trabalha na área')
         ]
     ocupacao = models.CharField(max_length=20, choices= ocupacao_choices, default='Estudante')
-    foto = models.ImageField(null=True, blank=True, upload_to="static/img/")
+    
 
     def __str__(self):
         return self.first_name

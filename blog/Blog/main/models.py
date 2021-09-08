@@ -56,7 +56,7 @@ class Indicacao(models.Model):
 class Comentarios(models.Model):
     posts = models.ForeignKey(Post, on_delete = models.CASCADE, related_name ='comentarios')
     comentario = models.TextField()
-    data = models.DateTimeField(auto_now_add=True)
+    data = models.DateTimeField( null=True , auto_now_add=True)
     aprovado = models.BooleanField(default=True)
 
     class Meta:
