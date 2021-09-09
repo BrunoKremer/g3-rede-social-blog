@@ -30,15 +30,16 @@
 <div class="container">
 	<h1>Faça um comentário</h1>
 	
-	<form method="POST" action="#">
-            
-            <div class="form-group">
-              <textarea class="form-control" id="comentario" name="comentario" rows="3"></textarea>
-            </div>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            <p class="formulario">{{form|crispy}}</p>
+            <p><input  class="btn btn-success"type="submit" value="Enviar"></p>
+          
          
         
     	{% csrf_token %}
-		<p><input class="btn" style="background-color: #8fc38a;" type="submit" value="Salvar alterações"></p>
+	
 	</form>
 </div>
 {% endblock %}

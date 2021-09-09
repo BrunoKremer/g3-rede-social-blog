@@ -1,5 +1,8 @@
 from django import forms
 from .models import Comentarios
 
-class FormComentario(forms.Form):
-    comentario = forms.CharField(widget= forms.Textarea())
+class ComentariosForm(forms.ModelForm):
+    class Meta:
+        model = Comentarios
+        fields = ('usuario', 'comentario')
+        labels = {'usuario': 'Usuário', 'comentario': 'Comentário'}

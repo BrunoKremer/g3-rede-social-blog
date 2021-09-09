@@ -1,6 +1,6 @@
 
 from django.views.generic.edit import FormView
-from .forms import FormComentario
+from .forms import ComentariosForm
 from django.shortcuts import render, get_object_or_404, redirect, get_list_or_404
 from django.http import HttpResponse, request, response
 from django.db.models import Q
@@ -31,21 +31,32 @@ def home(request):
     context = {'post':post, 'categoria':categoria, 'page_obj': page_obj,'cat':cat}
     
     return render(request, 'blog/home.html', context )
-        
 
-class PostDetailView(generic.DetailView):
-    model = Post
-    template_name = 'blog/post_detail.html'
 
-class ComentarioView(FormView):
-    form_class = FormComentario
-    success_url = reverse_lazy('post_detail')
-    template_name = 'blog/post_detail.html'
+def PostDetailView(request, pk):
+    post = Post.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = ComentariosForm()
+        if form.is_valid():
+            form.save()
+    else:
+        form = ComentariosForm()
+    return render (request, 'blog/post_detail.html', { "post": post, 'form':form})
 
-    def form_valid(self, form, *args, **kwargs):
-        comentario = form.cleaned_data['comentario']
-        comentario.save()
-        return super().form_valid(form)
+# class PostDetailView(generic.DetailView):
+#     model = Post
+#     form_class = ComentariosForm
+#     template_name = 'blog/post_detail.html'
+
+# class ComentarioView(FormView):
+#     form_class = FormComentario
+#     success_url = reverse_lazy('post_detail')
+#     template_name = 'blog/post_detail.html'
+
+    # def form_valid(self, form, *args, **kwargs):
+    #     comentario = form.cleaned_data['comentario']
+    #     comentario.save()
+    #     return super().form_valid(form)
         
 
 def indicacao(request):
