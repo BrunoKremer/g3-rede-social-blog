@@ -3,6 +3,7 @@ from django.db import models
 from django.conf import settings
 from django.db.models.deletion import CASCADE
 from django.db.models.fields.related import ManyToManyField
+from usuarios.models import CustomUser
 
 class Categoria(models.Model):
     categoria = models.CharField(max_length=100)
@@ -54,14 +55,19 @@ class Indicacao(models.Model):
         return self.titulo
 
 class Comentarios(models.Model):
-    posts = models.ForeignKey(Post, on_delete = models.CASCADE, related_name ='comentarios')
+    usuario=models.ForeignKey(CustomUser,on_delete=models.CASCADE,null=True,blank=True)
+    voto=(('g','Gostei'),('n','Não Gostei'),)
+    post = models.ForeignKey(Post, on_delete = models.CASCADE, related_name ='comentarios')
+    avaliacao=models.CharField(max_length=200,choices=voto,default='Gostei')
     comentario = models.TextField()
     data = models.DateTimeField( null=True , auto_now_add=True)
     aprovado = models.BooleanField(default=True)
 
     class Meta:
+        unique_together=[['post','usuario']]
         verbose_name = 'Comentário'
         verbose_name_plural = 'Comentários'
 
     def __str__(self):
         return self.comentario
+
