@@ -56,9 +56,9 @@ class Indicacao(models.Model):
 
 class Comentarios(models.Model):
     usuario=models.ForeignKey(CustomUser,on_delete=models.CASCADE,null=True,blank=True)
-    voto=(('g','Gostei'),('n','Não Gostei'),)
     post = models.ForeignKey(Post, on_delete = models.CASCADE, related_name ='comentarios')
-    avaliacao=models.CharField(max_length=200,choices=voto,default='Gostei')
+    like = models.BooleanField(default=True)
+    deslike = models.BooleanField(default=False)
     comentario = models.TextField()
     data = models.DateTimeField( null=True , auto_now_add=True)
     aprovado = models.BooleanField(default=True)
@@ -70,4 +70,3 @@ class Comentarios(models.Model):
 
     def __str__(self):
         return self.comentario
-

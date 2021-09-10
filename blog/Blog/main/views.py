@@ -34,6 +34,7 @@ def home(request):
 
 
 def PostDetailView(request, pk):
+    comentarios = get_list_or_404(Comentarios)
     post = Post.objects.get(pk=pk)
     if request.method == 'POST':
         form = ComentariosForm()
@@ -41,23 +42,8 @@ def PostDetailView(request, pk):
             form.save()
     else:
         form = ComentariosForm()
-    return render (request, 'blog/post_detail.html', { "post": post, 'form':form})
-
-# class PostDetailView(generic.DetailView):
-#     model = Post
-#     form_class = ComentariosForm
-#     template_name = 'blog/post_detail.html'
-
-# class ComentarioView(FormView):
-#     form_class = FormComentario
-#     success_url = reverse_lazy('post_detail')
-#     template_name = 'blog/post_detail.html'
-
-    # def form_valid(self, form, *args, **kwargs):
-    #     comentario = form.cleaned_data['comentario']
-    #     comentario.save()
-    #     return super().form_valid(form)
-        
+    return render (request, 'blog/post_detail.html', { "post": post, 'form':form, 'comentarios':comentarios})
+   
 
 def indicacao(request):
     indicacao = get_list_or_404(Indicacao)
@@ -68,11 +54,3 @@ class IndicacaoDetailView(generic.DetailView):
     model = Indicacao
     template_name = 'blog/indicacao_detail.html'
 
-    
-
-
-
-
-# Create your views here.
-
-            

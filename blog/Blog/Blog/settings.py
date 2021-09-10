@@ -157,7 +157,7 @@ REST_FRAMEWORK = {
 
 # Redirecionamento de login e logout
 
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/user/feed"
 LOGOUT_REDIRECT_URL = "/accounts/login"
 
 # Biblioteca

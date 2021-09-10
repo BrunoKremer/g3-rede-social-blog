@@ -14,8 +14,5 @@ urlpatterns = [
     path('', views.home, name = 'post'),
     path('<int:pk>/', views.PostDetailView, name='post_detail'),
     path('indicacao/', views.indicacao, name='indicacao'),
-
     path('indicacao/<int:pk>/', views.IndicacaoDetailView.as_view(), name='indicacao_detail'),
-    # path('', views.filter_categoria , name = 'categoria'),
-    
 ]

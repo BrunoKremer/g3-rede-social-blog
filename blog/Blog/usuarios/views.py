@@ -13,21 +13,11 @@ class CadastroFormView(generic.CreateView):
     template_name = "registration/cadastro.html"
     success_url = reverse_lazy('usuarios:sucess')
 
-# class EditFormView(generic.CreateView):
-#     form_class = UsuarioFormChange
-#     template_name = "registration/profile.html"
-#     success_url = reverse_lazy('usuarios:sucess')
-
-# Create your views here.
-
 class RegistradoView(generic.TemplateView):
     template_name = "registration/sucess.html"
 
-
-# class ProfileView(generic.ListView ):
-#     model = CustomUser
-#     template_name = "registration/profile.html"
-
+class FeedView(generic.TemplateView):
+    template_name = "social/feed.html"
 
 def ProfileView(request, pk):
     usuario = CustomUser.objects.get(pk=pk)
@@ -37,9 +27,7 @@ def ProfileView(request, pk):
                                     files=request.FILES)
         if form.is_valid():
             form.save()
-        #     messages.success(request, 'Perfial atualizado com sucesso')
-        # else:
-        #     messages.error(request, 'Erro ao atualizar o perfil')
+        
     else:
         form = UsuarioFormChange(instance=request.user)
    
