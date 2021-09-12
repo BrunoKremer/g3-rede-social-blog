@@ -19,7 +19,7 @@ class Categoria(models.Model):
 class Post(models.Model):
     categoria = models.ManyToManyField(Categoria)
     titulo = models.CharField(max_length=1000)
-    subtitulo = models.CharField(max_length=1000,null=True)
+    subtitulo = models.CharField(max_length=1000,null=True, blank=True)
     conteúdo = models.TextField()
     criado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
     criado_em = models.DateField(auto_now_add= False)
@@ -55,13 +55,16 @@ class Indicacao(models.Model):
         return self.titulo
 
 class Comentarios(models.Model):
-    usuario=models.ForeignKey(CustomUser,on_delete=models.CASCADE,null=True,blank=True)
+    INTERACAO_CHOICES = [
+        ('G', 'Gostei'), ('N', 'Não gostei')
+    ]
+    usuario=models.CharField(max_length=255, null=True)
+    email =models.CharField(max_length=255, null=True)
     post = models.ForeignKey(Post, on_delete = models.CASCADE, related_name ='comentarios')
-    like = models.BooleanField(default=True)
-    deslike = models.BooleanField(default=False)
     comentario = models.TextField()
-    data = models.DateTimeField( null=True , auto_now_add=True)
+    data = models.DateTimeField(null=True , auto_now_add=True)
     aprovado = models.BooleanField(default=True)
+    interacao = models.CharField(null=True, blank=True, max_length=10, choices= INTERACAO_CHOICES, default='')
 
     class Meta:
         unique_together=[['post','usuario']]
@@ -69,4 +72,4 @@ class Comentarios(models.Model):
         verbose_name_plural = 'Comentários'
 
     def __str__(self):
-        return self.comentario
+        return self.usuario

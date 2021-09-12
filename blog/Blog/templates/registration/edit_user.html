@@ -1,0 +1,120 @@
+{% extends 'base_social.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Profile{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/logo.ico' %}">
+   <link rel="stylesheet" href="{% static 'css/style.css' %}" type= 'text/css'>
+</head>
+
+{%block main%}
+<h5 class="card-title container-sm text-center" style="padding:5px">Editar perfil</h5>
+
+<div class="card w-50 border-success form container-sm" style="padding: 50px;">
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            {{ form.first_name|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-6">
+            {{ form.last_name|as_crispy_field }}
+          </div>
+        </div>
+        <div class="form-group">
+            {{ form.email|as_crispy_field }}
+        </div>
+        <div class="form-group">
+            {{ form.telefone|as_crispy_field }}
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            {{ form.cidade|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-4">
+            {{ form.estado|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-4">
+            {{ form.CEP|as_crispy_field }}
+          </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              {{ form.ocupacao|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6">
+              {{ form.genero|as_crispy_field }}
+            </div>
+          </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              {{ form.link_fb|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6">
+              {{ form.link_tt|as_crispy_field }}
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              {{ form.link_git|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6">
+              {{ form.link_ig|as_crispy_field }}
+            </div>
+          </div>
+        
+        <p><input  class="btn btn-success"type="submit" value="Salvar"></p>
+      </form>
+
+
+  
+  
+
+    
+    <!-- <div style="padding:8px ;" class="login-form">
+      <form method="POST" action="">
+        {% csrf_token %}
+        <p class="formulario">{{form|crispy}}</p>
+    
+        <p><input  class="btn btn-success"type="submit" value="Salvar"></p>
+      </form>
+    </div> -->
+  </div> 
+{%endblock%}
+
+
+
+
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- {% load static %}
+{% load crispy_forms_tags %}
+
+

@@ -13,4 +13,11 @@ class UsuarioForm(UserCreationForm):
 class UsuarioFormChange(forms.ModelForm):
     class Meta:
         model = CustomUser
-        fields = ('first_name', 'last_name', 'email', 'telefone', 'estado','cidade')
+        fields = ('first_name', 'last_name', 'email', 'telefone', 'estado','cidade', 'ocupacao', 'genero', 'CEP', 'link_fb', 'link_tt', 'link_ig', 'link_git')
+        labels = {'link_fb': 'Facebook', 'link_tt':'Twitter', 'link_ig': 'Instagram', 'link_git':'Github'}
+
+        def save(self, commit= True):
+            user =  super().save(commit=False)    
+            if commit:
+                user.save()
+            return user

@@ -16,6 +16,7 @@ class CustomUser(User):
     link_fb = models.CharField(null=True, blank=True, max_length=255)
     link_git = models.CharField(null=True, blank=True, max_length=255)
     link_tt = models.CharField(null=True, blank=True, max_length=255)
+    link_ig = models.CharField(null=True, blank=True, max_length=255)
     ocupacao_choices = [
         ('e', 'Estudante'), ('t', 'Trabalha na área')
         ]

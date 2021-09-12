@@ -5,48 +5,23 @@
 {% block title %}Infocode | Indicações | {{indicacao.titulo}}{% endblock %}
 
 {% block main %}
-
+<!-- Indicação -->
 <div class="container">
     <h1 class="text-center" style="margin-top: 25px;">{{indicacao.titulo}}</h1>
-
     <div class="row" style="margin-top: 25px;">
-        <div class="col-4">
-            {% if indicacao.foto %}
-                <img src="{{indicacao.foto.url}}" class='img-fluid' alt="" srcset="" style="width: 500; height: 500px;">
-            {%endif%}
-        </div>
-        <div class="col-8">
-            
+      <div class="col-4">
+        {% if indicacao.foto %}
+          <img src="{{indicacao.foto.url}}" class='img-fluid' alt="" srcset="" style="width: 500; height: 500px;">
+        {%endif%}
+      </div>
+      <div class="col-8">      
         <p class="card-text">{{indicacao.sinopse|linebreaks}}</p>
         <p class="card-text">Autor: {{indicacao.autor}}</p>
         <p class="card-text">Você pode adquirir <a class="stretched-link text-success" href="{{indicacao.link}}">clicando aqui  </a></p>
-        </div>
       </div>
-        
-      </div>
-        
-    
-</div>
-
-
-
-
-         
+    </div>
+</div>       
 {% endblock %}
 
 {% block content %}
-<div class="container" style="margin-top: 75px;">
-	<h1>Faça um comentário</h1>
-	
-	<form method="POST" action="#">
-            
-            <div class="form-group">
-              <textarea class="form-control" id="comentario" name="comentario" rows="3"></textarea>
-            </div>
-         
-        
-    	{% csrf_token %}
-		<p><input class="btn" style="background-color: #8fc38a;" type="submit" value="Salvar alterações"></p>
-	</form>
-</div>
 {% endblock %}

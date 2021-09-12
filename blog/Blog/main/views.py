@@ -9,6 +9,10 @@ from django.core.paginator import Paginator
 from django.views import generic
 from django.urls import reverse_lazy
 
+# Função para página principal
+# * cat é o filtro que fazemos por categoria, nome
+# * paginator é a paginação
+
 def home(request):
     cat = ''
 
@@ -32,23 +36,39 @@ def home(request):
     
     return render(request, 'blog/home.html', context )
 
+# View de Posts detalhados
+#  * qtde pega a quantidade de comentários do post
 
 def PostDetailView(request, pk):
-    comentarios = get_list_or_404(Comentarios)
+    comentarios = Comentarios.objects.filter()
+    qtde = 0
+
+    for q in comentarios:
+        qtde = qtde + 1
+
     post = Post.objects.get(pk=pk)
     if request.method == 'POST':
-        form = ComentariosForm()
+        form = ComentariosForm(request.POST)
         if form.is_valid():
-            form.save()
+            data = Comentarios()
+            data.usuario = form.cleaned_data['usuario']
+            data.comentario = form.cleaned_data['comentario']
+            data.post_id = pk
+            data.save()
     else:
         form = ComentariosForm()
-    return render (request, 'blog/post_detail.html', { "post": post, 'form':form, 'comentarios':comentarios})
+
+    context = {"post": post, 'form':form, 'comentarios':comentarios, 'qtde':qtde}
+    return render (request, 'blog/post_detail.html', context)
    
+# View para todas indicações
 
 def indicacao(request):
     indicacao = get_list_or_404(Indicacao)
     context = {'indicacao':indicacao}
     return render(request, 'blog/indicacao.html', context)
+
+# Indicação isolada
 
 class IndicacaoDetailView(generic.DetailView):
     model = Indicacao

@@ -4,8 +4,6 @@ from django.shortcuts import  render, redirect
 from django.urls.base import reverse_lazy
 from django.views import generic
 from django.views.generic.edit import FormView
- 
-# Relative import of GeeksForm
 from .forms import UsuarioForm, UsuarioFormChange
  
 class CadastroFormView(generic.CreateView):
@@ -21,14 +19,10 @@ class FeedView(generic.TemplateView):
 
 def ProfileView(request, pk):
     usuario = CustomUser.objects.get(pk=pk)
-    if request.method == 'POST':
-        form = UsuarioFormChange(instance=request.user,
-                                    data=request.POST,
-                                    files=request.FILES)
-        if form.is_valid():
-            form.save()
-        
-    else:
-        form = UsuarioFormChange(instance=request.user)
-   
-    return render (request, "registration/profile.html", { "user": usuario, 'form':form})
+    return render (request, "registration/profile.html", { "user": usuario})
+
+class UserChange(generic.UpdateView):
+    model = CustomUser
+    form_class = UsuarioFormChange
+    template_name = 'registration/edit_user.html'
+    success_url = reverse_lazy('usuarios:feed')

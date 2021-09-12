@@ -5,16 +5,17 @@
 {% block title %}Infocode | Home{% endblock %}
 
 {% block main %}
-<p><a href="{% url 'usuarios:profile' user.id%}">Vá para seu perfil</a></p>
-
 
 <div class=" container-sm text-center"style="margin-top: 15px;">
+
+  <!-- Alerta para rede social -->
   <div class="alert alert-success alert-dismissible fade show" role="alert">
     Entre agora na nossa <a href="{% url 'usuarios:cadastro'%}"><strong>Rede Social</strong></a>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
+  <!-- Botões de indicação -->
    <div class="align-items-center btn-group">
     {% for cat in categoria %}
     <form id="searchForm" class="align-items-center  form-inline" action="" method="get">
@@ -26,11 +27,9 @@
     {% endfor %}
     <li class="nav-link align-items-center"> <a class="btn-sm  btn btn-outline-success" href="{% url 'main:indicacao'%}">Indicações</a> </li> 
    </div>
-
-        
-     
 </div>
 
+<!-- Loop para mostrar os posts -->
 <div class="container-sm">
     {%for post in page_obj%}
     <div class="card mb-6" style=" margin-top: 50px;" >
@@ -55,36 +54,35 @@
     {% endfor %}
 </div>
 
+
+<!-- Páginação -->
 <div class="pagination container-sm" style="margin-top: 25px; text-align: center;">
   <div class="text-center">
     <p class="step-links align-items-center">
       {% if page_obj.has_previous %}
-          <!-- <a href="?page=1" class="text-center btn-outline-success">&laquo; Primeira</a> -->
           <a class="text-center btn btn-outline-success" href="?page={{ page_obj.previous_page_number }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
             <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
           </svg></a>
       {% endif %}
-
       <span class="text-center btn current btn-outline-success">
          {{ page_obj.number }}
       </span>
-
       {% if page_obj.has_next %}
           <a class="btn-outline-success btn" href="?page={{ page_obj.next_page_number }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
             <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
           </svg></a>
-          <!-- <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a> -->
       {% endif %}
     </p>
-  </div>
-  
+  </div> 
 </div>
 
+<!-- Sobre os integrantes do projeto, feito independente do Django -->
 
-<div class="container align-items-center" id= "sobre" style="margin-top: 45px; border-top: 1px solid #010139;">
+<div class="container-sm align-items-center" id= "sobre" style="margin-top: 45px; border-top: 1px solid #010139;">
     <h1 class="text-center">INTEGRANTES DO PROJETO</h1>
-    <div class="row align-self-center" style="margin-top: 15px;">
-      <div class="card col-lg align-items-center" style="width: 18rem; border: none;">
+    <div class="d-flex justify-content-center row align-self-center" style="margin-top: 15px;">
+      <!-- Card Antônio -->
+      <div class="card col-sm align-items-center" style="width: 18rem; border: none;">
         <img class="card-img-top" src="{% static 'img/antonio.jfif' %}" alt="Imagem de capa do card" style="width: 90px; height: 90px; border-radius: 50%;">
           <div class="card-body">
             <p class="card-text text-center font-italic">"Minha experiência com a criação deste projeto foi incrível, pude colocar minhas habilidades em prática e aprimorar meus conhecimentos"</p>
@@ -104,7 +102,8 @@
           </div><!--Card-body-->
       </div><!--Antonio - Card-->
 
-      <div class="card col-lg align-items-center" style="width: 18rem; border: none;">
+      <!-- Card Evanildo -->
+      <div class="card col-sm align-items-center" style="width: 18rem; border: none;">
         <img class="card-img-top" src="{% static 'img/antonio.jfif' %}" alt="Imagem de capa do card" style="width: 90px; height: 90px; border-radius: 50%;">
           <div class="card-body">
             <p class="card-text text-center font-italic">"Minha experiência com a criação deste projeto foi incrível, pude colocar minhas habilidades em prática e aprimorar meus conhecimentos"</p>
@@ -122,9 +121,10 @@
             </p>
           </div><!--svg-->
           </div><!--Card-body-->
-      </div><!--Antonio - Card-->
+      </div><!--Evanildo - Card-->
 
-      <div class="card col-lg align-items-center" style="width: 18rem; border: none;">
+      <!-- Card Jean -->
+      <div class="card col-sm align-items-center" style="width: 18rem; border: none;">
         <img class="card-img-top" src="{% static 'img/antonio.jfif' %}" alt="Imagem de capa do card" style="width: 90px; height: 90px; border-radius: 50%;">
           <div class="card-body">
             <p class="card-text text-center font-italic">"Minha experiência com a criação deste projeto foi incrível, pude colocar minhas habilidades em prática e aprimorar meus conhecimentos"</p>
@@ -142,9 +142,10 @@
             </p>
           </div><!--svg-->
           </div><!--Card-body-->
-      </div><!--Antonio - Card-->
+      </div><!--Jean - Card-->
 
-      <div class="card col-lg align-items-center" style="width: 18rem; border: none;">
+      <!-- Card Luan -->
+      <div class="card col-sm align-items-center" style="width: 18rem; border: none;">
         <img class="card-img-top" src="{% static 'img/antonio.jfif' %}" alt="Imagem de capa do card" style="width: 90px; height: 90px; border-radius: 50%;">
           <div class="card-body">
             <p class="card-text text-center font-italic">"Minha experiência com a criação deste projeto foi incrível, pude colocar minhas habilidades em prática e aprimorar meus conhecimentos"</p>
@@ -162,24 +163,9 @@
             </p>
           </div><!--svg-->
           </div><!--Card-body-->
-      </div><!--Antonio - Card-->
-
-
-
-        
+      </div><!--Luan - Card-->
     </div>
 </div>
-
-
 {% endblock %}
-
-
-
-
-
-
-
-
-
 
   

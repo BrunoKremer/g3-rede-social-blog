@@ -5,9 +5,7 @@
 {% block title %}{{post.titulo}}{% endblock %}
 
 {% block main %}
-
-
-
+<!-- Post -->
 <div class="container">
     <h1 class="text-center">{{post.titulo}}</h1>
     {% if post.subtitulo %}
@@ -18,28 +16,46 @@
     {%endif%}
     
     <p class="card-text">{{post.conteúdo|linebreaks}}</p>
-</div>
-
-
-
-
-         
+</div>      
 {% endblock %}
+{%block content%}
 
-{% block content %}
+<!-- Form de Comentário -->
 <div class="container">
 	<h1>Faça um comentário</h1>
-	
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-8">
+                {{ form.interacao|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-8">
+                {{ form.usuario|as_crispy_field }}
+            </div>
+          <div class="form-group col-md-8">
+            {{ form.email|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-8">
+            {{ form.comentario|as_crispy_field }}
+          </div>
+        </div>
+        <p><input  class="btn btn-success"type="submit" value="Salvar"></p>
+    </form>
+</div>
 
-        <form method="POST" action="">
-            {% csrf_token %}
-            <p class="formulario">{{form|crispy}}</p>
-            <p><input  class="btn btn-success"type="submit" value="Enviar"></p>
-          
-         
-        
-    	{% csrf_token %}
-	
-	</form>
+<!-- Comentarios -->
+<h1 class="container-sm">{{qtde}} Comentário </h1>
+<div class="card container-sm " >    
+    {%for comentario in comentarios%}
+      {% if comentarios %}
+        <div class="card-body">
+          <h5 class="card-title">{{comentario.usuario}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{comentario.data}}</h6>
+          <p style="border-bottom: 1px solid #ccc;" class="card-text">{{comentario.comentario}}</p>
+        </div>
+      {%else%}
+        <h1>Não tem comentários</h1>
+      {%endif%}
+    {%endfor%}
 </div>
 {% endblock %}

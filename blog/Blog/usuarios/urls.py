@@ -15,5 +15,5 @@ urlpatterns = [
     path('cadastro/sucess', views.RegistradoView.as_view(), name='sucess'),
     path('profile/<int:pk>', views.ProfileView, name='profile'),
     path('feed', views.FeedView.as_view(), name='feed'),    
-    
+     path('edit/<int:pk>', views.UserChange.as_view(), name='edit'),
 ]           
