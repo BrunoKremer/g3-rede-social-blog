@@ -34,6 +34,7 @@ urlpatterns = [
     path('api-token-auth/', obtain_auth_token),
     path('', include('main.urls', namespace = 'main')),
     path('user/', include('usuarios.urls', namespace = 'usuarios')),
+    path('social/', include('social.urls', namespace = 'social')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 

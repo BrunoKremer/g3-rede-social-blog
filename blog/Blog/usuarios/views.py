@@ -1,4 +1,4 @@
-from usuarios.models import CustomUser
+from .models import CustomUser
 from django.db.models.base import Model
 from django.shortcuts import  render, redirect
 from django.urls.base import reverse_lazy
@@ -13,9 +13,6 @@ class CadastroFormView(generic.CreateView):
 
 class RegistradoView(generic.TemplateView):
     template_name = "registration/sucess.html"
-
-class FeedView(generic.TemplateView):
-    template_name = "social/feed.html"
 
 def ProfileView(request, pk):
     usuario = CustomUser.objects.get(pk=pk)

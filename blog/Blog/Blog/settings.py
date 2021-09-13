@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     # apps criados
     'main.apps.MainConfig',
     'usuarios.apps.UsuariosConfig',
+    'social.apps.SocialConfig',
     # Bibliotecas auxiliares
     'ckeditor',
     'ckeditor_uploader',
@@ -157,7 +158,7 @@ REST_FRAMEWORK = {
 
 # Redirecionamento de login e logout
 
-LOGIN_REDIRECT_URL = "/user/feed"
+LOGIN_REDIRECT_URL = "/social/feed"
 LOGOUT_REDIRECT_URL = "/accounts/login"
 
 # Biblioteca

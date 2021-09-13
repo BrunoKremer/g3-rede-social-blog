@@ -2,15 +2,15 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
-class Usuario(models.Model):
-    CATEGORIA_CHOICES = [
-        ('p', 'Python'), ('h', 'Html'), ('c', 'Css'), ('js', 'JavaScript'), ('d', 'Django'), ('j', 'Java'), ('a', 'Api'), ('g', 'Geral')
-    ]
-    username = models.ForeignKey(User, on_delete=models.CASCADE)
+class Publicacao(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     conteudo = models.TextField()
-    data = models.DateTimeField(auto_now_add=True)
-    categoria = models.CharField(max_length=10, choices= CATEGORIA_CHOICES, default='Python')
+    data = models.DateTimeField(auto_now_add= True)
+    foto = models.FileField(null = True, blank = True,  upload_to="static/img/")
     
+    class Meta:
+        verbose_name = 'Publicação'
+        verbose_name_plural = 'Publicações'
 
     def __str__(self):
-        return self.usuario
+        return self.usuario.first_name
