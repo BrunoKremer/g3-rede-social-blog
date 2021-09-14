@@ -12,5 +12,6 @@ app_name = 'social'
 
 urlpatterns = [
     path('feed', views.feed, name='feed'),  
+    
 ]
 
