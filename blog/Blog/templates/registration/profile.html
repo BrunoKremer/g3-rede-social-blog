@@ -1,21 +1,9 @@
-
+{% extends 'base_social.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Profile{% endblock %}</title>
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/logo.ico' %}">
-   <link rel="stylesheet" href="{% static 'css/style.css' %}" type= 'text/css'>
-</head>
+
+
 <style>
     body{
     background: #f7f7ff;
@@ -38,20 +26,22 @@
     margin-right: .5rem!important;
 }
 </style>
-<body style="background-color: #f9f9fa;">
+{%block main%}
 
     <!-- <p> Olá,{{ request.user.first_name }} -->
 
   {% if request.user.is_authenticated %}
 	
-    <div class="container">
+    <div class="container" style="margin-top: 50px;">
 		<div class="main-body">
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="card">
 						<div class="card-body">
 							<div class="d-flex flex-column align-items-center text-center">
-								<img src="{{user.foto.url}}" alt="{{user.user}}" class="rounded-circle p-1 bg-success" width="110">
+								{%if user.foto%}
+									<img src="{{user.foto.url}}" alt="{{user.user}}" class="rounded-circle p-1 bg-success" width="110">
+								{%endif%}
 								<div class="mt-3">
 									<h4>{{user.get_full_name }}</h4>
 									<!-- <p class="text-secondary mb-1">{{user.ocupacao}}</p> -->
@@ -110,9 +100,8 @@
     {%endif%}
 
 
-
+{%endblock%}
     
-</body>
-</html>
+
 
 

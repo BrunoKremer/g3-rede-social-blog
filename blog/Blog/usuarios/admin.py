@@ -14,7 +14,7 @@ class CustomUsuarioAdmin(UserAdmin):
     list_display = ('first_name', 'last_name', 'email', 'telefone', 'ocupacao')
     fieldsets = (
         (None, {'fields':('email', 'password')}),
-        ('Informações Pessoais', {'fields':('first_name', 'last_name','telefone', 'ocupacao', 'genero','cidade', 'estado', 'CEP')}),
+        ('Informações Pessoais', {'fields':('first_name', 'last_name','telefone', 'ocupacao', 'genero','cidade', 'estado', 'CEP', 'foto')}),
         ('Links', {'fields':('link_fb', 'link_tt', 'link_ig', 'link_git')}),
         ('Permissões', {'fields':('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Datas Importantes', {'fields':('last_login','date_joined')}),

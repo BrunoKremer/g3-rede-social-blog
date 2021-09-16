@@ -7,7 +7,7 @@ class UsuarioForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
-        fields = ('username','first_name', 'last_name', 'email', 'telefone')
+        fields = ('username','first_name', 'last_name', 'email')
         labels = {'username': 'Usuário'}
 
 class UsuarioFormChange(forms.ModelForm):

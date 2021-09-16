@@ -5,29 +5,7 @@
 
 {%block main%}
 
- <!-- <div class="container-sm">
-        {%for post in posts%}
-        <div class="card mb-6" style=" margin-top: 50px;" >
-            <div class="row no-gutters">
-                <div class="col-md-5">
-                    
-                  {% if post.foto %}
-                    <img class="img-thumbnail" src="{{post.foto.url}}" alt="...">
-                  {%endif%}
-                </div>
-                <div class="col-md-7">
-                  <div class="card-body">
-                    
-                    <p class="card-text">{{post.conteudo|linebreaks}} </p>
-                    <p class="card-text">{{post.usuario|linebreaks}} </p>
-                    <p class="card-text">{{post.usuario.cidade|linebreaks}} </p>
-                    
-                  </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div> -->
+
 
     <section style="padding:50px;" class="hero">
         {%for post in posts%}
@@ -42,7 +20,7 @@
         
              <div class="media m-0">
               <div class="d-flex mr-3">
-               <a href=""><img class="img-fluid rounded-circle" src="##" alt="User"></a>
+               <a href=""><img class="img-fluid rounded-circle" src="{{post.usuario.foto.url}}" alt="{{post.usuario}}"></a>
               </div>
               <div class="media-body">
                <p class="m-0">{{post.usuario}}</p>
