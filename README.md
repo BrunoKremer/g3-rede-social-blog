@@ -4,11 +4,11 @@
 
 **Título**
 
-    - Rede Social e Blog
+    - Infocode - Rede Social e Blog
 
 **Status**
 
-    - Status do projeto: O projeto se encontra em desenvolvimento  :warning:
+    - Status do projeto: O projeto se encontra em desenvolvimento 80% concluído.  :warning:
 
 **Tabela de conteúdo**
 
@@ -31,10 +31,14 @@
 **Layout ou Deploy da aplicação**
 
     1. Blog / Página inicial / Menu
-    2. Login / Registro
+    2. Menu / Home / Sobre / 
     3. Barra de pesquisa
-    4. Tópicos recentes
-    5. menu = Quem somos, Categorias, Contato
+    4. Rede social com redirecionamento
+    5. Python / HTML / CSS / JavaScript / Django / Java / Geral / Indicações
+    6. Tópicos
+    7. Páginas
+    8. Integrantes do Projeto
+    9. Redirecionamento para Rede Social
 
 
 
@@ -106,7 +110,7 @@
 #      1. Antonio Bruno -Líder de equipe de desenvolvimento - (brunokremer022@gmail.com)
 #      2. Evanildo - Desenvolvimento de banco de dados
 #      3. Jean França - Conteúdo dos aplicativos
-#      4. Luan Gabriel - Testes de aplicativos
+#      4. Luan Gabriel - Documentação e Conteúdo
     
 
 # **Tarefas em aberto**
@@ -116,7 +120,7 @@
 #      2. Criar arquivo models blog
 #           [x] - Models de postagem
 #           [x] - Models de categoria
-#           [ ] - Models de cursos e livros
+#           [x] - Models de cursos e livros
 
 #      3. Criar views
 #           [x] - Views que retorna todos itens
