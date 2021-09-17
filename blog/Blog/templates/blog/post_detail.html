@@ -43,6 +43,7 @@
     </form>
 </div>
 
+
 <!-- Comentarios -->
 <h1 class="container-sm">{{qtde}} Comentário </h1>
 <div class="card container-sm " >    
@@ -58,4 +59,23 @@
       {%endif%}
     {%endfor%}
 </div>
+
+
+<div class="container">
+    <button type="button" class="btn btn-primary">
+     <i class="fa fa-google"></i>
+     <a class="white" href="{% url 'social:begin' 'google-oauth2' %}">
+        Login com Google
+     </a>
+    </button>
+</div>
+
+<button type="button" class="btn btn-primary">
+    <i class="fa fa-facebook"></i>
+    <a class="white" href="{% url 'social:begin' 'facebook' %}">
+        Login com Facebook
+    </a>
+</button>
+
 {% endblock %}
+

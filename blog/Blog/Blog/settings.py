@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'crispy_forms',
     'localflavor',
+    'social_django',
 
 ]
 
@@ -74,6 +75,8 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -169,3 +172,20 @@ CKEDITOR_UPLOAD_PATH = 'uploades/'
 
 with open("Blog/local_settings.py") as infile:
     exec(infile.read())
+
+    AUTHENTICATION_BACKENDS = [
+        'social_core.backends.google.GoogleOAuth2',
+        'django.contrib.auth.backends.ModelBackend',
+        'social_core.backends.facebook.FacebookOAuth2',
+    ]
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'login'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '816267412622-anmgofhh5et3gbgfr1j7bvfpjgtjcm46.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'oKyUtF10kS75h4KEoLszdzK4'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '303515681619009'
+SOCIAL_AUTH_FACEBOOK_SECRET = '918d9bdab99da8ee60535fbe03b0e7d8'
