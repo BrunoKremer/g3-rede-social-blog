@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +15,7 @@
 
     <div class="container-sm text-center" style="padding: 50px;">
         <h1 class="font-weight-bolder" style="font-size: 52px;">GOSTOU DO CONTEÚDO?</h1>
-        <button type="button" class="btn font-weight-light" style="font-family: josefix; padding: 15px 35px; background-color: black; color: blanchedalmond;">VENHA PARA NOSSA REDE SOCIAL!</button>
+        <a type="button" class="btn font-weight-light" style="font-family: josefix; padding: 15px 35px; background-color: black; color: blanchedalmond;" href="{% url 'usuarios:cadastro'%}">VENHA PARA NOSSA REDE SOCIAL!</a>
     </div>
     
 
