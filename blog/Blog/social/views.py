@@ -11,7 +11,7 @@ def feed(request):
        form = Publicacao_form(request.POST)
        if form.is_valid():
            data = Publicacao_form()
-           data.usuario = request.user.id
+           data.usuario = form.cleaned_data['usuario']
            data.conteudo = form.cleaned_data['conteudo']
            data.foto = form.cleaned_data['foto']
            
