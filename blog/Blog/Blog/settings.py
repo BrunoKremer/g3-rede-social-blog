@@ -179,10 +179,7 @@ with open("Blog/local_settings.py") as infile:
         'social_core.backends.facebook.FacebookOAuth2',
     ]
 
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'index'
-LOGOUT_URL = 'logout'
-LOGOUT_REDIRECT_URL = 'login'
+
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '816267412622-anmgofhh5et3gbgfr1j7bvfpjgtjcm46.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'oKyUtF10kS75h4KEoLszdzK4'
