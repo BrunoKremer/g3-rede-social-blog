@@ -51,7 +51,7 @@ def PostDetailView(request, pk):
         form = ComentariosForm(request.POST)
         if form.is_valid():
             data = Comentarios()
-            data.usuario = form.cleaned_data['usuario']
+            data.usuario_id = request.user.id
             data.comentario = form.cleaned_data['comentario']
             data.post_id = pk
             data.save()

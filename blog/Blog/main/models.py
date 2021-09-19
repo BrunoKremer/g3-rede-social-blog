@@ -4,6 +4,7 @@ from django.conf import settings
 from django.db.models.deletion import CASCADE
 from django.db.models.fields.related import ManyToManyField
 from usuarios.models import CustomUser
+from django.contrib.auth.models import User
 
 class Categoria(models.Model):
     categoria = models.CharField(max_length=100)
@@ -58,7 +59,7 @@ class Comentarios(models.Model):
     INTERACAO_CHOICES = [
         ('G', 'Gostei'), ('N', 'Não gostei')
     ]
-    usuario=models.CharField(max_length=255, null=True)
+    usuario=models.ForeignKey(User,on_delete=models.CASCADE, null=True)
     email =models.CharField(max_length=255, null=True)
     post = models.ForeignKey(Post, on_delete = models.CASCADE, related_name ='comentarios')
     comentario = models.TextField()
@@ -67,9 +68,8 @@ class Comentarios(models.Model):
     interacao = models.CharField(null=True, blank=True, max_length=10, choices= INTERACAO_CHOICES, default='')
 
     class Meta:
-        unique_together=[['post','usuario']]
         verbose_name = 'Comentário'
         verbose_name_plural = 'Comentários'
 
     def __str__(self):
-        return self.usuario
+        return self.usuario.first_name
