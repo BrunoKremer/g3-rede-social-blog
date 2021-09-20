@@ -1,10 +1,10 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.contrib.auth.models import User
+from usuarios.models import CustomUser
 
 
 class Publicacao(models.Model):
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     conteudo = models.TextField()
     data = models.DateTimeField(auto_now_add= True)
     foto = models.FileField(null = True, blank = True,  upload_to="static/img/")

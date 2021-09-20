@@ -5,18 +5,58 @@
 
 {%block main%}
 
-<div style="padding:8px ;" class="login-form">
-  <form method="POST" action="">
-    {% csrf_token %}
-    <p class="formulario">{{form|crispy}}</p>
-    <p> Esqueceu sua senha? <a class="text-success"  href = "{% url 'password_reset_done' %}" > Redefinir senha </a> </p>
-    <p><input  class="btn btn-success"type="submit" value="Publicar"></p>
-  </form>
-</div>
+{% if request.user.is_authenticated %}
+<!-- Section formulário de publicação -->
+<section  class="hero">
+  <div class="container">
+   <div class="row">	
+    <div class="col-lg-6 offset-lg-3">  
+     <div class="cardbox shadow-lg bg-white">    
+      <div class="cardbox-heading">
+       <div class="media m-0">
+        <div class="d-flex mr-3">
+         <a href="#"><img class="img-fluid rounded-circle" src="{%static 'img/avatar.png' %}"alt="{{user.user}}"></a>
+        </div>
+        <div class="media-body">
+        <!-- Button trigger modal -->
+          <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#staticBackdrop">
+          Faça uma publicação</button>
+<!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Crie uma Publicação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form method="post" action="">
+                  {% csrf_token %}
+                  <div class="input-group">
+                    {{ form.conteudo|as_crispy_field }}
+                    {{ form.foto|as_crispy_field }}
+                  </div>               
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-success" type="submit" name="post">Publicar</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+         
+        </div>
+       </div><!--/ media -->
+      </div><!--/ cardbox-heading -->  
+   </div><!--/ row -->
+  </div><!--/ container -->
+ </section>
 
+<!-- Todos os posts que foram feitos -->
 
-
-    <section style="padding:50px;" class="hero">
+    <section style="padding: 1px;" class="hero">
         {%for post in posts%}
         <div class="container">
          <div class="row">	
@@ -25,7 +65,7 @@
            
            <div class="cardbox shadow-lg bg-white">
             
-            <div class="cardbox-heading">
+            <div class="cardbox-heading" style="border-bottom: 1px solid #ccc;">
         
              <div class="media m-0">
               <div class="d-flex mr-3">
@@ -37,7 +77,7 @@
               </div>
              </div><!--/ media -->
             </div><!--/ cardbox-heading -->
-            <div class="cardbox-item">
+            <div class="cardbox-item"style="padding: 10px;">
                 <p class="card-text">{{post.conteudo|linebreaks}} </p>
             </div><!--/ cardbox-item --> 
 
@@ -46,12 +86,15 @@
              <img class="img-fluid" src="{{post.foto.url}}" alt="Image">
             </div><!--/ cardbox-item -->
             {%endif%}
-            
+            <div class="cardbox-item" style="padding: 10px;">
+              <span class="card-text"><button class="btn btn-success">Like</button></span>
+              <span class="card-text"><button class="btn btn-success">Comentar</button></span>
+          </div><!--/ cardbox-item --> 
          </div><!--/ row -->
         </div><!--/ container -->
         {% endfor %}
        </section>
 
-    
+  {%endif%}
       
 {%endblock%}

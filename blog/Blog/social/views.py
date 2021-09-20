@@ -10,11 +10,10 @@ def feed(request):
     if request.method == 'POST':
        form = Publicacao_form(request.POST)
        if form.is_valid():
-           data = Publicacao_form()
-           data.usuario = form.cleaned_data['usuario']
+           data = Publicacao()
            data.conteudo = form.cleaned_data['conteudo']
            data.foto = form.cleaned_data['foto']
-           
+           data.usuario_id = request.user.id
            data.save()
     else:
         form = Publicacao_form()

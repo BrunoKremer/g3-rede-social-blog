@@ -6,7 +6,12 @@ class Publicacao_form(forms.ModelForm):
 
     class Meta:
         model = Publicacao
-        fields = ('usuario','conteudo', 'foto')
+
+        widgets = {
+            'conteudo': forms.Textarea(attrs={'placeholder': 'Escreva algo'}),
+        }
+        fields = ('conteudo', 'foto')
+        labels = {'conteudo': ''}
 
 
         
