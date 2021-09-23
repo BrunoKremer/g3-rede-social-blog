@@ -101,6 +101,8 @@
             </div><!--/ cardbox-item -->
             {%endif%}
             <div class="cardbox-item" style="padding: 10px;">
+              <a href="{% url 'social:deletar-post' post.id %}  "><span class="card-text"><button class="btn btn-success">Excluir</button></span></a>
+              
               <span class="card-text"><button class="btn btn-success">Like</button></span>
               <span class="card-text"><button class="btn btn-success">Comentar</button></span>
           </div><!--/ cardbox-item --> 

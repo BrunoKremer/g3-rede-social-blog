@@ -1,0 +1,21 @@
+{% load static %}
+{% block content %}
+
+<p>Tem certeza que deseja excluir essa pulblicacao? {{post.id}}</p>
+
+<form action='{% url "social:deletar-post" post.id  %}' method="POST">
+    {% csrf_token %}
+    
+    <input type="submit" name="Confirm">
+    
+</form>
+
+
+
+
+
+
+
+
+
+{% endblock content %}
