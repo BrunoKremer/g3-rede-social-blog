@@ -72,8 +72,22 @@
                <a href="#"><img class="img-fluid rounded-circle" src="{{post.usuario.foto.url}}" alt="{{post.usuario}}"></a>
               </div>
               <div class="media-body">
-               <p class="m-0">{{post.usuario}}</p>
-               <small><span><i class="icon ion-md-time"></i>{{post.data}}</span></small>
+               <span class="m-0">{{post.usuario}}</span>
+               <span class="d-flex justify-content-end dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ...
+              </span>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Editar</a>
+                <a class="dropdown-item" href="#">Excluir</a>
+                
+              </div>
+               <small><p><i class="icon ion-md-time"></i>{{post.data}}</p></small>
+
+               
+                
+              
+                
+              
               </div>
              </div><!--/ media -->
             </div><!--/ cardbox-heading -->
