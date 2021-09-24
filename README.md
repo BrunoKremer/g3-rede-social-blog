@@ -40,17 +40,48 @@ bla bla bla...
 
 ## Layout 
 
+- home
+        - quem somos  
+        - login
+        - cadastro
+        - 
+
 ## Deploy da aplicação
 
+
+
 ## Pré-requisitos
+- Python 3.8
+- VSCode para edição dos codigos
+- Djago 
+- Mysql 
+- 
 
 ## Dependências e Libs Instaladas
 
-## Como rodar a aplicação
+- [ incluir a lista do pip freeze > requirements.txt ]
 
-## Como rodar os testes
+## Como rodar a aplicação na WEB 
+
+- http://projeto-teste-212.heroku.com   
+  - Faça seu cadastro
+  - Apos se logar voce pode navegar nas categorias de produtos.
+  - Selecione os produtos....
+  
+
+## Como rodar os testes e desenvolvimento da app
+
+- Faça download do repositorio no gihbu.com/xxxxlin.git
+- Instale os pre requisitos
+- Crie um VENV para utilizar..
+- Inclua as bibliotecas acima com o conando ...
 
 ## Database
+
+- Na versão inicial utilizamos o gerenciador de banco de ddos SqLite.
+- Na versão de apresentação utilizamos o GDB Mysql Server na Gogole Cloud fornecido pelo nosso instrutor do projeto. 
+- Endereços de conexão: Server.IP DatabaseName: 
+- 
 
 ## Solução de problemas
 
