@@ -77,8 +77,8 @@
                 ...
               </span>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="">Editar</a>
-                <a class="dropdown-item" href="#">Excluir</a>
+                <a class="dropdown-item" href="{% url 'social:editar-post' post.id %} ">Editar</a>
+                <a class="dropdown-item" href="{% url 'social:deletar-post' post.id %}">Excluir</a>
                 
               </div>
                <small><p><i class="icon ion-md-time"></i>{{post.data}}</p></small>
@@ -101,8 +101,8 @@
             </div><!--/ cardbox-item -->
             {%endif%}
             <div class="cardbox-item" style="padding: 10px;">
-              <a href="{% url 'social:deletar-post' post.id %}  "><span class="card-text"><button class="btn btn-success">Excluir</button></span></a>
-              <a href="{% url 'social:editar-post' post.id %}  "><span class="card-text"><button class="btn btn-success">Editar</button></span></a>
+
+            
               <span class="card-text"><button class="btn btn-success">Like</button></span>
               <span class="card-text"><button class="btn btn-success">Comentar</button></span>
           </div><!--/ cardbox-item --> 
