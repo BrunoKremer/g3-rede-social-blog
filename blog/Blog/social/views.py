@@ -1,9 +1,9 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, request, response
 from django.views import generic
-from .models import Publicacao
+from .models import Publicacao, Comentario
 from django.urls.base import reverse_lazy
-from .forms import Publicacao_form
+from .forms import Publicacao_form, Comentario_publi
 
 def feed(request):
     posts = Publicacao.objects.all()
