@@ -12,7 +12,7 @@ https://www.youtube.com/watch?v=2A_ebBA3jzM
 
 # Modelo README 
 
-# [ Titulo ]
+# InfoCode
 
 ## Projeto em Desenvolvimento
 
@@ -34,16 +34,17 @@ https://www.youtube.com/watch?v=2A_ebBA3jzM
 - Tarefas em Aberto (TODO)
 - Licenças 
 
+
 ## Descrição
 
-bla bla bla... 
+Blog com artigos sobre programação, junto a ele, uma rede social para pessoas que atuam e pretendem atuar nesta area.
 
 ## Layout 
 
-- home
-        - quem somos  
-        - login
-        - cadastro
+- Home
+-        Artigos  
+        login
+        cadastro
         - 
 
 ## Deploy da aplicação
