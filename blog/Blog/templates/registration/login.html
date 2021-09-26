@@ -14,6 +14,7 @@
         {% csrf_token %}
         <p class="formulario">{{form|crispy}}</p>
         <p> Esqueceu sua senha? <a class="text-success"  href = "{% url 'password_reset_done' %}" > Redefinir senha </a> </p>
+        <p>Não tem conta? <a class="text-success" href="{% url 'usuarios:cadastro' %}">Criar uma conta</a></p>
         <p><input  class="btn btn-success"type="submit" value="Login"></p>
       </form>
     </div>

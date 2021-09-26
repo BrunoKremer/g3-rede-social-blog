@@ -8,7 +8,7 @@
 <div class="card w-50 border-success form container-sm">
     <h5 class="card-title" style="padding:5px">Cadastre-se</h5>
     <div style="padding:8px ;" class="login-form">
-      <p>Já tem conta? <a href="{%url 'login'%}">Faça login</a></p>
+      <p>Já tem conta? <a class="text-success"  href="{%url 'login'%}">Faça login</a></p>
       <form method="POST" action="">
         {% csrf_token %}
         <p class="formulario">{{form|crispy}}</p>
