@@ -14,7 +14,7 @@ urlpatterns = [
     path('feed', views.feed, name='feed'),  
     path('deletar-post/<str:id>/', views.deletarPublicacao, name='deletar-post'),
     path('editar-post/<str:id>/', views.editarPublicacao, name='editar-post'),
-    # path('comentar_post/<str:id>/', views.comentar_Publicacao, name='comentar_post'),
+    path('comentar_post/<str:id>/', views.comentar_Publicacao, name='comentar_post'),
     
 ]
 

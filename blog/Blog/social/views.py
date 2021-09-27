@@ -1,14 +1,14 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, request, response
 from django.views import generic
-from .models import Publicacao
+from .models import Publicacao,Comentario
 from django.urls.base import reverse_lazy
-from .forms import Publicacao_form
+from .forms import Publicacao_form,Comentario_publi
 from usuarios.models import CustomUser
 
 def feed(request):
     posts = Publicacao.objects.all()
-    # comentarios = Comentario.objects.all()
+    comentarios = Comentario.objects.all()
     
     if request.method == 'POST':
        form = Publicacao_form(request.POST)
@@ -20,25 +20,25 @@ def feed(request):
            data.save()
     else:
         form = Publicacao_form()
-    context = {"posts":posts, "form":form, }
+    context = {"posts":posts, "form":form,'comentarios':comentarios }
     return render (request, "social/feed.html", context)
 
-# def comentar_Publicacao(request, id):
-#     post = Publicacao.objects.get(id = id)
-#     if request.method == 'POST':
-#         form_comentario = Comentario_publi(request.POST)
-#         if form_comentario.is_valid():
-#             data = Comentario()
-#             data.comentario = form_comentario.cleaned_data['comentario']
-#             data.foto = form_comentario.cleaned_data['foto']
-#             data.usuario_id = request.user.id
-#             data.publicacao_id = post.id
-#             data.save()
-#             return redirect('social:feed')
-#     else:
-#         form_comentario = Comentario_publi()
-#     context = {'post':post,"form_comentario":form_comentario}
-#     return render(request,'social/comentar_post.html',context)
+def comentar_Publicacao(request, id):
+    post = Publicacao.objects.get(id = id)
+    if request.method == 'POST':
+        form_comentario = Comentario_publi(request.POST)
+        if form_comentario.is_valid():
+            data = Comentario()
+            data.comentario = form_comentario.cleaned_data['comentario']
+            data.foto = form_comentario.cleaned_data['foto']
+            data.usuario_id = request.user.id
+            data.publicacao_id = post.id
+            data.save()
+            return redirect('social:feed')
+    else:
+        form_comentario = Comentario_publi()
+    context = {'post':post,"form_comentario":form_comentario}
+    return render(request,'social/comentar_post.html',context)
 
 def deletarPublicacao(request,id):
     post = Publicacao.objects.get(id=id)
