@@ -84,7 +84,6 @@
                   <a class="dropdown-item" href="{% url 'social:deletar-post' post.id %}">Excluir</a>
                   
                 </div>
-                  <a class="dropdown-item" href="{% url 'social:editar-post' post.id %} ">Editar</a>
               </div>
              </div><!--/ media -->
             </div><!--/ cardbox-heading -->
@@ -103,19 +102,38 @@
               <span class="card-text"><button class="btn btn-success">Like</button></span>
               <button type="button" class="btn btn-outline-success">
                 <a href="{%url 'social:comentar_post' post.id%}">Comentar</a></button>
+                <a class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  Comentários
+                </a>
+              
+                
       <!-- Modal -->
+
+        
               
           </div><!--/ cardbox-item --> 
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              {%for comentarios in comentarios%}
+              <div class="d-flex mr-3">
+                
+                <a href="#"><img class="img-fluid rounded-circle" style="width:20px;" src="{{comentarios.usuario.foto.url}}" alt="{{comentarios.usuario}}"></a>
+                <small style="padding: 5px;">{{comentarios.usuario}}</small>
+               </div>
+                
+                <small style="color: #ccc;">{{comentarios.data}}</small>
+                <p>{{comentarios.comentario}}</p>
+              {%endfor%}
+            </div>
+          </div>
+
+          
          </div><!--/ row -->
         </div><!--/ container -->
 
-        {%for comentarios in comentarios%}
-        <p>{{comentarios.user}}</p>
-        {%endfor%}
-
-        {% endfor %}
+        
        </section>
-
+{%endfor%}
   {%endif%}
       
 {%endblock%}
