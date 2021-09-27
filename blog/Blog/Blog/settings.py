@@ -191,5 +191,6 @@ with open("Blog/local_settings.py") as infile:
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '816267412622-anmgofhh5et3gbgfr1j7bvfpjgtjcm46.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'oKyUtF10kS75h4KEoLszdzK4'
 
+
 SOCIAL_AUTH_FACEBOOK_KEY = '303515681619009'
 SOCIAL_AUTH_FACEBOOK_SECRET = '918d9bdab99da8ee60535fbe03b0e7d8'
