@@ -73,21 +73,18 @@
               </div>
               <div class="media-body">
                <span class="m-0">{{post.usuario}}</span>
-               <span class="d-flex justify-content-end dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                ...
-              </span>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="{% url 'social:editar-post' post.id %} ">Editar</a>
-                <a class="dropdown-item" href="{% url 'social:deletar-post' post.id %}">Excluir</a>
-                
-              </div>
                <small><p><i class="icon ion-md-time"></i>{{post.data}}</p></small>
-
-               
-                
-              
-                
-              
+              </div>
+               <div class="dropdown mr-1">
+                <span class="d-flex justify-content-end dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  ...
+                </span>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="{% url 'social:editar-post' post.id %} ">Editar</a>
+                  <a class="dropdown-item" href="{% url 'social:deletar-post' post.id %}">Excluir</a>
+                  
+                </div>
+                  <a class="dropdown-item" href="{% url 'social:editar-post' post.id %} ">Editar</a>
               </div>
              </div><!--/ media -->
             </div><!--/ cardbox-heading -->
