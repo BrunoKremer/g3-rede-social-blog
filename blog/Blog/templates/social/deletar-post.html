@@ -1,17 +1,20 @@
+{% extends 'base_social.html' %}
 {% load static %}
-{% block content %}
+{% load crispy_forms_tags %}
+{% block main %}
+<div class="container-sm text-center" style="padding: 50px;">
 
-<p>Tem certeza que deseja excluir essa pulblicacao? {{post.id}}</p>
+<p>Tem certeza que deseja excluir essa publicação?</p>
 
 <form action='{% url "social:deletar-post" post.id  %}' method="POST">
     {% csrf_token %}
     
-    <input type="submit" name="Confirm">
-    
+    <button class="btn-success btn" type="submit">Deletar</button>
+    <a href='{% url "social:feed"   %}'> <button class="btn-success btn" type="submit">Voltar</button></a>
 </form>
 
-<a href='{% url "social:feed"   %}'><button>voltar</button></a>
 
+</div>
     
 
 
@@ -21,4 +24,4 @@
 
 
 
-{% endblock content %}
+{% endblock %}
