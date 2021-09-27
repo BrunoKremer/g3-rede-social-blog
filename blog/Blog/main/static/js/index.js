@@ -21,8 +21,15 @@ new Glider($responsiveCarousel, {
     {
       breakpoint: 900,
       settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      },
+    },
+    {
+      breakpoint: 1400,
+      settings: {
+        slidesToShow: 8,
+        slidesToScroll: 2,
       },
     },
   ],
