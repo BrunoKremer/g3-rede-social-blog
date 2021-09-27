@@ -10,10 +10,10 @@ class Publicacao_form(forms.ModelForm):
         model = Publicacao
 
         widgets = {
-            'conteudo': forms.Textarea(attrs={'placeholder': 'Escreva algo'}),
+            'conteudo': forms.Textarea(attrs={'placeholder': 'Escreva algo', 'id': 'editor'}),
         }
         fields = ('conteudo', 'foto')
-        labels = {'conteudo': ''}
+        labels = {'conteudo': '', 'foto': ''}
 
 # Form de comentário na publicação
 class Comentario_publi(forms.ModelForm):
