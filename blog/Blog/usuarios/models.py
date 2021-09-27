@@ -4,6 +4,9 @@ from django.db.models.fields import CharField
 from localflavor.br.models import BRStateField, BRPostalCodeField
 from django.contrib.auth.models import User
 
+# Model de usuário
+# BRStateField e BRPostalCodeField são importações de uma biblioteca chamada localFlavor para UF e CEP
+
 class CustomUser(User):
     telefone = models.CharField(max_length=15, null=True, blank=True)
     aniversario = models.DateField(auto_now_add=False, null=True, blank=True)

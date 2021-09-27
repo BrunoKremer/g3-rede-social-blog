@@ -3,12 +3,15 @@ from django.contrib.auth import get_user_model
 from .models import CustomUser
 from django import forms
 
+# Formulário para cadastrar usuário
+
 class UsuarioForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
         fields = ('username','first_name', 'last_name', 'email')
         labels = {'username': 'Usuário'}
+# Formulário para editar informações do usuário
 
 class UsuarioFormChange(forms.ModelForm):
     class Meta:

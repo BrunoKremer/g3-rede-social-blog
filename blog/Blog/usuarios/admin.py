@@ -5,13 +5,17 @@ from .models import CustomUser
 
 def _autor(self, instance):
     return f'{instance.user.get_full_name()}'
-
+# Registrando as novas informações personalizadas do usuário
 @admin.register(CustomUser)
 class CustomUsuarioAdmin(UserAdmin):
+    # Form para criar o Usuário
     add_form = UsuarioForm
+    # Form para alterar informações do usuário
     form = UsuarioFormChange
+    # Model utilizado
     model = CustomUser
     list_display = ('first_name', 'last_name', 'email', 'telefone', 'ocupacao')
+    # Demais campos do usuário
     fieldsets = (
         (None, {'fields':('email', 'password')}),
         ('Informações Pessoais', {'fields':('first_name', 'last_name','telefone', 'ocupacao', 'genero','cidade', 'estado', 'CEP', 'foto')}),

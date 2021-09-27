@@ -6,18 +6,22 @@ from django.views import generic
 from django.views.generic.edit import FormView
 from .forms import UsuarioForm, UsuarioFormChange
  
+#  View para cadastrar os usuários
 class CadastroFormView(generic.CreateView):
     form_class = UsuarioForm
     template_name = "registration/cadastro.html"
     success_url = reverse_lazy('usuarios:sucess')
 
+# View que redireciona para página de sucesso no cadastro
 class RegistradoView(generic.TemplateView):
     template_name = "registration/sucess.html"
 
+# View do perfil de usuário, pk seria o id do user
 def ProfileView(request, pk):
     usuario = CustomUser.objects.get(pk=pk)
     return render (request, "registration/profile.html", { "user": usuario})
 
+# View para editar informações do usuário
 class UserChange(generic.UpdateView):
     model = CustomUser
     form_class = UsuarioFormChange

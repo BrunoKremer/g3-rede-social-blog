@@ -6,6 +6,9 @@ from django.urls.base import reverse_lazy
 from .forms import Publicacao_form,Comentario_publi
 from usuarios.models import CustomUser
 
+# View feed, passamos o formulário de Publicação
+# Data - passamos o model de Publicação
+# Form - Passamos o formulário de Publicação
 def feed(request):
     posts = Publicacao.objects.all()
     comentarios = Comentario.objects.all()
@@ -23,6 +26,10 @@ def feed(request):
     context = {"posts":posts, "form":form,'comentarios':comentarios }
     return render (request, "social/feed.html", context)
 
+
+# View para o usuário comentar alguma publicação
+# Redireciona ele para uma página e quando ele realizar o comentário, volta para o FEED
+# Data - Passamos o model Comentário
 def comentar_Publicacao(request, id):
     post = Publicacao.objects.get(id = id)
     if request.method == 'POST':
@@ -40,6 +47,7 @@ def comentar_Publicacao(request, id):
     context = {'post':post,"form_comentario":form_comentario}
     return render(request,'social/comentar_post.html',context)
 
+# Função para deletar publicação, redireciona o usuário para uma página onde ele pode deletar a publicação
 def deletarPublicacao(request,id):
     post = Publicacao.objects.get(id=id)
     if request.method == 'POST':
@@ -49,7 +57,8 @@ def deletarPublicacao(request,id):
     context = {'post':post}
     return render(request,'social/deletar-post.html',context)
 
-
+# Função para editar publicação, redireciona o usuário para uma página onde ele pode editar a publicação
+# No form, está instanciado a publicação anterior e o usuário pode editar
 def editarPublicacao(request,id):
     post = Publicacao.objects.get(id=id)
     form = Publicacao_form(instance=post)

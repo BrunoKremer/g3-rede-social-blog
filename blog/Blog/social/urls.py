@@ -11,9 +11,13 @@ from django.contrib.auth import views as auth_views
 app_name = 'social'
 
 urlpatterns = [
-    path('feed', views.feed, name='feed'),  
+    # Url do Feed, onde mostra todas publicações feitas
+    path('feed', views.feed, name='feed'), 
+    # Url para deletar POST escolhido pelo usuário, utilizamos a ID para fazer a seleção do POST
     path('deletar-post/<str:id>/', views.deletarPublicacao, name='deletar-post'),
+    # Url para editar POST escolhido pelo usuário
     path('editar-post/<str:id>/', views.editarPublicacao, name='editar-post'),
+    # Url para comentar POST escolhido pelo usuário
     path('comentar_post/<str:id>/', views.comentar_Publicacao, name='comentar_post'),
     
 ]

@@ -2,6 +2,7 @@
 from django import forms
 from .models import Publicacao,Comentario
 
+# Formulário de publicação, onde é solicitado o conteúdo e caso o usuário queira, uma foto
 class Publicacao_form(forms.ModelForm):
 
     class Meta:
@@ -13,6 +14,7 @@ class Publicacao_form(forms.ModelForm):
         fields = ('conteudo', 'foto')
         labels = {'conteudo': ''}
 
+# Form de comentário na publicação
 class Comentario_publi(forms.ModelForm):
     class Meta:
         model = Comentario

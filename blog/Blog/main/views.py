@@ -36,7 +36,7 @@ def home(request):
     
     return render(request, 'blog/home.html', context )
 
-# View de Posts detalhados
+# View de Posts detalhados pela ID
 #  * qtde pega a quantidade de comentários do post
 
 def PostDetailView(request, pk):
@@ -68,7 +68,7 @@ def indicacao(request):
     context = {'indicacao':indicacao}
     return render(request, 'blog/indicacao.html', context)
 
-# Indicação isolada
+# Indicação detalhada, escolhida pelo usuário pela ID
 
 class IndicacaoDetailView(generic.DetailView):
     model = Indicacao

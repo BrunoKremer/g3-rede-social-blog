@@ -6,6 +6,8 @@ from django.db.models.fields.related import ManyToManyField
 from usuarios.models import CustomUser
 from django.contrib.auth.models import User
 
+# Model para cadastrarmos as categorias dos artigos
+
 class Categoria(models.Model):
     categoria = models.CharField(max_length=100)
 
@@ -16,6 +18,7 @@ class Categoria(models.Model):
     def __str__(self):
         return self.categoria
 
+# Model de Publicações, onde colocamos conteúdos, títulos e etc
 
 class Post(models.Model):
     categoria = models.ManyToManyField(Categoria)
@@ -34,6 +37,8 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titulo
+
+# Model onde indicamos livros e Cursos
 
 class Indicacao(models.Model):
     INDICACAO_CHOICES = [
@@ -54,6 +59,8 @@ class Indicacao(models.Model):
 
     def __str__(self):
         return self.titulo
+
+# Models para os usuários deixarem comentários nos artigos
 
 class Comentarios(models.Model):
     INTERACAO_CHOICES = [

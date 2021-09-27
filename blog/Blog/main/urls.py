@@ -11,8 +11,12 @@ from django.contrib.auth import views as auth_views
 app_name = 'main'
 
 urlpatterns = [
+    # Url principal do blog
     path('', views.home, name = 'post'),
+    # Url que redireciona para um artigo especificio pelo ID
     path('<int:pk>/', views.PostDetailView, name='post_detail'),
+    # Url que redireciona para nossas indicações de livros e cursos
     path('indicacao/', views.indicacao, name='indicacao'),
+    # Url que redireciona para uma indicação especificia pelo ID
     path('indicacao/<int:pk>/', views.IndicacaoDetailView.as_view(), name='indicacao_detail'),
 ]

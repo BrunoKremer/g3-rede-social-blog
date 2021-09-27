@@ -11,8 +11,12 @@ from django.contrib.auth import views as auth_views
 app_name = 'usuarios'
 
 urlpatterns = [
+    # View com formulário de cadastro de usuários
     path('cadastro', views.CadastroFormView.as_view(), name='cadastro'),
+    # View que redireciona após o sucesso de cadastro
     path('cadastro/sucess', views.RegistradoView.as_view(), name='sucess'),
+    # View de perfil do usuário
     path('profile/<int:pk>', views.ProfileView, name='profile'),  
+    # View para editar informações de usuários
     path('edit/<int:pk>', views.UserChange.as_view(), name='edit'),
 ]           

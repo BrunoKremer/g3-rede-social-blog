@@ -2,7 +2,8 @@ from django.contrib.auth.models import User
 from django.db import models
 from usuarios.models import CustomUser
 
-
+# Modelo de Publicação
+# Estamos importando o Custom User para autenticar o usuário
 class Publicacao(models.Model):
     usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     conteudo = models.TextField()
@@ -16,6 +17,7 @@ class Publicacao(models.Model):
     def __str__(self):
         return self.usuario.first_name
 
+# Model de comentario na rede social
 class Comentario(models.Model):
     usuario=models.ForeignKey(CustomUser,on_delete=models.CASCADE, null=True, related_name='usuario_social')
     email =models.CharField(max_length=255, null=True)
