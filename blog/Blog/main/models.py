@@ -28,7 +28,7 @@ class Post(models.Model):
     criado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
     criado_em = models.DateField(auto_now_add= False)
     # foto = models.ImageField(null=True, blank=True, upload_to="static/img/")
-    imagem = models.ImageField(null=True, blank=True, upload_to="static/img/")
+    #imagem = models.ImageField(null=True, blank=True, upload_to="static/img/")
 
     class Meta:
         verbose_name = 'Post'
