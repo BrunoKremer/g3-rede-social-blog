@@ -20,6 +20,18 @@
 {% endblock %}
 {%block content%}
 {% if request.user.is_authenticated %}
+<div class="container">
+  <form action="{% url 'main:curtir_post' %}" method='POST'>
+    {% csrf_token %}
+    <input type="hidden" name="post_id" value="{{post.id}}">
+    {% if user not in post.curtidas.all %}
+    <a href=""><button  class="btn btn-success" type="submit">Gostei</button></a>
+    {% else %}
+    <a  href=""><button type="submit" class=" btn-group align-items-center btn-sm btn btn-outline-success">Não Gostei</button></a>
+    {% endif %}
+  </form>
+  <strong>{{post.curtidas.all.count}} Curtida{{post.curtidas.all.count|pluralize:"s"}} </strong>
+</div>  
 <!-- Form de Comentário -->
 <div class="container">
 	<h1>Faça um comentário</h1>

@@ -60,6 +60,30 @@ def PostDetailView(request, pk):
 
     context = {"post": post, 'form':form, 'comentarios':comentarios, 'qtde':qtde}
     return render (request, 'blog/post_detail.html', context)
+
+def curtir_post(request):
+    usuario = request.user
+    if request.method == 'POST':
+        post_id = request.POST.get('post_id')
+        post_obj = Post.objects.get(id=post_id)
+
+        if usuario in post_obj.curtidas.all():
+            post_obj.curtidas.remove(usuario)
+        else:
+            post_obj.curtidas.add(usuario)
+        
+        curtir, created = Curtir.objects.get_or_create(usuario=usuario,post_id=post_id)
+
+        if not created:
+            if curtir.avaliacao == 'Gostei':
+                curtir.avaliacao = 'Não Gostei'
+            else:
+                curtir.avaliacao = 'Gostei'
+        
+        curtir.save()
+
+    return redirect('blog:post_detail.html')
+   
    
 # View para todas indicações
 

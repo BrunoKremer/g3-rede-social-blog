@@ -28,7 +28,11 @@ class Post(models.Model):
     criado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
     criado_em = models.DateField(auto_now_add= False)
     foto = models.ImageField(null=True, blank=True, upload_to="static/img/")
-    #imagem = models.ImageField(null=True, blank=True, upload_to="static/img/")
+    curtidas = models.ManyToManyField(User, default=None,blank=True,related_name='Curtidas')
+    
+    @property
+    def num_curtidas(self):
+        return self.curtidas.all().count()
 
     class Meta:
         verbose_name = 'Post'
@@ -38,6 +42,19 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titulo
+
+CURTIR_CHOICES=(
+    ('g','Gostei'),
+    ('n','Não Gostei'),
+)
+
+class Curtir(models.Model):
+    usuario = models.ForeignKey(User,on_delete=models.CASCADE)
+    post = models.ForeignKey(Post,on_delete=models.CASCADE)
+    avaliacao = models.CharField(choices=CURTIR_CHOICES,default='Gostei',max_length=10)
+
+    def __str__(self):
+        return str(self.post)
 
 # Model onde indicamos livros e Cursos
 
