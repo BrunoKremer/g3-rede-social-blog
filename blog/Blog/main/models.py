@@ -64,16 +64,13 @@ class Indicacao(models.Model):
 # Models para os usuários deixarem comentários nos artigos
 
 class Comentarios(models.Model):
-    INTERACAO_CHOICES = [
-        ('G', 'Gostei'), ('N', 'Não gostei')
-    ]
     usuario=models.ForeignKey(User,on_delete=models.CASCADE, null=True)
     email =models.CharField(max_length=255, null=True)
     post = models.ForeignKey(Post, on_delete = models.CASCADE, related_name ='comentarios')
     comentario = models.TextField()
     data = models.DateTimeField(null=True , auto_now_add=True)
     aprovado = models.BooleanField(default=True)
-    interacao = models.CharField(null=True, blank=True, max_length=10, choices= INTERACAO_CHOICES, default='')
+    
 
     class Meta:
         verbose_name = 'Comentário'
