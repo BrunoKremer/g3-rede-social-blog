@@ -4,7 +4,7 @@ from .forms import ComentariosForm
 from django.shortcuts import render, get_object_or_404, redirect, get_list_or_404
 from django.http import HttpResponse, request, response
 from django.db.models import Q
-from .models import Indicacao, Post, Categoria, Comentarios
+from .models import Indicacao, Post, Categoria, Comentarios, Curtir
 from django.core.paginator import Paginator
 from django.views import generic
 from django.urls import reverse_lazy
@@ -82,7 +82,7 @@ def curtir_post(request):
         
         curtir.save()
 
-    return redirect('blog:post_detail.html')
+    return redirect('main:indicacao')
    
    
 # View para todas indicações
