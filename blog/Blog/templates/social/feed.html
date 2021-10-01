@@ -97,8 +97,18 @@
             </div><!--/ cardbox-item -->
             {%endif%}
             <div class="cardbox-item" style="padding: 10px;">
-
-            
+              <div class="container">
+                <form action="{% url 'social:like_post' %}" method='POST'>
+                  {% csrf_token %}
+                  <input type="hidden" name="post_id" value="{{post.id}}">
+                  {% if user not in post.liked.all %}
+                  <a href=""><button  class="btn btn-success" type="submit">Gostei</button></a>
+                  {% else %}
+                  <a  href=""><button type="submit" class=" btn-group align-items-center btn-sm btn btn-outline-success">Não Gostei</button></a>
+                  {% endif %}
+                </form>
+                <strong>{{post.liked.all.count}} Curtida{{post.liked.all.count|pluralize:"s"}} </strong>
+              </div>  
               <span class="card-text"><button class="btn btn-success">Like</button></span>
               <button type="button" class="btn btn-outline-success">
                 <a href="{%url 'social:comentar_post' post.id%}">Comentar</a></button>

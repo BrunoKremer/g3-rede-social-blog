@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, request, response
 from django.views import generic
-from .models import Publicacao,Comentario
+from .models import Publicacao,Comentario,Like
 from django.urls.base import reverse_lazy
 from .forms import Publicacao_form,Comentario_publi
 from usuarios.models import CustomUser
@@ -69,3 +69,27 @@ def editarPublicacao(request,id):
 
     context = {'post':post,'form':form}
     return render(request,'social/editar-post.html',context)
+
+def like_post(request):
+    user = request.user
+    if request.method == 'POST':
+        post_id = request.POST.get('post_id')
+        post_obj = Publicacao.objects.get(id=post_id)
+        
+        if user in post_obj.liked.all():
+            post_obj.liked.remove(user)
+        else:
+            post_obj.liked.add(user)
+
+        like , created = Like.objects.get_or_create(user=user,post_id=post_id)
+
+        if not created:
+            if like.value =='Like':
+                like.value = 'Deslike'
+
+            else:
+                like.value = 'Like'
+
+            like.save()
+
+    return redirect('social:feed')

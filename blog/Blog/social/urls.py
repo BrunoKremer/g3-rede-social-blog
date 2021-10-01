@@ -19,6 +19,8 @@ urlpatterns = [
     path('editar-post/<str:id>/', views.editarPublicacao, name='editar-post'),
     # Url para comentar POST escolhido pelo usuário
     path('comentar_post/<str:id>/', views.comentar_Publicacao, name='comentar_post'),
+
+    path('like/', views.like_post, name='like_post'),
     
 ]
 
