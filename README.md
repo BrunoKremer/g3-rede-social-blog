@@ -1,26 +1,12 @@
-# README.md
-
-Modelo de arquivo README para Alunos de Python Projeto Entra 21 da Proway Blumenau em 2021. 
-
-Disponível em: 
-https://github.com/Machado-tec/readme
-
-
-Com base na video aula abaixo: 
-https://www.youtube.com/watch?v=2A_ebBA3jzM 
-
-
-# Modelo README 
-
 # InfoCode
 
-## Projeto em Desenvolvimento
+### Equipe G3 Turma Entra 21/2001 Integrantes Jean Santos França, Antônio Bruno Kremer Lamin, Evanildo Batista, Luan Gabriel Fausto Pereira. 
 
-#### Conteúdo deste README
 
-- Nome do Projeto
-- Status
-- Conteudo
+## STATUS DO PROJETO: em desenvolvimento
+
+### Conteúdo deste documento:
+
 - Descrição
 - Layout 
 - Deploy
@@ -37,40 +23,49 @@ https://www.youtube.com/watch?v=2A_ebBA3jzM
 
 ## Descrição
 
-Blog com artigos sobre programação, junto a ele, uma rede social para pessoas que atuam e pretendem atuar nesta area.
+Blog com artigos sobre programação, junto a ele, uma rede social para pessoas que atuam e pretendem atuar nesta area. Nosso blog foi desenvolvido em XXXXXXXXX..... e as principais bibliotecas que utilizamos foram XXXXX que nos permitem fazer o seguinte:XXXX
 
 ## Layout 
 
-- Home
->       Artigos  
->       Sobre
->       Barra de pesquisa
->       Categorias
+>### Home  
+>>####      Artigos  
+>>####      Sobre
+>>####      Barra de pesquisa
+>>####      Categorias
+>>>#####     Teste
 
-- Indicações
->       Slides
->       Livros e Cursos
+> Indicações
+>>       Slides
+>>       Livros e Cursos
 
-- Post Detail
->       Post
->       Comentários
+> Post Detail
+>>       Post
+>>       Comentários
 
-- Rede social
->       Feed
->       Perfil de Usuário
->       Editar Perfil
+> Rede social
+>>       Feed
+>>       Perfil de Usuário
+>>       Editar Perfil
+
+> Admin
+>>      ????
+>>      ????
+>>      ????
+>>      ????
+>>####      ????
 
 
 ## Deploy da aplicação
+
+- aplicativo disponivel em Heroku.com 
 
 
 
 ## Pré-requisitos
 - Python 3.8
-- IDLE para edição dos codigos
+- IDE para edição dos codigos 
 - Django 
-- Mysql 
-
+- Mysql Server 
 
 ## Dependências e Libs Instaladas
 
@@ -108,6 +103,7 @@ Blog com artigos sobre programação, junto a ele, uma rede social para pessoas 
 ## Como rodar a aplicação na WEB 
 
 - http://projeto-teste-212.heroku.com   
+
 - Blog
   - Você pode navegar entre todos os artigos e indicações
   - Pode interagir fazendo comentários
@@ -117,29 +113,29 @@ Blog com artigos sobre programação, junto a ele, uma rede social para pessoas 
   - Siga outras pessoas
   - Interaja e faça publicações
 
-  
-
 ## Como rodar os testes e desenvolvimento da app
 
 - Faça download do repositorio no https://github.com/BrunoKremer/g3-rede-social-blog
 - Instale os Pré-requisitos
 - Crie um VENV para utilizar
 - Inclua as bibliotecas listadas acima com o comando pip install -r requirements.txt
+- Coloque o Django-server para rodar com o comando python manage.py runserver 
 - Acesse localhost:8000
+- Para mais informações acesse http://djangoproject.com 
 
 ## Database
 
 - Na versão inicial utilizamos o gerenciador de banco de ddos SqLite.
 - Na versão de apresentação utilizamos o GDB Mysql Server na Gogole Cloud fornecido pelo nosso instrutor do projeto. 
-- Endereços de conexão: Server.IP DatabaseName: 
+- Endereços de conexão: Server.IP db01solapp.sol.app.br DatabaseName: E21G3
 - 
-
 ## Solução de problemas
 
 ## Contribuintes
 
 ####    Adriano Machado - Instrutor Python Entra21
-        Orientação pedagogica e treinamento em Python Django
+        Orientação pedagogica e treinamento em Python, Django, Databases, programação BackEnd e FrontEnd. 
+        
         adriano@machado.tec.br +55 (67) 9.92636781
 
 ####    Antônio Bruno Kremer Lamim - Líder
@@ -167,3 +163,5 @@ Blog com artigos sobre programação, junto a ele, uma rede social para pessoas 
 - Troca de mensagens
 
 ## Licença
+
+???????????????????
