@@ -68,6 +68,7 @@ Blog com artigos sobre programação, junto a ele, uma rede social para pessoas 
 - Mysql Server 
 
 ## Dependências e Libs Instaladas
+#### Veja mais detalhes em <a href="https://github.com/BrunoKremer/g3-rede-social-blog/network/dependencies"> Dependencias ByGitHub.com</a>
 
 - asgiref==3.4.1
 - certifi==2021.5.30
