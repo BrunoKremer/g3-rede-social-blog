@@ -109,12 +109,27 @@
                 
       <!-- Modal -->
 
+      <!-- <div class="card container-sm " >    
+        {%for comentario in comentarios%}
+          {% if comentarios %}
+            <div class="card-body">
+              <h5 class="card-title">{{comentario.usuario}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{comentario.data}}</h6>
+              <p style="border-bottom: 1px solid #ccc;" class="card-text">{{comentario.comentario}}</p>
+            </div>
+          {%else%}
+            <h1>Não tem comentários</h1>
+          {%endif%}
+        {%endfor%}
+      </div> -->
+
         
               
           </div><!--/ cardbox-item --> 
           <div class="collapse" id="collapseExample">
             <div class="card card-body">
               {%for comentarios in comentarios%}
+              {% if comentarios %}
               <div class="d-flex mr-3">
                 
                 <a href="#"><img class="img-fluid rounded-circle" style="width:20px;" src="{{comentarios.usuario.foto.url}}" alt="{{comentarios.usuario}}"></a>
@@ -123,6 +138,7 @@
                 
                 <small style="color: #ccc;">{{comentarios.data}}</small>
                 <p>{{comentarios.comentario}}</p>
+                {%endif%}
               {%endfor%}
             </div>
           </div>
