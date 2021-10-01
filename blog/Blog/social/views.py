@@ -5,6 +5,7 @@ from .models import Publicacao,Comentario,Like
 from django.urls.base import reverse_lazy
 from .forms import Publicacao_form,Comentario_publi
 from usuarios.models import CustomUser
+from comentarios.models import Comentario
 
 # View feed, passamos o formulário de Publicação
 # Data - passamos o model de Publicação

@@ -1,6 +1,7 @@
 
 from django import forms
-from .models import Publicacao,Comentario
+from .models import Publicacao
+from comentarios.models import Comentario
 
 # Formulário de publicação, onde é solicitado o conteúdo e caso o usuário queira, uma foto
 class Publicacao_form(forms.ModelForm):
