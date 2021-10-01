@@ -8,3 +8,4 @@ admin.site.register(Categoria)
 admin.site.register(Indicacao)
 admin.site.register(Comentarios)
 admin.site.register(Curtir)
+
