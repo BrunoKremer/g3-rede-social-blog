@@ -1,6 +1,6 @@
 from django.db import models
-from .social.models import Publicacao
-from .usuarios.models import CustomUser
+from social.models import Publicacao
+from usuarios.models import CustomUser
 # Create your models here.
 # Model de comentario na rede social
 class Comentario(models.Model):

@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, request, response
 from django.views import generic
-from .models import Publicacao,Comentario,Like
+from .models import Publicacao,Like
 from django.urls.base import reverse_lazy
 from .forms import Publicacao_form,Comentario_publi
 from usuarios.models import CustomUser

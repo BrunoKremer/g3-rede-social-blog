@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'usuarios.apps.UsuariosConfig',
     'social.apps.SocialConfig',
+    'comentarios.apps.ComentariosConfig',
     # Bibliotecas auxiliares
     'ckeditor',
     'ckeditor_uploader',
