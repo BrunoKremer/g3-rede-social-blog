@@ -1,6 +1,11 @@
 # InfoCode
 
-### Equipe G3 Turma Entra 21/2001 Integrantes Jean Santos França, Antônio Bruno Kremer Lamin, Evanildo Batista, Luan Gabriel Fausto Pereira. 
+### Equipe G3 Turma Entra 21/2021:
+>>#### Integrantes: 
+>>###### Jean Santos França
+>>###### Antônio Bruno Kremer Lamim
+>>###### Evanildo Batista 
+>>###### Luan Gabriel Fausto Pereira 
 
 
 ## STATUS DO PROJETO: em desenvolvimento
@@ -23,16 +28,15 @@
 
 ## Descrição
 
-Blog com artigos sobre programação, junto a ele, uma rede social para pessoas que atuam e pretendem atuar nesta area. Nosso blog foi desenvolvido em XXXXXXXXX..... e as principais bibliotecas que utilizamos foram XXXXX que nos permitem fazer o seguinte:XXXX
+Blog com artigos sobre programação, junto a ele, uma rede social para pessoas que atuam e pretendem atuar nesta area. Nosso blog foi desenvolvido em Python, Django, Html, Css e MySQL e as principais bibliotecas que utilizamos foram bootstrap, djangorestframework que nos permitem fazer o seguinte:XXXX
 
 ## Layout 
 
->### Home  
->>####      Artigos  
->>####      Sobre
->>####      Barra de pesquisa
->>####      Categorias
->>>#####     Teste
+> Home  
+>>      Artigos  
+>>      Sobre
+>>      Barra de pesquisa
+>>      Categorias
 
 > Indicações
 >>       Slides
@@ -47,13 +51,25 @@ Blog com artigos sobre programação, junto a ele, uma rede social para pessoas 
 >>       Perfil de Usuário
 >>       Editar Perfil
 
-> Admin
->>      ????
->>      ????
->>      ????
->>      ????
->>####      ????
-
+>#### Admin
+>
+>>>######     AUTENTICAÇÃO E AUTORIZAÇÃO
+>>>     Grupos
+>>>     Usuários
+>
+>>######      COMENTARIOS
+>>>     Comentários
+>
+>>######      MAIN
+>>>     Categorias
+>>>     Comentários
+>>>     Curtidas
+>>>     Indicações
+>>>     Posts
+>
+>>######      Social
+>>>     Likes
+>>>     Publicações
 
 ## Deploy da aplicação
 
@@ -157,12 +173,14 @@ Blog com artigos sobre programação, junto a ele, uma rede social para pessoas 
 
 #### Tarefas em aberto
 
-- Diagrama de Banco de Dados.
-- Formulário de comentários
-- Model para seguir pessoas
-- Responsividade
-- Troca de mensagens
+- [ ] Diagrama de Banco de Dados.
+- [ ] Formulário de comentários
+- [ ] Model para seguir pessoas
+- [ ] Responsividade
+- [ ] Troca de mensagens
 
 ## Licença
 
-???????????????????
+Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
+
+Veja mais em: https://github.com/BrunoKremer/g3-rede-social-blog/blob/main/LICENSE
