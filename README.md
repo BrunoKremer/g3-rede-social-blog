@@ -153,7 +153,7 @@ Blog com artigos sobre programação, junto a ele, uma rede social para pessoas 
 ####    Adriano Machado - Instrutor Python Entra21
         Orientação pedagogica e treinamento em Python, Django, Databases, programação BackEnd e FrontEnd. 
         
-        adriano@machado.tec.br +55 (67) 9.92636781
+        adriano@machado.tec.br +55 (67) 9 9263-6781
 
 ####    Antônio Bruno Kremer Lamim - Líder
         Desenvolvimento Front-end e Back-end
@@ -161,15 +161,15 @@ Blog com artigos sobre programação, junto a ele, uma rede social para pessoas 
 
 ####    Evanildo Batista - DBA
         Desenvolvimento de Banco de Dados
-        niko.batista@hotmail.com +55 (47) 9 9903-3958
+        niko.batista@hotmail.com +55 (47) 9 9925-2598
 
 ####    Jean Carlos P. de F. dos Santos - Conteúdo
         Desenvolvimento Back-end e pesquisa de conteúdo
-        Jeancarlossantos12@gmail.com +55 (47) 9 9903-3958
+        Jeancarlossantos12@gmail.com +55 (47) 9 9214-5877
 
 ####    Luan Gabriel - Conteúdo
         Auxilio na pesquisa e inclusão de conteúdos
-        luangabrielfaustonobrac@gmail.com +55 (47) 9 9903-3958
+        luangabrielfaustonobrac@gmail.com +55 (47) 9 99154-3131
 
 #### Tarefas em aberto
 
