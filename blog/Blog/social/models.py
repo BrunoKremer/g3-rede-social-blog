@@ -1,13 +1,15 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.db.models.fields.related import ForeignKey
 from usuarios.models import CustomUser
-# import comentarios.models.Comentario
+import comentarios
 
 # Modelo de Publicação
 # Estamos importando o Custom User para autenticar o usuário
 class Publicacao(models.Model):
     usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     conteudo = models.TextField()
+    comentario = ForeignKey('comentarios.Comentario',on_delete=models.CASCADE,null=True,blank=True,related_name='comentarios_social')
     data = models.DateTimeField(auto_now_add= True)
     foto = models.FileField(null = True, blank = True,  upload_to="static/img/")
     liked = models.ManyToManyField(User,default=None,blank=True,related_name='LIked')
