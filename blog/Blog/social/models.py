@@ -8,6 +8,7 @@ from usuarios.models import CustomUser
 class Publicacao(models.Model):
     usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     conteudo = models.TextField()
+    comentario = models.ForeignKey("comentarios.Comentario",on_delete=models.CASCADE, null=True, blank=True, related_name='comentarios_social')
     data = models.DateTimeField(auto_now_add= True)
     foto = models.FileField(null = True, blank = True,  upload_to="static/img/")
     liked = models.ManyToManyField(User,default=None,blank=True,related_name='LIked')
