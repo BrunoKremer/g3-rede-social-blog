@@ -21,6 +21,7 @@ def feed(request):
            data.conteudo = form.cleaned_data['conteudo']
            data.foto = form.cleaned_data['foto']
            data.usuario_id = request.user.id
+           data.comentario.add(Comentario)
            data.save()
     else:
         form = Publicacao_form()

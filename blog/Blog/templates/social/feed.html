@@ -102,25 +102,25 @@
                     {% csrf_token %}
                     <input type="hidden" name="post_id" value="{{post.id}}">
                     {% if user not in post.liked.all %}
-                    <a href=""><button  class="btn btn-success" type="submit"><i class="bi bi-heart-fill"></i></button></a>
+                    <a href=""><button  class="btn btn-light" type="submit"><i class="bi bi-heart-fill"></i></button></a>
                     {% else %}
-                    <a  href=""><button type="submit" class=" btn-light align-items-center btn-sm btn"><i class="bi bi-heart-fill"></i></button></a>
+                    <a  href=""><button type="submit" class=" btn-success align-items-center btn"><i class="bi bi-heart-fill"></i></button></a>
                     {% endif %}
                   </form>
                 
-                <!-- <strong>{{post.liked.all.count}} Curtida{{post.liked.all.count|pluralize:"s"}} </strong> -->
                
               <!-- <span class="card-text"><button class="btn btn-success">Like</button></span> -->
-              <span>
-                <button type="button" class="btn btn-outline-success">
+              <span style="margin-left: 5px;">
+                <button  type="button" class="btn btn-outline-success">
                   <a href="{%url 'social:comentar_post' post.id%}">Comentar</a></button>
               </span>
               
-                <a class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a style="margin-left: 5px;" class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                   Comentários
                 </a>
               </div> 
-                
+                <small style="padding: 20px;">{{post.liked.all.count}} Curtida{{post.liked.all.count|pluralize:"s"}} </small>
+               
       <!-- Modal -->
 
       <!-- <div class="card container-sm " >    
@@ -141,24 +141,27 @@
               
           </div><!--/ cardbox-item --> 
 
-          {% if post.comentario%}
+          
           <div class="collapse" id="collapseExample">
             <div class="card card-body">
               
-              {%for comentarios in posts%}
+              {%for comentario in comentarios%}
+              {% if post.comentario%}
               <div class="d-flex mr-3">
                 
                 <a href="#"><img class="img-fluid rounded-circle" style="width:20px;" src="{{comentarios.usuario.foto.url}}" alt="{{comentarios.usuario}}"></a>
-                <small style="padding: 5px;">{{comentarios.usuario}}</small>
+                <small style="padding: 5px;">{{comentario.usuario}}</small>
                </div>
                 
-                <small style="color: #ccc;">{{comentarios.data}}</small>
-                <p>{{comentarios.comentario.comentario}}</p>
-              {%endfor%}
+                <small style="color: #ccc;">{{comentario.data}}</small>
+                <p>{{comentario.comentario}}</p>
+              
             </div>
           </div>
-            {%endif%}
-
+          {%else%}
+            <small>Não tem comentários</small>
+          {%endif%}
+          {%endfor%}
          
 
           
