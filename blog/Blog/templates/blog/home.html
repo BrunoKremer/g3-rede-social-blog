@@ -36,14 +36,14 @@
         <div class="row no-gutters">
             <div class="col-md-5">
               {% if post.foto %}
-                <img class="img-thumbnail" src="{{post.foto.url}}" alt="...">
+                <img class="img-fluid img-thumbnail posts" src="{{post.foto.url}}" alt="..." >
               {%endif%}
             </div>
             <div class="col-md-7">
               <div class="card-body">
                 <h5 class="card-title font-weight-bold">{{post.titulo}}</h5>
                 {% if post.subtitulo %}
-                  <p class="card-text font-weight-light"> <small>{{post.subtitulo|truncatewords:20|linebreaks}}</small> </p>
+                  <p class="card-text font-weight-light"> <small>{{post.subtitulo|truncatewords:19|linebreaks}}</small> </p>
                 {%endif%}
                 <p class="card-text">{{post.conteúdo|truncatewords:20|linebreaks}} <span><a href="{% url 'main:post_detail' post.id %}">Ver mais..</a></span> </p>
                 <p class="card-text font-italic"><small class="text-muted">Criado por {{post.criado_por}}, em {{post.criado_em}}</small></p>
