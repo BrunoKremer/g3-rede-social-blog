@@ -40,13 +40,14 @@ def home(request):
 #  * qtde pega a quantidade de comentários do post
 
 def PostDetailView(request, pk):
+    post = get_object_or_404(Post,pk=pk)
     comentarios = Comentarios.objects.filter()
     qtde = 0
 
     for q in comentarios:
         qtde = qtde + 1
 
-    post = Post.objects.get(pk=pk)
+    
     if request.method == 'POST':
         form = ComentariosForm(request.POST)
         if form.is_valid():

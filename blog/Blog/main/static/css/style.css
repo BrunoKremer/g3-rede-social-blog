@@ -84,8 +84,7 @@
     position: relative;
     display: block;
 }
-.cardbox .cardbox-item img{
-}
+
 .img-responsive{
     display: block;
     max-width: 100%;
@@ -118,3 +117,11 @@ img.posts {
   width: 500px!important;
   height: 300px!important;
   }
+
+  @media (max-width: 780px)
+{
+  div.categorias
+   {
+    display: none;
+   }
+}

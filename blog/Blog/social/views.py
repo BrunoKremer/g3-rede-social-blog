@@ -12,7 +12,7 @@ from comentarios.models import Comentario
 # Form - Passamos o formulário de Publicação
 def feed(request):
     posts = Publicacao.objects.all()
-    comentarios = Comentario.objects.all()
+    comentarios = Comentario.objects.filter()
     
     if request.method == 'POST':
        form = Publicacao_form(request.POST)
@@ -21,7 +21,7 @@ def feed(request):
            data.conteudo = form.cleaned_data['conteudo']
            data.foto = form.cleaned_data['foto']
            data.usuario_id = request.user.id
-           data.comentario.add(Comentario)
+           
            data.save()
     else:
         form = Publicacao_form()
@@ -95,3 +95,16 @@ def like_post(request):
             like.save()
 
     return redirect('social:feed')
+
+def Publi_detail(request, pk):
+    comentarios = Comentario.objects.filter()
+    qtde = 0
+
+    for q in comentarios:
+        qtde = qtde + 1
+
+    post = Publicacao.objects.get(pk=pk)
+    
+
+    context = {"post": post, 'comentarios':comentarios, 'qtde':qtde}
+    return render (request, 'social/publi_detail.html', context)

@@ -9,7 +9,7 @@ import comentarios
 class Publicacao(models.Model):
     usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     conteudo = models.TextField()
-    comentario = ForeignKey('comentarios.Comentario',on_delete=models.CASCADE,null=True,blank=True,related_name='comentarios_social')
+    # comentario = ForeignKey('comentarios.Comentario',null=True,blank=True,related_name='Publicacao')
     data = models.DateTimeField(auto_now_add= True)
     foto = models.FileField(null = True, blank = True,  upload_to="static/img/")
     liked = models.ManyToManyField(User,default=None,blank=True,related_name='LIked')

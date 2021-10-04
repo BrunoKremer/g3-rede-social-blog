@@ -16,9 +16,9 @@
     </button>
   </div>
   <!-- Botões de indicação -->
-   <div class=" d-flex justify-content-center list-group-horizontal list-group btn-group">
+   <div class=" d-flex justify-content-center list-group-horizontal list-group btn-group categorias">
     {% for cat in categoria %}
-    <form id="searchForm" class="d-flex justify-content-center list-group list-group-horizontal align-items-center  form-inline" action="" method="get">
+    <form id="searchForm" class="categorias d-flex justify-content-center list-group list-group-horizontal align-items-center  form-inline" action="" method="get">
       <ul class="list-group list-group-horizontal-sm align-items-center" style="display: inline-block;">
         
         <li class="nav-link align-items-center"> <button type="submit" name="cat" role="group"  value="{{cat}}" class=" btn-group align-items-center btn-sm btn btn-outline-success">{{cat.categoria}}</button> </li>
