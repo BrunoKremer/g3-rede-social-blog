@@ -83,7 +83,7 @@ def curtir_post(request):
         
         curtir.save()
 
-    return redirect('main:indicacao')
+    return redirect('main:post')
    
    
 # View para todas indicações

@@ -48,7 +48,9 @@
 {% endif %}
 
 <!-- Comentarios -->
-{% if comentarios %}
+{% if post not in comentario.comentarios.all %}
+<h1>Não tem comentários</h1>
+{%else%}
 <h1 class="container-sm">{{qtde}} Comentário </h1>
 <div class="card container-sm " >    
     {%for comentario in comentarios%}
@@ -60,8 +62,8 @@
         </div>
       
     {%endfor%}
-    {%else%}
-        <h1>Não tem comentários</h1>
+    
+       
       {%endif%}
   </div>
 
