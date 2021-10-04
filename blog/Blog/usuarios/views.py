@@ -17,9 +17,13 @@ class CadastroFormView(generic.CreateView):
 
 # View que redireciona para página de sucesso no cadastro
 class RegistradoView(generic.TemplateView):
-    usuario = User.objects.get(pk=pk)        
-    enviar_email_via_gmail('teste','teste',''  )
     template_name = "registration/sucess.html"
+
+## criar funcao separada
+    # usuario = User.objects.get(pk=pk)        
+    # enviar_email_via_gmail('teste','teste',''  )
+
+
 
 # View do perfil de usuário, pk seria o id do user
 def ProfileView(request, pk):
