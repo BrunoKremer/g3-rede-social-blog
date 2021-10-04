@@ -5,15 +5,20 @@ from django.urls.base import reverse_lazy
 from django.views import generic
 from django.views.generic.edit import FormView
 from .forms import UsuarioForm, UsuarioFormChange
- 
+from Contato.enviar_email import enviar_email_via_gmail
+from django.contrib.auth.models import User
+
+
 #  View para cadastrar os usuários
 class CadastroFormView(generic.CreateView):
     form_class = UsuarioForm
-    template_name = "registration/cadastro.html"
-    success_url = reverse_lazy('usuarios:sucess')
+    template_name = "registration/cadastro.html"    
+    success_url = reverse_lazy("usuarios:sucess")
 
 # View que redireciona para página de sucesso no cadastro
 class RegistradoView(generic.TemplateView):
+    usuario = User.objects.get(pk=pk)        
+    enviar_email_via_gmail('teste','teste',''  )
     template_name = "registration/sucess.html"
 
 # View do perfil de usuário, pk seria o id do user
