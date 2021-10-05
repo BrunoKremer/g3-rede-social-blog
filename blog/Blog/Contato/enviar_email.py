@@ -1,6 +1,6 @@
 import smtplib
 import email.message
-import email_settings
+from django.conf import settings
 
 
 def enviar_email_via_gmail(assunto, corpo_email, destinatario):
@@ -10,16 +10,16 @@ def enviar_email_via_gmail(assunto, corpo_email, destinatario):
 
     msg['Subject'] = assunto
 
-    msg['From'] = email_settings.GMAIL_FROM
+    msg['From'] =settings.EMAIL_HOST_USER
     msg['To'] = destinatario
 
-    password = email_settings.GMAIL_SENHA
+    password = settings.EMAIL_HOST_PASSWORD
 
     msg.add_header('Content-Type', 'text/html')
 
     msg.set_payload(corpo_email)
 
-    s = smtplib.SMTP(email_settings.GMAIL_SMTP)
+    s = smtplib.SMTP(settings.EMAIL_HOST)
 
     s.starttls()
 
@@ -28,4 +28,4 @@ def enviar_email_via_gmail(assunto, corpo_email, destinatario):
     print('Email enviado com sucesso')
 
 
-enviar_email_via_gmail("Ola Meu Primeiro email", "<p>corpo email<p><br><br>", "seu email")
+
