@@ -12,9 +12,9 @@ app_name = 'usuarios'
 
 urlpatterns = [
     # View com formulário de cadastro de usuários
-    path('cadastro', views.CadastroFormView.as_view(), name='cadastro'),
+    path('cadastro', views.CadastroFormView, name='cadastro'),
     # View que redireciona após o sucesso de cadastro
-    path('cadastro/sucess/', views.RegistradoView, name='sucess'),
+    path('cadastro/sucess/<int:pk>', views.RegistradoView, name='sucess'),
     # View de perfil do usuário
     path('profile/<int:pk>', views.ProfileView, name='profile'),  
     # View para editar informações de usuários

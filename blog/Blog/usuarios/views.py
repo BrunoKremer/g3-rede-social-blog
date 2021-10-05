@@ -9,20 +9,36 @@ from Contato.enviar_email import enviar_email_via_gmail
 from django.contrib.auth.models import User
 
 
+# def CadastroFormView(request):
+    
+#     if request.method == 'POST':
+#        form = UsuarioForm(request.POST)
+#        if form.is_valid():
+#            data = CustomUser()
+#            data.username = form.cleaned_data['username']
+#            data.email = form.cleaned_data['email']
+        #    data.password = form.password ///// Não funciona
+#            data.save()
+#            return render(request, "registration/sucess.html")
+#     else:
+#         form = UsuarioForm()
+#     context = {"form":form}
+#     return render (request, "registration/cadastro.html" , context)
+
+# View que redireciona para página de sucesso no cadastro
+def RegistradoView(request, pk):
+    usuario = CustomUser.objects.get(pk = pk)
+    email = usuario.email        
+    enviar_email_via_gmail('teste','teste', email)
+    return render (request, "registration/sucess.html", {"email":email})
+    # template_name = "registration/sucess.html"
+
 #  View para cadastrar os usuários
 class CadastroFormView(generic.CreateView):
     form_class = UsuarioForm
     template_name = "registration/cadastro.html"    
     success_url = reverse_lazy("usuarios:sucess")
-
-# View que redireciona para página de sucesso no cadastro
-def RegistradoView(request):
-    # usuario = User.objects.get()
-    email = request.user.email        
-    enviar_email_via_gmail('teste','teste', email)
-    return render (request, "registration/sucess.html", {"email":email})
-    # template_name = "registration/sucess.html"
-
+    
 ## criar funcao separada
     # usuario = User.objects.get(pk=pk)        
     # enviar_email_via_gmail('teste','teste',''  )
@@ -32,6 +48,8 @@ def RegistradoView(request):
 # View do perfil de usuário, pk seria o id do user
 def ProfileView(request, pk):
     usuario = CustomUser.objects.get(pk=pk)
+    email = usuario.email        
+    enviar_email_via_gmail('teste','teste', email)
     return render (request, "registration/profile.html", { "user": usuario})
 
 # View para editar informações do usuário
