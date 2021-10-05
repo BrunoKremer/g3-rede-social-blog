@@ -16,8 +16,12 @@ class CadastroFormView(generic.CreateView):
     success_url = reverse_lazy("usuarios:sucess")
 
 # View que redireciona para página de sucesso no cadastro
-class RegistradoView(generic.TemplateView):
-    template_name = "registration/sucess.html"
+def RegistradoView(request):
+    # usuario = User.objects.get()
+    email = request.user.email        
+    enviar_email_via_gmail('teste','teste', email)
+    return render (request, "registration/sucess.html", {"email":email})
+    # template_name = "registration/sucess.html"
 
 ## criar funcao separada
     # usuario = User.objects.get(pk=pk)        
