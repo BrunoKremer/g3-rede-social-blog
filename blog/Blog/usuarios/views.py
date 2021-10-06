@@ -6,6 +6,7 @@ from django.views import generic
 from django.views.generic.edit import FormView
 from .forms import UsuarioForm, UsuarioFormChange
 from Contato.enviar_email import enviar_email_via_gmail
+from social.models import Publicacao
  
 #  View para cadastrar os usuários
 class CadastroFormView(generic.CreateView):
