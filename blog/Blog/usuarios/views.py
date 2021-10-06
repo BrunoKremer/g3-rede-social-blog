@@ -27,6 +27,6 @@ class UserChange(generic.UpdateView):
     model = CustomUser
     form_class = UsuarioFormChange
     template_name = 'registration/edit_user.html'
-    success_url = reverse_lazy('usuarios:feed')
+    success_url = reverse_lazy("social:feed")
     
 

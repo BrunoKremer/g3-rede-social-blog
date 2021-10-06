@@ -70,11 +70,16 @@
             <div class="cardbox-heading" style="border-bottom: 1px solid #ccc;">
         
              <div class="media m-0">
+               
               <div class="d-flex mr-3">
+                {%if post.usuario.foto%}
                <a href="#"><img class="img-fluid rounded-circle" src="{{post.usuario.foto.url}}" alt="{{post.usuario}}"></a>
+               {%else%}
+                  <img class="img-fluid rounded-circle" src="{%static 'img/teste.png' %}" alt="" srcset="">
+                  {%endif%}
               </div>
               <div class="media-body">
-               <span class="m-0">{{post.usuario}}</span>
+               <span class="m-0"> <a href="{% url 'usuarios:profile' post.usuario.id%}">{{post.usuario}}</a> </span>
                <small><p><i class="icon ion-md-time"></i>{{post.data}}</p></small>
               </div>
                <div class="dropdown mr-1">
