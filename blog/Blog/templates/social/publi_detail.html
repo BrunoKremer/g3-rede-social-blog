@@ -94,15 +94,18 @@
 
 <div class="card container-sm " >    
     
-      {% if comentarios %}
+      {% if post in comentarios %}
+      {%for comentario in comentarios%}
         <div class="card-body">
           <h5 class="card-title">{{comentario.usuario}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">{{comentario.data}}</h6>
           <p style="border-bottom: 1px solid #ccc;" class="card-text">{{comentario.comentario}}</p>
         </div>
+        {%endfor%}
       {%else%}
         <h1>Não tem comentários</h1>
       {%endif%}
+      
     
   </div>
 

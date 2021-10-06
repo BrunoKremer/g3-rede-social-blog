@@ -6,7 +6,7 @@
 
 <div class="container-sm" style="padding: 50px;">
   <h4>Alterar Publicação</h4>
-  <form method="POST">
+  <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-group">
       {{ form.conteudo|as_crispy_field }}

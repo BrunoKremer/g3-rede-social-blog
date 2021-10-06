@@ -1,6 +1,6 @@
 from .models import CustomUser
 from django.db.models.base import Model
-from django.shortcuts import  render, redirect
+from django.shortcuts import  get_list_or_404, render, redirect
 from django.urls.base import reverse_lazy
 from django.views import generic
 from django.views.generic.edit import FormView
@@ -12,7 +12,7 @@ from social.models import Publicacao
 class CadastroFormView(generic.CreateView):
     form_class = UsuarioForm
     template_name = "registration/cadastro.html"
-    success_url = reverse_lazy('usuarios:sucess')
+    success_url = reverse_lazy("usuarios:sucess")
 
 # View que redireciona para página de sucesso no cadastro
 class RegistradoView(generic.TemplateView):

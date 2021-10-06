@@ -33,18 +33,19 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+              
               <div class="modal-body">
-                <form method="post" action="">
+                <form method="POST"  enctype="multipart/form-data">
                   {% csrf_token %}
-                  <div class="input-group">
+                  
                     {{ form.conteudo|as_crispy_field }}
                     {{ form.foto|as_crispy_field }}
-                  </div>               
-              </div>
+                              
+              
               <div class="modal-footer">
-                <button class="btn btn-success" type="submit" name="post">Publicar</button>
+                <input  class="btn btn-success"type="submit" value="Salvar">
               </div>
-            </form>
+            </form></div>
             </div>
           </div>
         </div>
@@ -55,6 +56,8 @@
    </div><!--/ row -->
   </div><!--/ container -->
  </section>
+
+ 
 
 <!-- Todos os posts que foram feitos -->
 
@@ -123,7 +126,7 @@
               </span>
               
               <button  type="button" class="btn btn-outline-success">
-                <a href="{%url 'social:publicacao' post.id%}">Comentarios</a></button>
+                <a href="{%url 'social:publi' post.id%}">Comentarios</a></button>
             </span>
                 <!-- <a style="margin-left: 5px;" class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                   Comentários
