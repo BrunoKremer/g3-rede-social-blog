@@ -1,4 +1,4 @@
-from .models import CustomUser
+from .models import CustomUser,Seguir
 from django.db.models.base import Model
 from django.shortcuts import  get_list_or_404, render, redirect
 from django.urls.base import reverse_lazy
@@ -7,6 +7,8 @@ from django.views.generic.edit import FormView
 from .forms import UsuarioForm, UsuarioFormChange
 from Contato.enviar_email import enviar_email_via_gmail
 from social.models import Publicacao
+from django.contrib.auth.models import User
+
  
 #  View para cadastrar os usuários
 class CadastroFormView(generic.CreateView):
@@ -32,4 +34,26 @@ class UserChange(generic.UpdateView):
     template_name = 'registration/edit_user.html'
     success_url = reverse_lazy("social:feed")
     
+def seguir_usuario(request):
+    seguidor = request.user
+    if request.method == 'POST':
+        seguindo_id = request.POST.get('CustomUser.id')
+        seguindo_obj =User.objects.get(id=seguindo_id)
+        
+        if seguidor in seguindo_obj.seguidores.all():
+            seguindo_obj.seguidores.remove(seguidor)
+        else:
+            seguindo_obj.seguidores.add(seguidor)
 
+        seguir , created = Seguir.objects.get_or_create(seguidores=seguidor,seguindo_id=seguindo_id)
+
+        if not created:
+            if seguir.value =='Seguir':
+                seguir.value = 'Não Seguir'
+
+            else:
+                seguir.value = 'Seguir'
+
+            seguir.save()
+
+    return redirect('social:feed')

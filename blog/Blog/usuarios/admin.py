@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .forms import UsuarioFormChange, UsuarioForm
-from .models import CustomUser
+from .models import CustomUser, Seguir
 
 def _autor(self, instance):
     return f'{instance.user.get_full_name()}'
@@ -23,3 +23,5 @@ class CustomUsuarioAdmin(UserAdmin):
         ('Permissões', {'fields':('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Datas Importantes', {'fields':('last_login','date_joined')}),
     )
+
+admin.site.register(Seguir)
