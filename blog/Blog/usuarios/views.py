@@ -21,6 +21,8 @@ class RegistradoView(generic.TemplateView):
 # View do perfil de usuário, pk seria o id do user
 def ProfileView(request, pk):
     usuario = CustomUser.objects.get(pk=pk)
+    email = usuario.email        
+    enviar_email_via_gmail('teste','teste', email)
     return render (request, "registration/profile.html", { "user": usuario})
 
 # View para editar informações do usuário
