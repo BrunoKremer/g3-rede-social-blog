@@ -67,7 +67,7 @@ Blog com artigos sobre programação e tecnologia em geral, integrado a uma Rede
 >>>     Indicações
 >>>     Posts
 >
->>######      Social
+>>######      SOCIAL
 >>>     Likes
 >>>     Publicações
 
