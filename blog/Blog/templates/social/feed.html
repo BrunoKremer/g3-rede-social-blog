@@ -19,7 +19,7 @@
        <div class="media m-0">
         <div class="d-flex mr-3">
          <a href="#"><img class="img-fluid rounded-circle" src="{%static 'img/teste.png' %}"alt="{{user.user}}"></a>
-        </div>
+        </div><!--d-flex-->
         <div class="media-body">
         <!-- Button trigger modal -->
           <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#staticBackdrop">
@@ -33,27 +33,26 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
-              </div>
+              </div><!--modal-header-->
               
               <div class="modal-body">
                 <form method="POST"  enctype="multipart/form-data">
-                  {% csrf_token %}
-                  
+                  {% csrf_token %}             
                     {{ form.conteudo|as_crispy_field }}
                     {{ form.foto|as_crispy_field }}
-                              
-              
               <div class="modal-footer">
                 <input  class="btn btn-success"type="submit" value="Salvar">
-              </div>
-            </form></div>
-            </div>
-          </div>
-        </div>
-         
-        </div>
-       </div><!--/ media -->
-      </div><!--/ cardbox-heading -->  
+              </div><!--modal footer-->
+            </form>
+          </div><!--modal body-->
+            </div><!--modal-content-->
+          </div><!--modal dialog-->
+        </div><!--modal-->
+        </div><!--media-body-->
+        </div><!--media-->
+       </div><!--/ cardbox-heading -->
+      </div><!--cardbox shadow-lg bg-white -->  
+   </div><!--col-lg-6 offset-lg-3-->
    </div><!--/ row -->
   </div><!--/ container -->
  </section><!--Hero-->
@@ -135,35 +134,41 @@
                 <small style="padding: 20px;">{{post.liked.all.count}} Curtida{{post.liked.all.count|pluralize:"s"}} </small>
                
 
-              {% for comment in post.comment_set.all %}
-              <div class="card card-body">
-            <div class="collapse comment__details" id="collapseExample">
-                  
-                  <div class="d-flex mr-3">
-                   
-                   <a href="{% url 'usuarios:profile' comment.usuario.id%}"><img  width="20px" class="img-fluid rounded-circle" src="{{comment.usuario.foto.url}}" alt="{{comment.usuario}}"></a>
-                   
-                  </div>
-  
-  
-                  <small>{{comment.criacao}}</small><br>
-                  <strong><a href="" class="comment__author">{{comment.usuario}}</a></strong>        
-                  <p class="comment__info">
-                    {{comment.comentario}}
-                  </p>
-                
-             {% endfor %}
-            </div>
-              </div>
+              
             </div>
               
       
       
       
            </div>
-           <!-- Modal -->      
-          </div><!--/ cardbox-item --> 
- 
+
+           {% for comment in post.comment_set.all %}
+              
+            <div class="collapse comment__details" id="collapseExample">
+              <div class="card card-body" style="height: 100px;" > 
+                  <div class="d-flex mr-3">
+                   
+                   <a href="{% url 'usuarios:profile' comment.usuario.id%}"><img  width="40px" class="img-fluid rounded-circle" src="{{comment.usuario.foto.url}}" alt="{{comment.usuario}}"></a>
+                   <span class="m-0"> <a href="{% url 'usuarios:profile' comment.usuario.id%}">{{comment.usuario}}</a> </span>
+                    <small><p><i class="icon ion-md-time"></i>{{comment.data}}</p></small>
+                   
+                  </div>
+  
+                  <div class="media-body">
+                    
+                   </div>
+                  
+                        
+                  <p class="comment__info">
+                    {{comment.comentario}}
+                  </p>
+                
+             
+            </div>
+              </div>
+              {% endfor %}
+             
+          </div><!--/ col-lg-6 offset-lg-3 --> 
          </div><!--/ row -->
         </div><!--/ container -->
        
