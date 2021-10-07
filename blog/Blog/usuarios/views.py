@@ -37,7 +37,7 @@ class UserChange(generic.UpdateView):
 def seguir_usuario(request):
     seguidor = request.user
     if request.method == 'POST':
-        seguindo_id = request.POST.get('CustomUser.id')
+        seguindo_id = request.POST.get('CustomUser_id')
         seguindo_obj =User.objects.get(id=seguindo_id)
         
         if seguidor in seguindo_obj.seguidores.all():

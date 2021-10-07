@@ -18,7 +18,7 @@ class CustomUsuarioAdmin(UserAdmin):
     # Demais campos do usuário
     fieldsets = (
         (None, {'fields':('email', 'password')}),
-        ('Informações Pessoais', {'fields':('first_name', 'last_name','telefone', 'ocupacao', 'genero','cidade', 'estado', 'CEP', 'foto')}),
+        ('Informações Pessoais', {'fields':('first_name', 'last_name','telefone', 'ocupacao', 'genero','cidade', 'estado', 'CEP', 'foto', 'seguidores')}),
         ('Links', {'fields':('link_fb', 'link_tt', 'link_ig', 'link_git')}),
         ('Permissões', {'fields':('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Datas Importantes', {'fields':('last_login','date_joined')}),

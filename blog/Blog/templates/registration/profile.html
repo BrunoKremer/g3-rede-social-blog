@@ -49,8 +49,18 @@
 									<h4>{{user.get_full_name }}</h4>
 									<!-- <p class="text-secondary mb-1">{{user.ocupacao}}</p> -->
 									<p class="text-muted font-size-sm">{{user.cidade}}, {{user.estado}}, {{user.CEP}}</p>
-									<button class="btn btn-primary"> TESTE, Follow</button>
-									<button class="btn btn-outline-primary">TESTE, MENSAGEM</button>
+									{%if request.user.id != user.id%}
+									<form action="{% url 'usuarios:seguir' %}" method='POST'>
+										{% csrf_token %}
+										<input type="hidden" name="post_id" value="{{post.id}}">
+										{% if user not in user.seguidores.all %}
+										<a href=""><button  class="btn btn-light" type="submit"><i class="bi bi-heart-fill"></i></button></a>
+										{% else %}
+										<a  href=""><button type="submit" class=" btn-success align-items-center btn"><i class="bi bi-heart-fill"></i></button></a>
+										{% endif %}
+									  </form>
+									
+									{%endif%}
 								</div>
 							</div>
 							<hr class="my-4">
