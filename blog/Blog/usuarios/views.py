@@ -1,6 +1,6 @@
 from .models import CustomUser,Seguir
 from django.db.models.base import Model
-from django.shortcuts import  get_list_or_404, render, redirect
+from django.shortcuts import  get_list_or_404, render, redirect, get_object_or_404
 from django.urls.base import reverse_lazy
 from django.views import generic
 from django.views.generic.edit import FormView
@@ -34,18 +34,18 @@ class UserChange(generic.UpdateView):
     template_name = 'registration/edit_user.html'
     success_url = reverse_lazy("social:feed")
     
-def seguir_usuario(request):
-    seguidor = request.user
+def seguir_usuario(request, pk):
+    seguidor = request.user.id
     if request.method == 'POST':
-        seguindo_id = request.POST.get('CustomUser_id')
-        seguindo_obj =User.objects.get(id=seguindo_id)
+        seguindo_id = CustomUser.objects.get(pk = pk)
+        seguindo_obj =CustomUser.objects.get(id=seguindo_id.id)
         
         if seguidor in seguindo_obj.seguidores.all():
             seguindo_obj.seguidores.remove(seguidor)
         else:
             seguindo_obj.seguidores.add(seguidor)
 
-        seguir , created = Seguir.objects.get_or_create(seguidores=seguidor,seguindo_id=seguindo_id)
+        seguir , created = Seguir.objects.get_or_create(seguidor=seguidor,seguindo_id=seguindo_id.id)
 
         if not created:
             if seguir.value =='Seguir':

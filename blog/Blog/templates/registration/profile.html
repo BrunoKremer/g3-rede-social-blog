@@ -2,7 +2,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-
+{%block title%}{{user.get_full_name}}{%endblock%}
 
 <style>
     body{
@@ -50,13 +50,13 @@
 									<!-- <p class="text-secondary mb-1">{{user.ocupacao}}</p> -->
 									<p class="text-muted font-size-sm">{{user.cidade}}, {{user.estado}}, {{user.CEP}}</p>
 									{%if request.user.id != user.id%}
-									<form action="{% url 'usuarios:seguir' %}" method='POST'>
+									<form action="{% url 'usuarios:seguir' user.id %}" method='POST'>
 										{% csrf_token %}
 										<input type="hidden" name="post_id" value="{{post.id}}">
 										{% if user not in user.seguidores.all %}
-										<a href=""><button  class="btn btn-light" type="submit"><i class="bi bi-heart-fill"></i></button></a>
+										<a href=""><button style="margin-left: 5px;" type="button"  class="btn btn-success"><i  class="bi bi-person-check-fill">Seguir</i></button></a>
 										{% else %}
-										<a  href=""><button type="submit" class=" btn-success align-items-center btn"><i class="bi bi-heart-fill"></i></button></a>
+										<a  href=""><button type="button" class="btn btn-success"><i style="padding-left: 5px;" class="bi bi-person-check-fill">Seguir</i></button></a>
 										{% endif %}
 									  </form>
 									
@@ -79,7 +79,7 @@
 									<h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-envelope-open-fill" viewBox="0 0 24 24">
                                         <path d="M8.941.435a2 2 0 0 0-1.882 0l-6 3.2A2 2 0 0 0 0 5.4v.313l6.709 3.933L8 8.928l1.291.717L16 5.715V5.4a2 2 0 0 0-1.059-1.765l-6-3.2zM16 6.873l-5.693 3.337L16 13.372v-6.5zm-.059 7.611L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516zM0 13.373l5.693-3.163L0 6.873v6.5z"/>
                                       </svg>E-mail</h6>
-									<span class="text-secondary">{{request.user.email}}</span>
+									<span class="text-secondary">{{user.email}}</span>
 								</li>
 								
 
