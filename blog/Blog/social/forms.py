@@ -1,7 +1,7 @@
 
 from django import forms
-from .models import Publicacao
-from comentarios.models import Comentario
+from .models import Comment, Publicacao
+
 
 # Formulário de publicação, onde é solicitado o conteúdo e caso o usuário queira, uma foto
 class Publicacao_form(forms.ModelForm):
@@ -18,11 +18,11 @@ class Publicacao_form(forms.ModelForm):
 # Form de comentário na publicação
 class Comentario_publi(forms.ModelForm):
     class Meta:
-        model = Comentario
-        fields = {'comentario', 'foto'}
+        model = Comment
+        fields = {'comentario'}
         # widgets = {
         #     'comentario': forms.Textarea(attrs={'placeholder': 'Faça um comentário..'}),
         # }
-        labels = {'comentario': '', 'foto': ''}
+        labels = {'comentario':'comentario'}
 
         

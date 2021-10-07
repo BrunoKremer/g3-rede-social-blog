@@ -134,7 +134,29 @@
               </div> 
                 <small style="padding: 20px;">{{post.liked.all.count}} Curtida{{post.liked.all.count|pluralize:"s"}} </small>
                
-      <!-- Modal -->      
+
+              {% for comment in post.comment_set.all %}
+             <!---- <div class="d-flex mr-3">
+                {%if comment.usuario.foto%}
+               <a href="#"><img class="img-fluid rounded-circle" src="{{comment.usuario.foto.url}}" alt="{{post.usuario}}"></a>
+               {%else%}
+                  <img class="img-fluid rounded-circle" src="{%static 'img/teste.png' %}" alt="" srcset="">
+                  {%endif%}
+              </div>-->
+              <div class="comment__details">
+                <small>{{comment.criacao}}</small><br>
+                <strong><a href="{% url 'usuarios:profile' comment.usuario.id%}" class="comment__author">{{comment.usuario}}</a></strong>        
+                <p class="comment__info">
+                  {{comment.comentario}}
+                </p>
+              </div>
+           {% endfor %}
+      
+      
+      
+      
+      
+           <!-- Modal -->      
           </div><!--/ cardbox-item --> 
  
          </div><!--/ row -->

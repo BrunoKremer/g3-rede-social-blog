@@ -5,14 +5,14 @@ from .models import Publicacao,Like
 from django.urls.base import reverse_lazy
 from .forms import Publicacao_form,Comentario_publi
 from usuarios.models import CustomUser
-from comentarios.models import Comentario
+from .models import Comment
 
 # View feed, passamos o formulário de Publicação
 # Data - passamos o model de Publicação
 # Form - Passamos o formulário de Publicação
 def feed(request):
     posts = Publicacao.objects.all()
-    comentarios = Comentario.objects.filter()
+    comentarios = Comment.objects.filter()
     
     if request.method == 'POST':
        form = Publicacao_form(request.POST)
@@ -37,9 +37,9 @@ def comentar_Publicacao(request, id):
     if request.method == 'POST':
         form_comentario = Comentario_publi(request.POST)
         if form_comentario.is_valid():
-            data = Comentario()
+            data = Comment()
             data.comentario = form_comentario.cleaned_data['comentario']
-            data.foto = form_comentario.cleaned_data['foto']
+            # data.foto = form_comentario.cleaned_data['foto']
             data.usuario_id = request.user.id
             data.publicacao_id = post.id
             data.save()
@@ -97,7 +97,7 @@ def like_post(request):
     return redirect('social:feed')
 
 def Publi_detail(request, pk):
-    comentarios = Comentario.objects.filter()
+    comentarios = Comment.objects.filter()
     qtde = 0
 
     for q in comentarios:
