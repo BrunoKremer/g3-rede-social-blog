@@ -1,10 +1,8 @@
-{% extends 'base_social.html' %}
-
-{% load static %}
-{% load crispy_forms_tags %}
+{% extends 'base_social.html' %} {% load static %} {% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/logo.ico' %}">
-   <link rel="stylesheet" href="{% static 'css/style.css' %}" type= 'text/css'>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type='text/css'>
 </head>
 
 {%block main%}
@@ -26,12 +24,12 @@
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-row">
-          <div class="form-group col-md-6">
-            {{ form.first_name|as_crispy_field }}
-          </div>
-          <div class="form-group col-md-6">
-            {{ form.last_name|as_crispy_field }}
-          </div>
+            <div class="form-group col-md-6">
+                {{ form.first_name|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form.last_name|as_crispy_field }}
+            </div>
         </div>
         <div class="form-group">
             {{ form.email|as_crispy_field }}
@@ -40,59 +38,59 @@
             {{ form.telefone|as_crispy_field }}
         </div>
         <div class="form-row">
-          <div class="form-group col-md-4">
-            {{ form.cidade|as_crispy_field }}
-          </div>
-          <div class="form-group col-md-4">
-            {{ form.estado|as_crispy_field }}
-          </div>
-          <div class="form-group col-md-4">
-            {{ form.CEP|as_crispy_field }}
-          </div>
+            <div class="form-group col-md-4">
+                {{ form.cidade|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ form.estado|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ form.CEP|as_crispy_field }}
+            </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-6">
-              {{ form.ocupacao|as_crispy_field }}
+                {{ form.ocupacao|as_crispy_field }}
             </div>
             <div class="form-group col-md-6">
-              {{ form.genero|as_crispy_field }}
+                {{ form.genero|as_crispy_field }}
             </div>
-          </div>
+        </div>
 
         <div class="form-row">
             <div class="form-group col-md-6">
-              {{ form.link_fb|as_crispy_field }}
+                {{ form.link_fb|as_crispy_field }}
             </div>
             <div class="form-group col-md-6">
-              {{ form.link_tt|as_crispy_field }}
+                {{ form.link_tt|as_crispy_field }}
             </div>
-          </div>
+        </div>
 
-          <div class="form-row">
+        <div class="form-row">
             <div class="form-group col-md-6">
-              {{ form.link_git|as_crispy_field }}
+                {{ form.link_git|as_crispy_field }}
             </div>
             <div class="form-group col-md-6">
-              {{ form.link_ig|as_crispy_field }}
+                {{ form.link_ig|as_crispy_field }}
             </div>
-          </div>
+        </div>
 
-          <div class="form-row">
+        <div class="form-row">
             <div class="form-group col-md-6">
-              {{ form.foto|as_crispy_field }}
+                {{ form.foto|as_crispy_field }}
             </div>
-            
-          </div>
-        
-        <p><input  class="btn btn-success"type="submit" value="Salvar"></p>
-      </form>
+
+        </div>
+
+        <p><input class="btn btn-success" type="submit" value="Salvar"></p>
+    </form>
 
 
-  
-  
 
-    
+
+
+
     <!-- <div style="padding:8px ;" class="login-form">
       <form method="POST" action="">
         {% csrf_token %}
@@ -101,14 +99,15 @@
         <p><input  class="btn btn-success"type="submit" value="Salvar"></p>
       </form>
     </div> -->
-  </div> 
+</div>
 {%endblock%}
 
 
 
 
-    
+
 </body>
+
 </html>
 
 
@@ -123,5 +122,3 @@
 
 <!-- {% load static %}
 {% load crispy_forms_tags %}
-
-

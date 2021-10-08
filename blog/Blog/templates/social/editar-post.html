@@ -1,33 +1,30 @@
-{% extends 'base_social.html' %}
-{% load static %}
-{% load crispy_forms_tags %}
-{% block main %}
+{% extends 'base_social.html' %} {% load static %} {% load crispy_forms_tags %} {% block main %}
 
 
 <div class="container-sm" style="padding: 50px;">
-  <h4>Alterar Publicação</h4>
-  <form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="form-group">
-      {{ form.conteudo|as_crispy_field }}
-    </div>
-    <div class="form-group">
-      {{ form.foto|as_crispy_field }}
-    </div>
-    <div class="form-group">
-      <button class="btn btn-success" type="submit" name="post">Salvar alterações</button>
-    </div>
-    
-  </form>
+    <h4>Alterar Publicação</h4>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.conteudo|as_crispy_field }}
+        </div>
+        <div class="form-group">
+            {{ form.foto|as_crispy_field }}
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success" type="submit" name="post">Salvar alterações</button>
+        </div>
+
+    </form>
     <form method="post" action="">
-      
-      <div class="input-group">
-        
-        
-      </div>               
-  </div>
-  
 
-  
+        <div class="input-group">
 
-  {% endblock %}
+
+        </div>
+</div>
+
+
+
+
+{% endblock %}

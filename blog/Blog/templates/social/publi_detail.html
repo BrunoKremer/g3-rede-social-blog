@@ -1,115 +1,108 @@
-{% extends 'base_social.html' %}
-{% load static %}
-{% load crispy_forms_tags %}
-
-
-{%block main%}
+{% extends 'base_social.html' %} {% load static %} {% load crispy_forms_tags %} {%block main%}
 <section style="padding: 1px;" class="hero">
-        
-        <div class="container">
-         <div class="row">	
-         
-          <div class="col-lg-6 offset-lg-3">
-           
-           <div class="cardbox shadow-lg bg-white">
-            
-            <div class="cardbox-heading" style="border-bottom: 1px solid #ccc;">
-        
-             <div class="media m-0">
-              <div class="d-flex mr-3">
-               <a href="#"><img class="img-fluid rounded-circle" src="{{post.usuario.foto.url}}" alt="{{post.usuario}}"></a>
-              </div>
-              <div class="media-body">
-               <span class="m-0">{{post.usuario}}</span>
-               <small><p><i class="icon ion-md-time"></i>{{post.data}}</p></small>
-              </div>
-               <div class="dropdown mr-1">
-                <span class="d-flex justify-content-end dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 offset-lg-3">
+
+                <div class="cardbox shadow-lg bg-white">
+
+                    <div class="cardbox-heading" style="border-bottom: 1px solid #ccc;">
+
+                        <div class="media m-0">
+                            <div class="d-flex mr-3">
+                                <a href="#"><img class="img-fluid rounded-circle" src="{{post.usuario.foto.url}}" alt="{{post.usuario}}"></a>
+                            </div>
+                            <div class="media-body">
+                                <span class="m-0">{{post.usuario}}</span>
+                                <small><p><i class="icon ion-md-time"></i>{{post.data}}</p></small>
+                            </div>
+                            <div class="dropdown mr-1">
+                                <span class="d-flex justify-content-end dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   ...
                 </span>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="{% url 'social:editar-post' post.id %} ">Editar</a>
-                  <a class="dropdown-item" href="{% url 'social:deletar-post' post.id %}">Excluir</a>
-                  
-                </div>
-              </div>
-             </div><!--/ media -->
-            </div><!--/ cardbox-heading -->
-            <div class="cardbox-item"style="padding: 10px;">
-                <p class="card-text">{{post.conteudo|linebreaks}} </p>
-            </div><!--/ cardbox-item --> 
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="{% url 'social:editar-post' post.id %} ">Editar</a>
+                                    <a class="dropdown-item" href="{% url 'social:deletar-post' post.id %}">Excluir</a>
 
-            {% if post.foto %}
-            <div class="cardbox-item">
-             <img class="img-fluid" src="{{post.foto.url}}" alt="Image">
-            </div><!--/ cardbox-item -->
-            {%endif%}
-            <div class="cardbox-item" style="padding: 10px;">
-              <div class="container d-flex">
-                  <form action="{% url 'social:like_post' %}" method='POST'>
-                    {% csrf_token %}
-                    <input type="hidden" name="post_id" value="{{post.id}}">
-                    {% if user not in post.liked.all %}
-                    <a href=""><button  class="btn btn-light" type="submit"><i class="bi bi-heart-fill"></i></button></a>
-                    {% else %}
-                    <a  href=""><button type="submit" class=" btn-success align-items-center btn"><i class="bi bi-heart-fill"></i></button></a>
-                    {% endif %}
-                  </form>
-                
-               
-              <!-- <span class="card-text"><button class="btn btn-success">Like</button></span> -->
-              <span style="margin-left: 5px;">
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ media -->
+                    </div>
+                    <!--/ cardbox-heading -->
+                    <div class="cardbox-item" style="padding: 10px;">
+                        <p class="card-text">{{post.conteudo|linebreaks}} </p>
+                    </div>
+                    <!--/ cardbox-item -->
+
+                    {% if post.foto %}
+                    <div class="cardbox-item">
+                        <img class="img-fluid" src="{{post.foto.url}}" alt="Image">
+                    </div>
+                    <!--/ cardbox-item -->
+                    {%endif%}
+                    <div class="cardbox-item" style="padding: 10px;">
+                        <div class="container d-flex">
+                            <form action="{% url 'social:like_post' %}" method='POST'>
+                                {% csrf_token %}
+                                <input type="hidden" name="post_id" value="{{post.id}}"> {% if user not in post.liked.all %}
+                                <a href=""><button  class="btn btn-light" type="submit"><i class="bi bi-heart-fill"></i></button></a> {% else %}
+                                <a href=""><button type="submit" class=" btn-success align-items-center btn"><i class="bi bi-heart-fill"></i></button></a> {% endif %}
+                            </form>
+
+
+                            <!-- <span class="card-text"><button class="btn btn-success">Like</button></span> -->
+                            <span style="margin-left: 5px;">
                 <button  type="button" class="btn btn-outline-success">
                   <a href="{%url 'social:comentar_post' post.id%}">Comentar</a></button>
               </span>
-              
-              <button  type="button" class="btn btn-outline-success">
+
+                            <button type="button" class="btn btn-outline-success">
                 <a href="{%url 'social:publicacao' post.id%}">Comentar</a></button>
-            </span>
-                <!-- <a style="margin-left: 5px;" class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            </span>
+                            <!-- <a style="margin-left: 5px;" class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                   Comentários
                 </a> -->
-              </div> 
-                <small style="padding: 20px;">{{post.liked.all.count}} Curtida{{post.liked.all.count|pluralize:"s"}} </small>
-               
-      <!-- Modal -->      
-          </div><!--/ cardbox-item --> 
- 
-         </div><!--/ row -->
-        </div><!--/ container -->
-       
-        
-       </section>
+                        </div>
+                        <small style="padding: 20px;">{{post.liked.all.count}} Curtida{{post.liked.all.count|pluralize:"s"}} </small>
 
-     {%endblock%}
+                        <!-- Modal -->
+                    </div>
+                    <!--/ cardbox-item -->
 
-   
+                </div>
+                <!--/ row -->
+            </div>
+            <!--/ container -->
 
-{%block content%}
+
+</section>
+
+{%endblock%} {%block content%}
 
 
 <!-- Comentarios -->
 <h1 class="container-sm">{{qtde}} Comentário </h1>
 
 
-<div class="card container-sm " >    
-    
-      {% if post in comentarios %}
-      {%for comentario in comentarios%}
-        <div class="card-body">
-          <h5 class="card-title">{{comentario.usuario}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{comentario.data}}</h6>
-          <p style="border-bottom: 1px solid #ccc;" class="card-text">{{comentario.comentario}}</p>
-        </div>
-        {%endfor%}
-      {%else%}
-        <h1>Não tem comentários</h1>
-      {%endif%}
-      
-    
-  </div>
+<div class="card container-sm ">
+
+    {% if post in comentarios %} {%for comentario in comentarios%}
+    <div class="card-body">
+        <h5 class="card-title">{{comentario.usuario}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{comentario.data}}</h6>
+        <p style="border-bottom: 1px solid #ccc;" class="card-text">{{comentario.comentario}}</p>
+    </div>
+    {%endfor%} {%else%}
+    <h1>Não tem comentários</h1>
+    {%endif%}
 
 
-      
-  
+</div>
+
+
+
+
 {%endblock%}

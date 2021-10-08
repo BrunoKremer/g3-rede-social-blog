@@ -1,46 +1,33 @@
-{% extends 'base_social.html' %}
-{% load static %}
-{% load crispy_forms_tags %}
-{% block main %}
+{% extends 'base_social.html' %} {% load static %} {% load crispy_forms_tags %} {% block main %}
 
 
 <form action='{% url "social:comentar_post" post.id  %}' method="POST">
-    <div >
+    <div>
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">Faça um comentário</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Faça um comentário</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            {{ form_comentario.comentario|as_crispy_field }}
+
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" type="submit" name="post">Comentar</button>
+                </div>
+                </form>
             </div>
-            <div class="modal-body">
-              <form method="post" action="">
-                {% csrf_token %}
-                <div class="input-group">
-                  {{ form_comentario.comentario|as_crispy_field }}
-                  
-                </div>               
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-success" type="submit" name="post">Comentar</button>
-            </div>
-          </form>
-          </div>
         </div>
-      </div> 
-    
-    
+    </div>
+
+
 </form>
 
-<a href='{% url "social:feed"   %}'><button>voltar</button></a>
-
-    
-{%endblock%}
-
-
-
-
-
-
-
+<a href='{% url "social:feed"   %}'><button>voltar</button></a> {%endblock%}

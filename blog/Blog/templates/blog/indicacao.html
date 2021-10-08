@@ -1,51 +1,44 @@
-
-{% extends "base.html" %}
-{% load crispy_forms_tags %}
-{% load static %}
-
-{% block title %}Infocode | Indicações{% endblock %}
-
-{% block main %}
+ {% extends "base.html" %} {% load crispy_forms_tags %} {% load static %} {% block title %}Infocode | Indicações{% endblock %} {% block main %}
 
 <div class="container-sm">
-<h2 class="text-center">Indicações</h2>
+    <h2 class="text-center">Indicações</h2>
 
-<!-- Slide de indicações -->
-<article class="c-carousel c-carousel--responsive align-items-center text-center" style=" margin-top: 75px;">
-  <div class="c-carousel__slides js-carousel--responsive " style="margin-left: 130px;">
-    {%for ind in indicacao %}
-    
-        <article class="c-carousel__slide">
-            <div class="card" style="width: 15rem; min-height: 38rem; max-height: 38rem;" >
-                <img src="{{ind.foto.url}}" class="card-img-top" alt="..." style="min-height: 20rem;">
-                <div class="card-body">
-                  <h5 class="card-title">{{ind.titulo}}</h5>
-                  <!-- <p class="card-text">{{ind.sinopse|truncatewords:16}}</p> -->
-                  <p class="card-text">{{ind.categoria}}</p>
-                  <a href="{% url 'main:indicacao_detail' ind.id %}" class="btn btn-outline-success">Ver mais</a>
+    <!-- Slide de indicações -->
+    <article class="c-carousel c-carousel--responsive align-items-center text-center" style=" margin-top: 75px;">
+        <div class="c-carousel__slides js-carousel--responsive " style="margin-left: 130px;">
+            {%for ind in indicacao %}
+
+            <article class="c-carousel__slide">
+                <div class="card" style="width: 15rem; min-height: 38rem; max-height: 38rem;">
+                    <img src="{{ind.foto.url}}" class="card-img-top" alt="..." style="min-height: 20rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ind.titulo}}</h5>
+                        <!-- <p class="card-text">{{ind.sinopse|truncatewords:16}}</p> -->
+                        <p class="card-text">{{ind.categoria}}</p>
+                        <a href="{% url 'main:indicacao_detail' ind.id %}" class="btn btn-outline-success">Ver mais</a>
+                    </div>
                 </div>
-              </div>
-        </article>
-        {%endfor%}
-  </div>
-  <button class="js-carousel--responsive-prev btn" aria-label="Anterior">
+            </article>
+            {%endfor%}
+        </div>
+        <button class="js-carousel--responsive-prev btn" aria-label="Anterior">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
         <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
       </svg>
   </button>
 
-  <button class="js-carousel--responsive-next btn" aria-label="Próximo">
+        <button class="js-carousel--responsive-next btn" aria-label="Próximo">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
         <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
       </svg>
   </button>
-  <div class="js-carousel--responsive-dots" role="tablist"></div>
-</article>
- 
+        <div class="js-carousel--responsive-dots" role="tablist"></div>
+    </article>
+
 </div>
 
 
 
 
-         
+
 {% endblock %}
