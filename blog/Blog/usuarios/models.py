@@ -20,7 +20,6 @@ class CustomUser(User):
     link_git = models.CharField(null=True, blank=True, max_length=255)
     link_tt = models.CharField(null=True, blank=True, max_length=255)
     link_ig = models.CharField(null=True, blank=True, max_length=255)
-    seguidores = models.ManyToManyField(User,blank=True,related_name='Seguidores')
     ocupacao_choices = [
         ('e', 'Estudante'), ('t', 'Trabalha na área')
         ]
@@ -37,9 +36,9 @@ SEGUIR_OPCAO = (
     ('n','Não Seguir')
 )
 class Seguir(models.Model):
-    seguidor = models.ForeignKey(User,on_delete=models.CASCADE,related_name='seguidor')
-    seguindo = models.ForeignKey(CustomUser,on_delete=models.CASCADE,related_name='seguindo')
-    value = models.CharField(choices=SEGUIR_OPCAO,default='Segui',max_length=10)
+    user = models.OneToOneField(CustomUser,blank=True,related_name='seguido')
+    seguidores = models.ManyToManyField(CustomUser, related_name='seguidores')
+    value = models.CharField(choices=SEGUIR_OPCAO,default='Seguir',max_length=10)
 
     class Meta:
-        unique_together= [['seguidor' ,'seguindo']]
+        unique_together= [['seguidores']]

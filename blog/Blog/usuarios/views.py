@@ -38,24 +38,10 @@ class UserChange(generic.UpdateView):
     
 def seguir_usuario(request, pk):
     seguidor = request.user.id
+    seguindo = get_list_or_404(CustomUser)
     if request.method == 'POST':
-        seguindo_id = CustomUser.objects.get(pk = pk)
-        seguindo_obj =CustomUser.objects.get(id=seguindo_id.id)
-        
-        if seguidor in seguindo_obj.seguidores.all():
-            seguindo_obj.seguidores.remove(seguidor)
+        if seguidor in seguindo.seguidores.all():
+            seguindo.seguidores.remove(seguidor)
         else:
-            seguindo_obj.seguidores.add(seguidor)
-
-        seguir , created = Seguir.objects.get_or_create(seguidor=seguidor,seguindo_id=seguindo_id.id)
-
-        if not created:
-            if seguir.value =='Seguir':
-                seguir.value = 'Não Seguir'
-
-            else:
-                seguir.value = 'Seguir'
-
-            seguir.save()
-
+            seguindo.seguidores.add(seguidor)
     return redirect('social:feed')
