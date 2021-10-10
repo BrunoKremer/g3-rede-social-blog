@@ -5,15 +5,14 @@
 
     <!-- Slide de indicações -->
     <article class="c-carousel c-carousel--responsive align-items-center text-center" style=" margin-top: 75px;">
-        <div class="c-carousel__slides js-carousel--responsive " style="margin-left: 130px;">
+        <div class="c-carousel__slides js-carousel--responsive ">
             {%for ind in indicacao %}
 
-            <article class="c-carousel__slide">
-                <div class="card" style="width: 30rem; min-height: 38rem; max-height: 38rem;">
+            <article class="c-carousel__slide align-items-center" style="padding: 20px;" >
+                <div class="card" style="width: 25rem; min-height: 38rem; max-height: 38rem;">
                     <img src="{{ind.foto.url}}" class="img-fluid img-thumbnail card-img-top" alt="..." style="min-height: 20rem; max-height: 20px;">
                     <div class="card-body">
                         <h5 class="card-title">{{ind.titulo}}</h5>
-                        <!-- <p class="card-text">{{ind.sinopse|truncatewords:16}}</p> -->
                         <p class="card-text">{{ind.categoria}}</p>
                         <a href="{% url 'main:indicacao_detail' ind.id %}" class="btn btn-outline-success">Ver mais</a>
                     </div>
