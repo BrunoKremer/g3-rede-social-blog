@@ -81,7 +81,7 @@ class Indicacao(models.Model):
 # Models para os usuários deixarem comentários nos artigos
 
 class Comentarios(models.Model):
-    usuario=models.ForeignKey(User,on_delete=models.CASCADE, null=True)
+    usuario=models.ForeignKey(CustomUser,on_delete=models.CASCADE, null=True)
     email =models.CharField(max_length=255, null=True)
     post = models.ForeignKey(Post, on_delete = models.CASCADE, related_name ='comentarios')
     comentario = models.TextField()
@@ -95,3 +95,13 @@ class Comentarios(models.Model):
 
     def __str__(self):
         return self.usuario.first_name
+
+# class Comment(models.Model):
+#     usuario = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+#     publicacao = models.ForeignKey(Publicacao,on_delete=models.CASCADE)
+#     comentario = models.TextField(null=True,blank=True)
+#     criacao = models.DateTimeField(auto_now_add=True)
+#     id = models.UUIDField(default=uuid.uuid4,unique=True,primary_key=True,editable=False)
+
+#     def __str__(self):
+#         return self.comentario
