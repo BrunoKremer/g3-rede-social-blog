@@ -11,12 +11,15 @@
     </div>
     <!-- Botões de indicação -->
     <div class="
-      d-flex
+    d-inline-flex
+    list-group-horizontal-sm
       justify-content-center
-      list-group-horizontal list-group
+    list-group
       btn-group
       categorias
-    ">
+      container-sm
+    " role="group">
+
         {% for cat in categoria %}
         <form id="searchForm" class="
         categorias
@@ -35,9 +38,9 @@
             </ul>
         </form>
         {% endfor %}
-        <li class="nav-link align-items-center">
+        <!-- <li class="nav-link align-items-center">
             <a class="btn-sm btn btn-outline-success" href="{% url 'main:indicacao'%}">Indicações</a>
-        </li>
+        </li> -->
     </div>
 </div>
 

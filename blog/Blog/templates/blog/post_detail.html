@@ -5,7 +5,7 @@
     {% if post.subtitulo %}
     <h6 class="text-center">{{post.subtitulo}}</h6>
     {%endif%} {% if post.foto %}
-    <img src="{{post.foto.url}}" class='img-fluid' alt="" srcset="" style="width: 1100px; height: 700px;"> {%endif%}
+    <img src="{{post.foto.url}}" class='img-fluid img-thumbnail' alt="" srcset="" > {%endif%}
 
     <p class="card-text">{{post.conteúdo|linebreaks}}</p>
 </div>
@@ -35,12 +35,10 @@
 {% endif %}
 
 <!-- Comentarios -->
-{% if post not in comentario.comentarios.all %}
-<h1>Não tem comentários</h1>
-{%else%}
+
 <h1 class="container-sm">{{qtde}} Comentário </h1>
 <div class="card container-sm ">
-    {%for comentario in comentarios%}
+    {%for comentario in post.comentarios_set.all%}
 
     <div class="card-body">
         <h5 class="card-title">{{comentario.usuario}}</h5>
@@ -48,7 +46,7 @@
         <p style="border-bottom: 1px solid #ccc;" class="card-text">{{comentario.comentario}}</p>
     </div>
 
-    {%endfor%} {%endif%}
+    {%endfor%} 
 </div>
 
 <div class="container" style="margin-top: 25px;">

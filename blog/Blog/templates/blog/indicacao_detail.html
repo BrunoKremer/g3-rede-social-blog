@@ -2,12 +2,12 @@
 <!-- Indicação -->
 <div class="container">
     <h1 class="text-center" style="margin-top: 25px;">{{indicacao.titulo}}</h1>
-    <div class="row" style="margin-top: 25px;">
-        <div class="col-4">
+    <div class="row" style="margin-top: 25px; padding: 5%;">
+        <div class="">
             {% if indicacao.foto %}
-            <img src="{{indicacao.foto.url}}" class='img-fluid' alt="" srcset="" style="width: 500; height: 500px;"> {%endif%}
+            <img src="{{indicacao.foto.url}}" class="img-fluid img-thumbnail" alt="" srcset="" style="margin-top: 20px;" > {%endif%}
         </div>
-        <div class="col-8">
+        <div class="">
             <p class="card-text">{{indicacao.sinopse|linebreaks}}</p>
             <p class="card-text">Autor: {{indicacao.autor}}</p>
             <p class="card-text">Você pode adquirir <a class="stretched-link text-success" href="{{indicacao.link}}">clicando aqui  </a></p>
