@@ -36,9 +36,9 @@ SEGUIR_OPCAO = (
     ('n','Não Seguir')
 )
 class Seguir(models.Model):
-    user = models.OneToOneField(CustomUser,blank=True,related_name='seguido')
+    user = models.OneToOneField(CustomUser,null=True ,blank=True,related_name='seguido',on_delete=models.CASCADE)
     seguidores = models.ManyToManyField(CustomUser, related_name='seguidores')
     value = models.CharField(choices=SEGUIR_OPCAO,default='Seguir',max_length=10)
 
-    class Meta:
-        unique_together= [['seguidores']]
+    # class Meta:
+    #     unique_together= [['seguidores','user']]
