@@ -4,7 +4,7 @@ from .forms import ComentariosForm
 from django.shortcuts import render, get_object_or_404, redirect, get_list_or_404
 from django.http import HttpResponse, request, response
 from django.db.models import Q
-from .models import Indicacao, Post, Categoria, Comentarios, Curtir
+from .models import Indicacao, Post, Categoria, Comentarios, Curtir, Reviews
 from django.core.paginator import Paginator
 from django.views import generic
 from django.urls import reverse_lazy
@@ -41,6 +41,7 @@ def home(request):
 
 def PostDetailView(request, pk):
     post = get_object_or_404(Post,pk=pk)
+    reviews = Reviews.objects.filter()
     comentarios = Comentarios.objects.filter()
     qtde = 0
 
@@ -59,7 +60,7 @@ def PostDetailView(request, pk):
     else:
         form = ComentariosForm()
 
-    context = {"post": post, 'form':form, 'comentarios':comentarios, 'qtde':qtde}
+    context = {"post": post, 'form':form, 'comentarios':comentarios, 'qtde':qtde, 'reviews':reviews}
     return render (request, 'blog/post_detail.html', context)
 
 def curtir_post(request):

@@ -5,6 +5,7 @@ from django.db.models.deletion import CASCADE
 from django.db.models.fields.related import ManyToManyField
 from usuarios.models import CustomUser
 from django.contrib.auth.models import User
+import uuid
 
 # Model para cadastrarmos as categorias dos artigos
 
@@ -95,6 +96,18 @@ class Comentarios(models.Model):
 
     def __str__(self):
         return self.usuario.first_name
+
+
+class Reviews(models.Model):
+    usuario = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+    publicacao = models.ForeignKey(Post,on_delete=models.CASCADE)
+    comentario = models.TextField(null=True,blank=True)
+    criacao = models.DateTimeField(auto_now_add=True)
+    id = models.UUIDField(default=uuid.uuid4,unique=True,primary_key=True,editable=False)
+
+    def __str__(self):
+        return self.comentario
+
 
 # class Comment(models.Model):
 #     usuario = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
