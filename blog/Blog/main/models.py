@@ -103,7 +103,7 @@ class Reviews(models.Model):
     publicacao = models.ForeignKey(Post,on_delete=models.CASCADE)
     comentario = models.TextField(null=True,blank=True)
     criacao = models.DateTimeField(auto_now_add=True)
-    id = models.UUIDField(default=uuid.uuid4,unique=True,primary_key=True,editable=False)
+    
 
     def __str__(self):
         return self.comentario

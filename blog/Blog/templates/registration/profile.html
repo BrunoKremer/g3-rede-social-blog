@@ -47,30 +47,13 @@
                                     {{user.cidade}}, {{user.estado}}, {{user.CEP}}
                                 </p>
                                 {%if request.user.id != user.id%}
-                                <form action="{% url 'usuarios:seguir' user.id %}" method="POST">
+                                <form action="{% url 'usuarios:profile' %}" method="POST">
                                     {% csrf_token %}
-                                    <input type="hidden" name="post_id" value="{{post.id}}" /> {% if user not in user.seguidores.all %}
-                                    <a href=""><button
-                      style="margin-left: 5px"
-                      type="button"
-                      class="btn btn-success"
-                    >
-                      <i class="bi bi-person-check-fill">Seguir</i>
-                    </button>
-                  </form>
-                    </a
-                  >
-                  {% else %}
-                  <a href=""
-                    ><button type="button" class="btn btn-success">
-                      <i
-                        style="padding-left: 5px"
-                        class="bi bi-person-check-fill"
-                        >Seguir</i
-                      >
-                    </button></a
-                  >
-                  {% endif %}
+                                    <button>Seguir</button>
+                                     
+                                    
+                                </form>
+                   
                 
 
                 {%endif%}

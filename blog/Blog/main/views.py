@@ -52,11 +52,12 @@ def PostDetailView(request, pk):
     if request.method == 'POST':
         form = ComentariosForm(request.POST)
         if form.is_valid():
-            data = Comentarios()
+            data = Reviews()
             data.usuario_id = request.user.id
             data.comentario = form.cleaned_data['comentario']
-            data.post_id = pk
+            data.publicacao_id = post.id
             data.save()
+            return redirect("main:post")
     else:
         form = ComentariosForm()
 
@@ -84,7 +85,7 @@ def curtir_post(request):
         
         curtir.save()
 
-    return redirect('main:post')
+    return redirect("main:post")
    
    
 # View para todas indicações

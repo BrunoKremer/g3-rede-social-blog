@@ -34,7 +34,32 @@
 </div>
 {% endif %}
 {% for review in post.reviews_set.all %}
-{{review}}
+<div class="comment__details container"  style="margin-bottom: 10px;">
+    <div class="card card-body" style="height: 140px;">
+        <div class="cardbox-heading">
+
+            <div class="media m-0">
+
+                
+                <div class="media-body">
+                    <span class="m-0"> <a href="{% url 'usuarios:profile' review.usuario.id%}">{{review.usuario}}</a> </span>
+                    <small><p><i class="icon ion-md-time"></i>{{review.criacao}}</p></small>
+                </div>
+
+            </div>
+            <!--/ media -->
+        </div>
+        <!--/ cardbox-heading -->
+        <div class="cardbox-item">
+            <p class="card-text">{{review.comentario|linebreaks}} </p>
+        </div>
+        <!--/ cardbox-item -->
+
+
+    </div>
+    <!--card-->
+</div>
+<!--collapse-->
 {% endfor %}
 
 <!-- Comentarios -->

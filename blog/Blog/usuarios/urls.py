@@ -20,5 +20,4 @@ urlpatterns = [
     # View para editar informações de usuários
     path('edit/<int:pk>', views.UserChange.as_view(), name='edit'),
 
-    path('seguir/<int:pk>', views.seguir_usuario, name='seguir'),
 ]           

@@ -1,0 +1,25 @@
+{% extends 'base_social.html' %} {% load static %} {% load crispy_forms_tags %} {%block main%}
+
+<div class="container">
+    
+    
+    {%for user in usuarios%}
+
+    <div class="row row-cols-6 row-cols-md-3">
+        <div class="col mb-12" style="width: 250px;" >
+          <div class="card">
+            <img src="{{user.foto.url}}" class="card-img-top img-fluid img-thumbnail" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{user.get_full_name}}</h5>
+             
+                  <a href="">Ver perfil</a>
+              
+            </div>
+          </div>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+
+
+{%endblock%}

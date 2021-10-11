@@ -32,14 +32,11 @@ class CustomUser(User):
 
 
 
-SEGUIR_OPCAO = (
-    ('s','Seguir'),
-    ('n','Não Seguir')
-)
+
 class Seguir(models.Model):
     user = models.OneToOneField(CustomUser,null=True ,blank=True,related_name='seguido',on_delete=models.CASCADE)
     seguidores = models.ManyToManyField(CustomUser, related_name='seguidor')
-    value = models.CharField(choices=SEGUIR_OPCAO,default='Seguir',max_length=10)
+    
 
-    # class Meta:
-    #     unique_together= [['seguidores','user']]
+    def __str__(self):
+        return self.first_name

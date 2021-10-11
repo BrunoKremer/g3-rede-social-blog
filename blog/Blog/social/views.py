@@ -2,10 +2,12 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse, request, response
 from django.views import generic
 from .models import Publicacao,Like
+from django.shortcuts import  get_list_or_404
 from django.urls.base import reverse_lazy
 from .forms import Publicacao_form,Comentario_publi
 from usuarios.models import CustomUser
 from .models import Comment
+from random import choices
 
 # View feed, passamos o formulário de Publicação
 # Data - passamos o model de Publicação
@@ -13,6 +15,7 @@ from .models import Comment
 def feed(request):
     posts = Publicacao.objects.all()
     comentarios = Comment.objects.filter()
+    
     
     if request.method == 'POST':
        form = Publicacao_form(request.POST)
@@ -25,10 +28,14 @@ def feed(request):
            data.save()
     else:
         form = Publicacao_form()
-    context = {"posts":posts, "form":form,'comentarios':comentarios }
+    context = {"posts":posts, "form":form,'comentarios':comentarios, 'usuarios':usuarios }
     return render (request, "social/feed.html", context)
 
 
+def usuarios(request):
+    usuarios = get_list_or_404(CustomUser)
+    context = {'usuarios':usuarios }
+    return render (request, "social/usuarios.html", context)
 # View para o usuário comentar alguma publicação
 # Redireciona ele para uma página e quando ele realizar o comentário, volta para o FEED
 # Data - Passamos o model Comentário

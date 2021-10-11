@@ -20,7 +20,7 @@ urlpatterns = [
     # Url para comentar POST escolhido pelo usuário
     path('comentar_post/<str:id>/', views.comentar_Publicacao, name='comentar_post'),
     # Url para ver POST completo(comentários) escolhido pelo usuário
-    path('publicacao/<str:pk>/', views.Publi_detail, name='publicacao'),
+    path('usuarios/', views.usuarios, name='usuarios'),
 
     path('like/', views.like_post, name='like_post'),
     

@@ -27,6 +27,7 @@ def ProfileView(request, pk):
     usuario = CustomUser.objects.get(pk=pk)
     email = usuario.email   
     enviar_email_via_gmail('Bem-vindo à InfoCode', "teste", email)
+    
     return render (request, "registration/profile.html", { "user": usuario})
 
 # View para editar informações do usuário
@@ -36,12 +37,3 @@ class UserChange(generic.UpdateView):
     template_name = 'registration/edit_user.html'
     success_url = reverse_lazy("social:feed")
     
-def seguir_usuario(request, pk):
-    seguidor = request.user.id
-    seguindo = get_list_or_404(CustomUser)
-    if request.method == 'POST':
-        if seguidor in seguindo.seguidores.all():
-            seguindo.seguidores.remove(seguidor)
-        else:
-            seguindo.seguidores.add(seguidor)
-    return redirect('social:feed')

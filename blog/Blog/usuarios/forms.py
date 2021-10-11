@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth import get_user_model
-from .models import CustomUser
+from .models import CustomUser, Seguir
 from django import forms
 
 # Formulário para cadastrar usuário
