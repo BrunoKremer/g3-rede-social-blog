@@ -157,19 +157,19 @@ Blog com artigos sobre programação e tecnologia em geral, integrado a uma Rede
 
 ####    Antônio Bruno Kremer Lamim - Líder
         Desenvolvimento Front-end e Back-end
-        brunokremer022@gmail.com +55 (47) 9 9903-3958
+        brunokremer022@gmail.com | +55 (47) 9 9903-3958
 
 ####    Evanildo Batista - DBA
         Desenvolvimento de Banco de Dados
-        niko.batista@hotmail.com +55 (47) 9 9925-2598
+        niko.batista@hotmail.com | +55 (47) 9 9925-2598
 
 ####    Jean Carlos P. de F. dos Santos - Conteúdo
-        Desenvolvimento Back-end e pesquisa de conteúdo
-        Jeancarlossantos12@gmail.com +55 (47) 9 9214-5877
+        Desenvolvimento Back-end e testes.
+        Jeancarlossantos12@gmail.com | +55 (47) 9 9214-5877
 
 ####    Luan Gabriel - Conteúdo
         Auxilio na pesquisa e inclusão de conteúdos
-        luangabrielfaustonobrac@gmail.com +55 (47) 9 9154-3131
+        luangabrielfaustonobrac@gmail.com | +55 (47) 9 9154-3131
 
 #### Tarefas em aberto
 
