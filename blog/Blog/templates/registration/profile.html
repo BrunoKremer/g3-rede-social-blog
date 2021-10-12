@@ -29,7 +29,9 @@
 <!-- <p> Olá,{{ request.user.first_name }} -->
 
 {% if request.user.is_authenticated %}
-
+{% for publicacao in user.publicacao_set.all %}
+{{publicacao.conteudo}}
+{% endfor %}
 <div class="container" style="margin-top: 50px">
     <div class="main-body">
         <div class="row">
