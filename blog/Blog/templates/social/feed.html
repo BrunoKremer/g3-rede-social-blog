@@ -94,7 +94,7 @@
                                 <img class="img-fluid rounded-circle" src="{%static 'img/teste.png' %}" alt="" srcset=""> {%endif%}
                             </div>
                             <div class="media-body">
-                                <span class="m-0"> <a href="{% url 'usuarios:profile' post.usuario.id%}">{{post.usuario}}</a> </span>
+                                <span class="m-0"> <a href='{% url "usuarios:profile" post.usuario.id%}'>{{post.usuario}}</a> </span>
                                 <small><p><i class="icon ion-md-time"></i>{{post.data}}</p></small>
                             </div>
                             <div class="dropdown mr-1">
