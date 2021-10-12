@@ -37,3 +37,10 @@ class UserChange(generic.UpdateView):
     template_name = 'registration/edit_user.html'
     success_url = reverse_lazy("social:feed")
     
+def seguir_usuario(request):
+    user = get_object_or_404()
+    user.seguir_id = request.user.id
+    user.seguidores.Seguidores.add(request.user.id)
+
+    user.save()
+    return redirect("social:feed")

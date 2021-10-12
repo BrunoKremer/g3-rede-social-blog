@@ -49,9 +49,9 @@
                                     {{user.cidade}}, {{user.estado}}, {{user.CEP}}
                                 </p>
                                 {%if request.user.id != user.id%}
-                                <form action="{% url 'usuarios:profile' user.id %}" method="POST">
+                                <form action="{% url 'usuarios:seguir'%}" method="POST">
                                     {% csrf_token %}
-                                    <button>Seguir</button>
+                                    <button type="submit">Seguir</button>
                                      
                                     
                                 </form>

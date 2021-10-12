@@ -28,7 +28,8 @@
 
 ## Descrição
 
-Blog com artigos sobre programação e tecnologia em geral, integrado a uma Rede Social, que tem o intuito de atingir a comunidade tecnológica, incentivando a propagação de conteúdo, compartilhamento de experiências e expansão de Networking. Nosso site foi desenvolvido em Python, Django, Html, Css e MySQL e as principais bibliotecas que utilizamos foram bootstrap, djangorestframework, django-crispy-forms e django-localflavor que nos permitem fazer o seguinte: Djangorestframework nos permite fazer a construção da nossa API, com bootstrap podemos fazer a configuração geral da parte de front end possibilitando preparar o layout para se adequar a vários tamanhos de tela, com Djangolocalflavor podemos fazer as configurações gerais do nosso site e com Djangocrispyforms fazemos a construção melhorada dos nossos forms.
+Blog com artigos sobre programação e tecnologia em geral, integrado a uma Rede Social, que tem o intuito de atingir a comunidade tecnológica, incentivando a propagação de conteúdo, compartilhamento de experiências e expansão de Networking.
+Nosso site foi desenvolvido em Python, Django, Html, Css e MySQL e as principais bibliotecas que utilizamos foram bootstrap, djangorestframework, django-crispy-forms e django-localflavor que nos permitem fazer o seguinte: Djangorestframework nos permite fazer a construção da nossa API, com bootstrap podemos fazer a configuração geral da parte de front end possibilitando preparar o layout para se adequar a vários tamanhos de tela, com Djangolocalflavor podemos fazer as configurações gerais do nosso site e com Djangocrispyforms fazemos a construção melhorada dos nossos forms.
 
 ## Layout 
 
