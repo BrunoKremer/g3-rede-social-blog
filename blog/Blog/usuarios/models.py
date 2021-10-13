@@ -20,7 +20,8 @@ class CustomUser(User):
     link_git = models.CharField(null=True, blank=True, max_length=255)
     link_tt = models.CharField(null=True, blank=True, max_length=255)
     link_ig = models.CharField(null=True, blank=True, max_length=255)
-    seguindo = models.ManyToManyField(User,blank=True,related_name='Seguidores')
+    seguidores = models.ManyToManyField(User, related_name='seguidores')
+
     ocupacao_choices = [
         ('Estudante', 'Estudante'), ('Trabalha na área', 'Trabalha na área')
         ]
@@ -33,8 +34,11 @@ class CustomUser(User):
 
 
 
-class Seguir(models.Model):
-    user = models.OneToOneField(CustomUser,null=True ,blank=True,related_name='seguido',on_delete=models.CASCADE)
-    
-    seguidores = models.ManyToManyField(CustomUser, related_name='seguidor')
+
+# class Seguir(models.Model):
+#     user = models.OneToOneField(User,null=True ,blank=True,related_name='seguidor',on_delete=models.CASCADE)
+
+#     def __str__(self):
+#         return str(self.user)
+
 

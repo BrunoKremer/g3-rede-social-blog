@@ -1,4 +1,4 @@
-from .models import CustomUser,Seguir
+from .models import CustomUser
 from django.db.models.base import Model
 from django.shortcuts import  get_list_or_404, render, redirect, get_object_or_404
 from django.urls.base import reverse_lazy
@@ -37,21 +37,27 @@ class UserChange(generic.UpdateView):
     template_name = 'registration/edit_user.html'
     success_url = reverse_lazy("social:feed")
     
+# def seguir_usuario(request, id):
+#     try:
+#         print(request.user.seguidores, "print")
+#     except Exception as e:
+#         print(e, "print")
+#         seguir = Seguir.objects.create(user=request.user)
+#         seguir.seguidores.add(get_object_or_404(User, id=id))
+#     return redirect("social:feed")
+    
+#     # try:
+#     #     request.user.seguidores.seguidores.add(get_object_or_404(User, id = id))
+
+#     # except Exception as e:
+#     #     print(e, "print Aqui")
+#     #     seguir = Seguir.objects.create(user = request.user)
+#     #     seguir.seguidores.add(get_object_or_404(User, id=id)) 
+#     # return redirect("social:feed")
+
 def seguir_usuario(request, id):
-    user = request.user
-    if request.method == 'POST':
-        user_id = CustomUser.objects.get(id=id)
-
-
-
-    seguir = Seguir.objects.get_or_create(
-        user = user, seguidores = user_id
-    )
-    seguir.save()
-
+    request.user.seguidores.add(get_object_or_404(CustomUser, id=id))
     return redirect("social:feed")
-
-
 
 
 

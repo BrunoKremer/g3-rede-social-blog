@@ -17,6 +17,7 @@ class Publicacao(models.Model):
     class Meta:
         verbose_name = 'Publicação'
         verbose_name_plural = 'Publicações'
+        ordering = ['-data']
 
     def __str__(self):
         return self.usuario.first_name
@@ -46,4 +47,8 @@ class Comment(models.Model):
     def __str__(self):
         return self.comentario
 
+    class Meta:
+        verbose_name = 'Comentario'
+        verbose_name_plural = 'Comentários'
+        ordering = ['-criacao']
 
