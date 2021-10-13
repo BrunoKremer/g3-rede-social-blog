@@ -7,8 +7,10 @@
       <div class="col mb-4"style = "padding:20px">
         <div class="card">
           <div class="media m-0"  style="border-bottom: 1px solid #ccc; padding: 10px;">
-              <div class="d-flex mr-3">               
-                  <a href="#"><img class="img-fluid rounded-circle" src="{{user.foto.url}}" alt=""></a>              
+              <div class="d-flex mr-3"> 
+                {%if user.foto%}         
+                  <a href="#"><img class="img-fluid rounded-circle" src="{{user.foto.url}}" alt=""></a>  
+                {%endif%}            
               </div>
               <div class="media-body">
                   <span class="m-0"> <a href="{% url 'usuarios:profile' user.id%}">{{user.get_full_name}}</a> </span>
