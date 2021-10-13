@@ -35,5 +35,6 @@ class CustomUser(User):
 
 class Seguir(models.Model):
     user = models.OneToOneField(CustomUser,null=True ,blank=True,related_name='seguido',on_delete=models.CASCADE)
+    
     seguidores = models.ManyToManyField(CustomUser, related_name='seguidor')
 
