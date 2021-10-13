@@ -164,11 +164,11 @@ Nosso site foi desenvolvido em Python, Django, Html, Css e MySQL e as principais
         Desenvolvimento de Banco de Dados
         niko.batista@hotmail.com | +55 (47) 9 9925-2598
 
-####    Jean Carlos P. de F. dos Santos - Conteúdo
+####    Jean Carlos P. de F. dos Santos - Back-end e testes
         Desenvolvimento Back-end e testes.
         Jeancarlossantos12@gmail.com | +55 (47) 9 9214-5877
 
-####    Luan Gabriel - Conteúdo
+####    Luan Gabriel - Conteúdo e documentação
         Auxilio na pesquisa e inclusão de conteúdos
         luangabrielfaustonobrac@gmail.com | +55 (47) 9 9154-3131
 
