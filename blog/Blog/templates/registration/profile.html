@@ -50,9 +50,11 @@
                                 {%if request.user.id != user.id%}
                                 <form action="{% url 'usuarios:seguir' user.id%}" method="POST">
                                     {% csrf_token %}
-                                    <button type="submit">Seguir</button>
-                                     
-                                    
+                                    {% if request.user not in user.seguidores.all %}
+                                    <button class="btn btn-outline-success" type="submit">Seguir</button>
+                                    {%else%} 
+                                    <button class="btn btn-outline-success" type="submit">Seguindo</button>
+                                    {%endif%}
                                 </form>
                    
                 
