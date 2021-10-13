@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 class CustomUser(User):
     telefone = models.CharField(max_length=15, null=True, blank=True)
     aniversario = models.DateField(auto_now_add=False, null=True, blank=True)
-    foto = models.ImageField(null=True, blank=True, upload_to="static/img/", default="static/img/default_profile_image.jpg")
+    foto = models.ImageField(null=True, blank=True, upload_to="static/img/")
     estado = BRStateField(null = True, blank = True)
     CEP = BRPostalCodeField(null = True, blank = True)
     cidade = models.CharField(max_length=155, null=True)
