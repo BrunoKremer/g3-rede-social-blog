@@ -101,3 +101,6 @@ class IndicacaoDetailView(generic.DetailView):
     model = Indicacao
     template_name = 'blog/indicacao_detail.html'
 
+class Contato_view(generic.TemplateView):
+    template_name = 'blog/contato.html'
+

@@ -12,7 +12,7 @@ class CustomUser(User):
     aniversario = models.DateField(auto_now_add=False, null=True, blank=True)
     foto = models.ImageField(null=True, blank=True, upload_to="static/img/", default="static/img/default_profile_image.jpg")
     estado = BRStateField(null = True, blank = True)
-    CEP = BRPostalCodeField(null = True)
+    CEP = BRPostalCodeField(null = True, blank = True)
     cidade = models.CharField(max_length=155, null=True)
     genero_choices = [("F", "Feminino"), ("H", "Masculino"), ("O", "Outro")]
     genero = models.CharField(choices=genero_choices, default="M", max_length=1)
@@ -22,7 +22,7 @@ class CustomUser(User):
     link_ig = models.CharField(null=True, blank=True, max_length=255)
     seguindo = models.ManyToManyField(User,blank=True,related_name='Seguidores')
     ocupacao_choices = [
-        ('e', 'Estudante'), ('t', 'Trabalha na área')
+        ('Estudante', 'Estudante'), ('Trabalha na área', 'Trabalha na área')
         ]
     ocupacao = models.CharField(max_length=20, choices= ocupacao_choices, default='Estudante')
     

@@ -4,22 +4,28 @@
     
     
     {%for user in usuarios%}
-
-    <div class="row row-cols-6 row-cols-md-3">
-        <div class="col mb-12" style="width: 250px;" >
-          <div class="card">
-            <img src="{{user.foto.url}}" class="card-img-top img-fluid img-thumbnail" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{user.get_full_name}}</h5>
-             
-                  <a href="">Ver perfil</a>
-              
-            </div>
+      <div class="col mb-4"style = "padding:20px">
+        <div class="card">
+          <div class="media m-0"  style="border-bottom: 1px solid #ccc; padding: 10px;">
+              <div class="d-flex mr-3">               
+                  <a href="#"><img class="img-fluid rounded-circle" src="{{user.foto.url}}" alt=""></a>              
+              </div>
+              <div class="media-body">
+                  <span class="m-0"> <a href="{% url 'usuarios:profile' user.id%}">{{user.get_full_name}}</a> </span>
+                  <small><p><i class="icon ion-md-time"></i>{{user.ocupacao}}</p></small>
+              </div>
+          </div>
+          <div class="card-body">
+            <small class="card-text"></i>{{user.cidade}}</small>,
+            <small class="card-text"></i>{{user.estado}}</small>
+          </div>
+          <div class="card-footer">
+            <a href="{% url 'usuarios:profile' user.id%}" role="alert">Ver perfil</a>
           </div>
         </div>
+      </div>
+      {%endfor%}
     </div>
-    {%endfor%}
-</div>
 
 
 {%endblock%}

@@ -19,6 +19,7 @@ urlpatterns = [
     path('indicacao/', views.indicacao, name='indicacao'),
     # Url que redireciona para uma indicação especificia pelo ID
     path('indicacao/<int:pk>/', views.IndicacaoDetailView.as_view(), name='indicacao_detail'),
+    path('contato', views.Contato_view.as_view(), name='contato'),
 
     path('curtir/', views.curtir_post, name='curtir_post'),
 ]
