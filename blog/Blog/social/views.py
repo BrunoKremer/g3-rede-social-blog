@@ -24,8 +24,8 @@ def feed(request):
            data.conteudo = form.cleaned_data['conteudo']
            data.foto = form.cleaned_data['foto']
            data.usuario_id = request.user.id
-           
            data.save()
+           return redirect("social:feed")
     else:
         form = Publicacao_form()
     context = {"posts":posts, "form":form,'comentarios':comentarios, 'usuarios':usuarios }
@@ -50,7 +50,7 @@ def comentar_Publicacao(request, id):
             data.usuario_id = request.user.id
             data.publicacao_id = post.id
             data.save()
-            return redirect('social:feed')
+            return redirect("social:feed")
     else:
         form_comentario = Comentario_publi()
     context = {'post':post,"form_comentario":form_comentario}
@@ -61,7 +61,7 @@ def deletarPublicacao(request,id):
     post = Publicacao.objects.get(id=id)
     if request.method == 'POST':
         post.delete()
-        return redirect('social:feed')
+        return redirect("social:feed")
 
     context = {'post':post}
     return render(request,'social/deletar-post.html',context)
@@ -74,7 +74,7 @@ def editarPublicacao(request,id):
     if request.method == 'POST':
         form = Publicacao_form(request.POST,instance=post)
         form.save()
-        return redirect('social:feed')
+        return redirect("social:feed")
 
     context = {'post':post,'form':form}
     return render(request,'social/editar-post.html',context)
@@ -101,17 +101,5 @@ def like_post(request):
 
             like.save()
 
-    return redirect('social:feed')
+    return redirect("social:feed")
 
-def Publi_detail(request, pk):
-    comentarios = Comment.objects.filter()
-    qtde = 0
-
-    for q in comentarios:
-        qtde = qtde + 1
-
-    post = Publicacao.objects.get(pk=pk)
-    
-
-    context = {"post": post, 'comentarios':comentarios, 'qtde':qtde}
-    return render (request, 'social/publi_detail.html', context)

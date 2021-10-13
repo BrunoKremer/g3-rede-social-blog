@@ -35,3 +35,7 @@ new Glider($responsiveCarousel, {
     },
   ],
 });
+
+
+   
+   
