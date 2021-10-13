@@ -175,9 +175,9 @@ Nosso site foi desenvolvido em Python, Django, Html, Css e MySQL e as principais
 #### Tarefas em aberto
 
 - [ ] Diagrama de Banco de Dados.
-- [ ] Formulário de comentários
+- [x] Formulário de comentários
 - [ ] Model para seguir pessoas
-- [ ] Responsividade
+- [x] Responsividade
 - [ ] Troca de mensagens
 
 ## Licença
