@@ -185,3 +185,28 @@ Nosso site foi desenvolvido em Python, Django, Html, Css e MySQL e as principais
 Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
 
 Veja mais em: https://github.com/BrunoKremer/g3-rede-social-blog/blob/main/LICENSE
+
+
+## Migração de base de dados Mysql para Localhost SqLite
+
+1. Alterar configuração do local_setting.py de :
+        DATABASES = DbSqLite 
+        #DATABASES = DbMySQL
+        # ou seja. Voce ira utilizar a base de dados local e não mais do Mysql em Cloud
+
+2. Excluir arquivo atual se ouver db.sqlite3 (ou renomear por duvida)
+3. Executar o python manage.py migrate  (ira criar o arquivo db.sqlite3 novamente)
+4. Instalar a extenção SQLite Viewer no VS code para analisar o conteudo do db.sqlite3 
+5. Importar conteudo fornecipelo pelo instrutor no arquivo blog.json com o comando: 
+        python3 manage.py loaddata blog.json 
+        *** 
+
+6. Verificar se os dados foram importados corretamente para a sua base de dados local. (pelo vscode sqlite browser)
+7. rodar e verificar tudo pelo site. 
+
+
+*** Conteudo foi exportado da seguinte maneira:
+1. Conectado o local_settings no banco de dados em nuvem (mysql)
+2. Executar o comando de exportar para formato json        
+        python3 manage.py dumpdata --natural-foreign --natural-primary --indent 4 > blog.json
+3. Copiar arquivo .json para o Evanildo. 
